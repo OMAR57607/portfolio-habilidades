@@ -86,10 +86,20 @@ body {
 }
 
 .blob-purple {
-    background-color: #7c3aed;
+    background-color: #06b6d4; /* cyan/teal matching your new logo */
     bottom: 10%;
     right: -10%;
     animation: float-blob 25s infinite alternate-reverse ease-in-out;
+}
+
+.blob-orange {
+    background-color: #ff3e55; /* warm coral/orange */
+    top: 40%;
+    left: 40%;
+    width: 60vw;
+    height: 60vw;
+    opacity: 0.08;
+    animation: float-blob 22s infinite alternate ease-in-out;
 }
 
 @keyframes float-blob {
@@ -145,17 +155,25 @@ body {
     align-items: center;
 }
 
-.logo {
-    font-family: var(--font-title);
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--text-main);
+.logo-wrapper {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    letter-spacing: -0.5px;
 }
 
-.logo-accent {
-    color: var(--primary-color);
+.nav-logo-img {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.2); /* cyan glow matching the logo */
+    transition: var(--transition-smooth);
+}
+
+.logo-wrapper:hover .nav-logo-img {
+    transform: rotate(10deg) scale(1.08);
+    box-shadow: 0 0 22px rgba(6, 182, 212, 0.45);
+    border-color: rgba(255, 255, 255, 0.25);
 }
 
 .nav-menu {

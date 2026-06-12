@@ -23,6 +23,12 @@ async def read_css():
 async def read_js():
     return FileResponse("static/app.js")
 
+# Servir logo.png directo si es necesario
+@app.get("/logo.png")
+async def read_logo():
+    return FileResponse("static/logo.png")
+
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
