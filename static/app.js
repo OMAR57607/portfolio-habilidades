@@ -140,14 +140,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('out-service').innerText = proximoServicio;
                 document.getElementById('out-crt').innerText = clasificacionCrt;
                 
-                // Churn Pct y barra
+                // Churn Pct y Dial Circular
                 document.getElementById('out-churn-pct').innerText = `${churnPct}%`;
                 
-                const churnBar = document.getElementById('out-churn-bar');
-                // Cap a 100% de ancho visual en la barra
+                const dialFill = document.getElementById('dial-fill');
                 const visualWidth = Math.min(churnPct, 100);
-                churnBar.style.width = `${visualWidth}%`;
-                churnBar.style.backgroundColor = progressBarColor;
+                const offset = 100 - visualWidth;
+                dialFill.setAttribute('stroke-dashoffset', offset);
+                dialFill.style.stroke = progressBarColor;
+                dialFill.style.filter = `drop-shadow(0 0 5px ${progressBarColor})`;
+
                 
                 const churnAlert = document.getElementById('out-churn-alert');
                 churnAlert.innerText = alertaChurn;
@@ -239,6 +241,17 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(el);
         });
     }
+
+    // 6. SCROLL PROGRESS INDICATOR BAR
+    window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const scrollIndicator = document.getElementById('scroll-indicator');
+        if (scrollIndicator) {
+            scrollIndicator.style.width = scrolled + '%';
+        }
+    });
 });
 
 // CSS inyectado para soporte de Intersection Observer Animations

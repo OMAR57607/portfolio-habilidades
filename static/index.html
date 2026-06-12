@@ -28,6 +28,9 @@
 </head>
 <body class="dark-theme">
 
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true"></div>
+
     <!-- Glowing Background blobs -->
     <div class="blob-bg blob-red" aria-hidden="true"></div>
     <div class="blob-bg blob-purple" aria-hidden="true"></div>
@@ -293,14 +296,17 @@
                             <span class="output-label">Clasificación CRT del Cliente:</span>
                             <span class="output-value" id="out-crt">1. RETENCIÓN PURA (VENDIDO AQUÍ Y ACTIVO)</span>
                         </div>
-                        <div class="output-item">
-                            <span class="output-label">Índice de Riesgo (Churn Risk):</span>
-                            <div class="progress-container">
-                                <span class="output-value" id="out-churn-pct">155.56%</span>
-                                <div class="progress-bar-bg">
-                                    <div class="progress-bar" id="out-churn-bar" style="width: 100%; background-color: var(--primary-color);"></div>
-                                </div>
+                        <div class="output-item churn-output-group">
+                            <div class="churn-info">
+                                <span class="output-label">Índice de Riesgo (Churn Risk):</span>
                                 <span class="churn-alert-tag text-red" id="out-churn-alert">1. CHURN CONFIRMADO</span>
+                            </div>
+                            <div class="churn-dial-container">
+                                <svg class="churn-dial" width="85" height="85" viewBox="0 0 36 36">
+                                    <path class="dial-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="3"/>
+                                    <path class="dial-fill" id="dial-fill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--primary-color)" stroke-width="3" stroke-dasharray="100, 100" stroke-dashoffset="0"/>
+                                </svg>
+                                <span class="dial-pct" id="out-churn-pct">155.56%</span>
                             </div>
                         </div>
                         <div class="output-item strategy-output">
@@ -327,6 +333,7 @@
                 <button class="filter-btn" data-filter="data" id="filter-data">Datos & Analytics</button>
                 <button class="filter-btn" data-filter="cloud" id="filter-cloud">Cloud & DB</button>
                 <button class="filter-btn" data-filter="devops" id="filter-devops">DevOps</button>
+                <button class="filter-btn" data-filter="business" id="filter-business">Negocio & Metodología</button>
             </div>
 
             <!-- Skills Grid -->
@@ -407,6 +414,22 @@
                     <div class="skill-icon"><i class="fa-solid fa-bug text-red"></i></div>
                     <span class="skill-name">Sentry SDK</span>
                 </div>
+                <!-- Tableau -->
+                <div class="skill-card" data-category="data">
+                    <div class="skill-icon"><i class="fa-solid fa-chart-column text-teal"></i></div>
+                    <span class="skill-name">Tableau</span>
+                </div>
+                <!-- Excel Avanzado -->
+                <div class="skill-card" data-category="data">
+                    <div class="skill-icon"><i class="fa-regular fa-file-excel text-green"></i></div>
+                    <span class="skill-name">Excel Avanzado</span>
+                </div>
+                <!-- Toyota Way -->
+                <div class="skill-card" data-category="business">
+                    <div class="skill-icon"><i class="fa-solid fa-gears text-red"></i></div>
+                    <span class="skill-name">Toyota Way</span>
+                </div>
+
 
             </div>
         </section>
@@ -433,7 +456,10 @@
                             <i class="fa-solid fa-envelope"></i>
                             <span>desable999@gmail.com</span>
                         </a>
-
+                        <a href="https://www.facebook.com/share/18gQBhdY94/" target="_blank" class="contact-link-item" id="facebook-link">
+                            <i class="fa-brands fa-facebook text-blue"></i>
+                            <span>Facebook</span>
+                        </a>
                     </div>
 
                     <div class="toyota-badge">
