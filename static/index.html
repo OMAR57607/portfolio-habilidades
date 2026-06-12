@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio profesional de Omar Fuentes - Full Stack Developer & Data Analyst. Automatización industrial, analítica BDC y desarrollo ágil en Python (Django, FastAPI, Pandas).">
+    <meta name="keywords" content="Omar Fuentes, Python Developer, Data Analyst, Django, FastAPI, Streamlit, Pandas, Supabase, BDC, Automotriz, Programador Python">
+    <meta name="author" content="Omar Fuentes">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Omar Fuentes | Full Stack Python Developer & Data Analyst">
+    <meta property="og:description" content="Especialista en desarrollo backend y analítica avanzada de datos para optimización de procesos comerciales y automotrices.">
+    <meta property="og:url" content="https://github.com/OMAR57607">
+
+    <title>Omar Fuentes | Full Stack Python Developer & Data Analyst</title>
+
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <!-- Glowing Background blobs -->
+    <div class="blob-bg blob-red" aria-hidden="true"></div>
+    <div class="blob-bg blob-purple" aria-hidden="true"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header" id="header-nav">
+        <div class="header-container">
+            <a href="#" class="logo" id="logo-link">
+                <span class="logo-accent">&lt;</span>OF<span class="logo-accent">/&gt;</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#proyectos" class="nav-link"><i class="fa-solid fa-code"></i> Proyectos</a>
+                <a href="#simulador" class="nav-link"><i class="fa-solid fa-chart-line"></i> Simulador BDC</a>
+                <a href="#habilidades" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Skills</a>
+                <a href="#contacto" class="nav-link contact-btn"><i class="fa-solid fa-paper-plane"></i> Contacto</a>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+
+        <!-- Hero Section -->
+        <section class="hero-section" id="inicio">
+            <div class="hero-content">
+                <div class="badge-status fade-in">
+                    <span class="status-dot"></span> Disponible para nuevos proyectos
+                </div>
+                <h1 class="hero-title fade-in-up">
+                    Hola, soy <span class="highlight-name">Omar Fuentes</span>
+                </h1>
+                <h2 class="hero-subtitle fade-in-up">
+                    Full Stack Python Developer & Data Analyst
+                </h2>
+                <p class="hero-desc fade-in-up">
+                    Especializado en diseñar e implementar arquitecturas web robustas con **Django** y **FastAPI**, complementadas con analítica inteligente de datos en **Pandas**. Desarrollo soluciones a medida enfocadas en la optimización de procesos BDC y automatización para el sector automotriz.
+                </p>
+                <div class="hero-tech-pills fade-in-up">
+                    <span class="tech-pill"><i class="fa-brands fa-python"></i> Python</span>
+                    <span class="tech-pill"><i class="fa-solid fa-network-wired"></i> Django</span>
+                    <span class="tech-pill"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+                    <span class="tech-pill"><i class="fa-solid fa-table"></i> Pandas</span>
+                    <span class="tech-pill"><i class="fa-solid fa-cloud"></i> Supabase</span>
+                </div>
+                <div class="hero-actions fade-in-up">
+                    <a href="#proyectos" class="btn btn-primary" id="btn-view-projects">
+                        Ver Proyectos <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#simulador" class="btn btn-secondary" id="btn-try-simulator">
+                        Probar Simulador BDC <i class="fa-solid fa-circle-play"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section-container" id="proyectos">
+            <div class="section-header">
+                <span class="section-tag">Mis Desarrollos</span>
+                <h3 class="section-title">Proyectos Destacados</h3>
+                <p class="section-desc">Sistemas empresariales y de analítica implementados y optimizados para entornos de producción.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1: Django -->
+                <article class="project-card" id="project-django">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Sistema Central Taller Toyota</h4>
+                        <p class="project-text">
+                            Plataforma empresarial Django para la gestión integral de operaciones de taller, citas y control de pedidos especiales de refacciones.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fa-solid fa-circle-check"></i> Integración con **Gemini AI** para captura y clasificación inteligente de leads.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Logs dinámicos de interacciones de IA con consentimiento legal (PROFECO).</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Modelos híbridos vinculados a bases de datos en la nube (Supabase).</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Módulos CRM para la agenda de seguimiento telefónico y control de sesiones.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Django</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Gemini AI</span>
+                            <span class="tag">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="repo-lock"><i class="fa-solid fa-lock"></i> Repositorio Privado</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: FastAPI -->
+                <article class="project-card" id="project-fastapi">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Verificador Digital de Precios</h4>
+                        <p class="project-text">
+                            Aplicación web de consulta y verificación de refacciones diseñada bajo las normativas PROFECO de exhibición comercial mexicana.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fa-solid fa-circle-check"></i> Búsqueda en milisegundos mediante SKU/número de parte con FastAPI.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> **Web Scraping** OEM automático (BeautifulSoup de Partsouq, OEM Parts, Amayama).</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Tema responsivo adaptativo (modo día/noche según zona horaria CDMX).</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Desplegado en producción sobre contenedores Docker en Railway.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Supabase</span>
+                            <span class="tag">BeautifulSoup</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Railway</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="repo-lock"><i class="fa-solid fa-lock"></i> Repositorio Privado</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: Flask & Pandas -->
+                <article class="project-card" id="project-flask">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Consolidador BDC y Analítica Automotriz</h4>
+                        <p class="project-text">
+                            Motor de analítica y consolidación que unifica hojas de cálculo del DMS (Quiter) y del CRM para predecir retención de clientes.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fa-solid fa-circle-check"></i> Consolidación automática de reportes de servicio (U297, U307, TDM).</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Clasificación de retención mediante el algoritmo **CRT** (Pura, Conquista, Fuga).</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Algoritmo de proyección predictiva de kilometraje (**CERT**).</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Alertas y priorización de llamadas según índice de riesgo de abandono (Churn).</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Flask</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">NumPy</span>
+                            <span class="tag">OpenPyXL</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="repo-lock"><i class="fa-solid fa-lock"></i> Repositorio Privado</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: Streamlit -->
+                <article class="project-card" id="project-streamlit">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-images"></i>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Sistema de Evidencia y Diagnóstico Taller</h4>
+                        <p class="project-text">
+                            Aplicación móvil de captura rápida para técnicos que agiliza la subida de cotizaciones de servicio con evidencias visuales.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fa-solid fa-circle-check"></i> Interfaz en Streamlit con login seguro conectado a Supabase Auth.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> **Compresión de imágenes en cliente** (PIL) para ahorrar datos móviles.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Generación en tiempo real y descarga de reportes avanzados con **FPDF**.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Subida asíncrona de reportes y fotografías a Supabase Storage.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">Supabase</span>
+                            <span class="tag">FPDF</span>
+                            <span class="tag">Pillow (PIL)</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="repo-lock"><i class="fa-solid fa-lock"></i> Repositorio Privado</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- BDC Simulator Section -->
+        <section class="section-container" id="simulador">
+            <div class="section-header">
+                <span class="section-tag">Simulador Interactivo</span>
+                <h3 class="section-title">Consola Analítica BDC</h3>
+                <p class="section-desc">Pon a prueba el motor matemático que implementé en mis proyectos de analítica. Ingresa datos de un vehículo de ejemplo para ver cómo calcula y clasifica a un cliente.</p>
+            </div>
+
+            <div class="simulator-wrapper">
+                <div class="simulator-card glass-panel">
+                    <div class="simulator-card-header">
+                        <div class="console-dots">
+                            <span class="dot dot-r"></span>
+                            <span class="dot dot-y"></span>
+                            <span class="dot dot-g"></span>
+                        </div>
+                        <span class="console-title">kpi_engine_v1.py</span>
+                    </div>
+                    <div class="simulator-card-body">
+                        <form id="bdc-sim-form" onsubmit="return false;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="input-km"><i class="fa-solid fa-tachometer-alt"></i> Kilometraje Actual</label>
+                                    <input type="number" id="input-km" value="38500" min="0" placeholder="Ej: 40000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="input-days"><i class="fa-solid fa-calendar-day"></i> Días sin Visitas</label>
+                                    <input type="number" id="input-days" value="280" min="0" placeholder="Ej: 150" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="input-interval"><i class="fa-solid fa-history"></i> DERT Promedio (Días entre servicios)</label>
+                                    <input type="number" id="input-interval" value="180" min="1" placeholder="Ej: 180" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="select-model"><i class="fa-solid fa-car"></i> Modelo de Vehículo</label>
+                                    <select id="select-model">
+                                        <option value="Hilux">Hilux</option>
+                                        <option value="Yaris">Yaris</option>
+                                        <option value="Corolla">Corolla</option>
+                                        <option value="RAV4">RAV4</option>
+                                        <option value="Hiace">Hiace</option>
+                                        <option value="Otro" selected>Otro Modelo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row checkbox-row">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="check-tdm" checked>
+                                    <label for="check-tdm">¿Objetivo de Citas TDM?</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="check-local" checked>
+                                    <label for="check-local">¿Vendido en esta Agencia?</label>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-full" id="btn-run-sim">
+                                <i class="fa-solid fa-play"></i> Ejecutar Algoritmo de Priorización
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Simulation Output -->
+                <div class="simulator-results glass-panel" id="sim-results">
+                    <div class="results-header">
+                        <i class="fa-solid fa-terminal"></i> Salida del Algoritmo (Output)
+                    </div>
+                    <div class="results-body">
+                        <div class="output-item">
+                            <span class="output-label">Kilometraje Proyectado (CERT):</span>
+                            <span class="output-value text-glow" id="out-cert">44,488 KM</span>
+                        </div>
+                        <div class="output-item">
+                            <span class="output-label">Próximo Paquete de Servicio:</span>
+                            <span class="output-value" id="out-service">OFRECER PAQUETE DE 50,000 KM</span>
+                        </div>
+                        <div class="output-item">
+                            <span class="output-label">Clasificación CRT del Cliente:</span>
+                            <span class="output-value" id="out-crt">1. RETENCIÓN PURA (VENDIDO AQUÍ Y ACTIVO)</span>
+                        </div>
+                        <div class="output-item">
+                            <span class="output-label">Índice de Riesgo (Churn Risk):</span>
+                            <div class="progress-container">
+                                <span class="output-value" id="out-churn-pct">155.56%</span>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar" id="out-churn-bar" style="width: 100%; background-color: var(--primary-color);"></div>
+                                </div>
+                                <span class="churn-alert-tag text-red" id="out-churn-alert">1. CHURN CONFIRMADO</span>
+                            </div>
+                        </div>
+                        <div class="output-item strategy-output">
+                            <span class="output-label">Acción Estratégica sugerida:</span>
+                            <div class="strategy-badge" id="out-strategy">0. CRÍTICO TDM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="section-container" id="habilidades">
+            <div class="section-header">
+                <span class="section-tag">Tecnologías</span>
+                <h3 class="section-title">Habilidades & Stack</h3>
+                <p class="section-desc">Herramientas y tecnologías que domino para el desarrollo de software y ciencia de datos.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="skills-filters">
+                <button class="filter-btn active" data-filter="all" id="filter-all">Todas</button>
+                <button class="filter-btn" data-filter="backend" id="filter-backend">Backend</button>
+                <button class="filter-btn" data-filter="data" id="filter-data">Datos & Analytics</button>
+                <button class="filter-btn" data-filter="cloud" id="filter-cloud">Cloud & DB</button>
+                <button class="filter-btn" data-filter="devops" id="filter-devops">DevOps</button>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="skills-grid" id="skills-grid-container">
+
+                <!-- Python -->
+                <div class="skill-card" data-category="backend data">
+                    <div class="skill-icon"><i class="fa-brands fa-python text-blue"></i></div>
+                    <span class="skill-name">Python</span>
+                </div>
+                <!-- Django -->
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon"><i class="fa-solid fa-network-wired text-green"></i></div>
+                    <span class="skill-name">Django</span>
+                </div>
+                <!-- FastAPI -->
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon"><i class="fa-solid fa-bolt text-teal"></i></div>
+                    <span class="skill-name">FastAPI</span>
+                </div>
+                <!-- Flask -->
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon"><i class="fa-solid fa-leaf text-grey"></i></div>
+                    <span class="skill-name">Flask</span>
+                </div>
+                <!-- Streamlit -->
+                <div class="skill-card" data-category="backend data">
+                    <div class="skill-icon"><i class="fa-solid fa-cubes text-red"></i></div>
+                    <span class="skill-name">Streamlit</span>
+                </div>
+                <!-- Pandas -->
+                <div class="skill-card" data-category="data">
+                    <div class="skill-icon"><i class="fa-solid fa-table text-purple"></i></div>
+                    <span class="skill-name">Pandas</span>
+                </div>
+                <!-- NumPy -->
+                <div class="skill-card" data-category="data">
+                    <div class="skill-icon"><i class="fa-solid fa-square-root-variable text-blue"></i></div>
+                    <span class="skill-name">NumPy</span>
+                </div>
+                <!-- OpenPyXL -->
+                <div class="skill-card" data-category="data">
+                    <div class="skill-icon"><i class="fa-regular fa-file-excel text-green"></i></div>
+                    <span class="skill-name">OpenPyXL</span>
+                </div>
+                <!-- R / RStudio -->
+                <div class="skill-card" data-category="data">
+                    <div class="skill-icon"><i class="fa-solid fa-registered text-blue"></i></div>
+                    <span class="skill-name">RStudio / R</span>
+                </div>
+                <!-- Supabase -->
+                <div class="skill-card" data-category="cloud">
+                    <div class="skill-icon"><i class="fa-solid fa-cloud text-teal"></i></div>
+                    <span class="skill-name">Supabase</span>
+                </div>
+                <!-- PostgreSQL -->
+                <div class="skill-card" data-category="cloud">
+                    <div class="skill-icon"><i class="fa-solid fa-database text-blue"></i></div>
+                    <span class="skill-name">PostgreSQL</span>
+                </div>
+                <!-- SQLite -->
+                <div class="skill-card" data-category="cloud">
+                    <div class="skill-icon"><i class="fa-solid fa-server text-grey"></i></div>
+                    <span class="skill-name">SQLite</span>
+                </div>
+                <!-- Docker -->
+                <div class="skill-card" data-category="devops">
+                    <div class="skill-icon"><i class="fa-brands fa-docker text-blue"></i></div>
+                    <span class="skill-name">Docker</span>
+                </div>
+                <!-- Railway -->
+                <div class="skill-card" data-category="devops cloud">
+                    <div class="skill-icon"><i class="fa-solid fa-train text-purple"></i></div>
+                    <span class="skill-name">Railway</span>
+                </div>
+                <!-- Sentry -->
+                <div class="skill-card" data-category="devops">
+                    <div class="skill-icon"><i class="fa-solid fa-bug text-red"></i></div>
+                    <span class="skill-name">Sentry SDK</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section-container" id="contacto">
+            <div class="section-header">
+                <span class="section-tag">Conectemos</span>
+                <h3 class="section-title">Contacto</h3>
+                <p class="section-desc">¿Tienes alguna duda sobre mis sistemas o quieres colaborar en algún desarrollo?</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info glass-panel">
+                    <h4>Información de Enlaces</h4>
+                    <p>Puedes ver parte de mi código público y mis contribuciones académicas o personales directamente en mis redes.</p>
+                    
+                    <div class="contact-links-list">
+                        <a href="https://github.com/OMAR57607" target="_blank" class="contact-link-item" id="github-link">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub (OMAR57607)</span>
+                        </a>
+                        <div class="contact-link-item email-mock">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>136415360+OMAR57607@users.noreply.github.com</span>
+                        </div>
+                    </div>
+
+                    <div class="toyota-badge">
+                        <i class="fa-solid fa-wrench"></i> Especialista en Desarrollo para Sistemas de Taller Automotriz
+                    </div>
+                </div>
+
+                <div class="contact-form-container glass-panel">
+                    <form id="contact-form" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="form-name">Nombre</label>
+                            <input type="text" id="form-name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Email</label>
+                            <input type="email" id="form-email" placeholder="tu@correo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-msg">Mensaje</label>
+                            <textarea id="form-msg" rows="4" placeholder="¿En qué puedo ayudarte?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="btn-send-message">
+                            Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="form-feedback hidden" id="form-feedback">
+                        <i class="fa-solid fa-circle-check"></i> Mensaje enviado correctamente (Simulado).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Omar Fuentes. Todos los derechos reservados.</p>
+            <p class="footer-legal">Cumplimiento del portfolio con fines informativos y demostrativos.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
