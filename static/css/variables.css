@@ -1,0 +1,86 @@
+/* Variables CSS */
+:root {
+    --bg-color: #08080a;
+    --card-bg: rgba(18, 18, 24, 0.65);
+    --border-color: rgba(255, 255, 255, 0.06);
+    --border-glow: rgba(235, 10, 30, 0.15);
+    
+    --primary-color: #eb0a1e;
+    --primary-glow: rgba(235, 10, 30, 0.35);
+    --primary-hover: #ff2a3c;
+    
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --text-dark: #6b7280;
+    
+    --font-title: 'Outfit', 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --glass-blur: blur(14px);
+    --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+    --shadow-glow: 0 0 25px -5px rgba(235, 10, 30, 0.2);
+}
+
+/* Light Theme Variables */
+body.light-theme {
+    --bg-color: #f7f8fa;
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --border-glow: rgba(235, 10, 30, 0.2);
+    
+    --text-main: #111827;
+    --text-muted: #4b5563;
+    --text-dark: #9ca3af;
+    
+    --primary-color: #eb0a1e;
+    --primary-glow: rgba(235, 10, 30, 0.2);
+    --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px) !important;
+}
+
+body.light-theme .blob-bg {
+    opacity: 0.06;
+}
+
+body.light-theme .theme-toggle {
+    background: rgba(0, 0, 0, 0.04);
+    color: #111827;
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: var(--primary-color);
+}
+
+body.light-theme .contact-link-item {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+body.light-theme .contact-link-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .skill-card {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme .btn-secondary {
+    background-color: rgba(0, 0, 0, 0.02);
+    color: var(--text-main);
+}
+
+body.light-theme .btn-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .simulator-card-header {
+    background: rgba(0, 0, 0, 0.03);
+}
