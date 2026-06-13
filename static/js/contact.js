@@ -17,9 +17,13 @@ export function initContact() {
             const text = `Hola Omar, soy ${name}.\n\n${message}\n\nMi correo de contacto: ${email}\n— Enviado desde tu portfolio web`;
             const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
-            // Abrir WhatsApp (app o Web); si el navegador bloquea la pestaña, navegar directo
-            const win = window.open(url, '_blank', 'noopener');
-            if (!win) {
+            // Abrir WhatsApp (app o Web); si el navegador bloquea la pestaña, navegar directo.
+            // Nota: no usar el feature 'noopener' aquí porque window.open retornaría null
+            // siempre y el fallback navegaría la pestaña actual ademas de abrir la nueva.
+            const win = window.open(url, '_blank');
+            if (win) {
+                win.opener = null;
+            } else {
                 window.location.href = url;
             }
 
