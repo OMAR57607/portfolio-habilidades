@@ -138,6 +138,8 @@
 .project-links {
     display: flex;
     align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
     font-size: 0.85rem;
     font-weight: 600;
 }
@@ -151,6 +153,36 @@
     padding: 6px 12px;
     border-radius: 6px;
     border: 1px dashed var(--border-color);
+}
+
+.project-link {
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.project-link:hover {
+    border-color: var(--border-glow);
+    background: rgba(235, 10, 30, 0.08);
+    color: var(--primary-hover);
+}
+
+.demo-link {
+    color: #34d399;
+    border-color: rgba(16, 185, 129, 0.25);
+}
+
+.demo-link:hover {
+    border-color: rgba(16, 185, 129, 0.5);
+    background: rgba(16, 185, 129, 0.1);
+    color: #34d399;
 }
 
 /* Responsive adjustments */

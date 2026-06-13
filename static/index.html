@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Omar Fuentes - Full Stack Python Developer & Data Analyst en el piso de un taller Toyota. Automatización de cotizaciones, reportes DMS y analítica BDC para concesionarias: de 3 horas a 15 minutos por cotización.">
-    <meta name="keywords" content="Omar Fuentes, Python Developer, Data Analyst, Django, FastAPI, Streamlit, Pandas, Supabase, BDC, Automotriz, Programador Python, Automatización de Concesionarias, Taller Automotriz, Cotizaciones de Taller, Analítica BDC">
+    <meta name="description" content="Portfolio de Omar Fuentes - Full Stack Developer (Python & Node.js) & Data/ML Analyst en el piso de un taller Toyota. Machine learning para refacciones, automatización de cotizaciones y analítica BDC para concesionarias: de 3 horas a 15 minutos por cotización.">
+    <meta name="keywords" content="Omar Fuentes, Python Developer, Node.js, Data Analyst, Machine Learning, scikit-learn, Django, FastAPI, Flask, Streamlit, Express, Pandas, Supabase, PostgreSQL, BDC, Automotriz, Programador Python, Automatización de Concesionarias, Taller Automotriz, Cotizaciones de Taller, Analítica BDC">
     <meta name="author" content="Omar Fuentes">
 
     <!-- Open Graph / Facebook -->
@@ -102,12 +102,14 @@
                     Digitalizo y automatizo la operación de concesionarias automotrices
                 </h2>
                 <p class="hero-desc fade-in-up">
-                    <strong>Full Stack Python Developer & Data Analyst</strong> — y trabajo todos los días en el piso de un taller Toyota. Diseño arquitecturas web con <strong>Django</strong> y <strong>FastAPI</strong> y analítica de datos en <strong>Pandas</strong> que resuelven cuellos de botella reales de BDC, taller y refacciones: cotizaciones que tardaban horas hoy salen en minutos.
+                    <strong>Full Stack Developer & Data/ML Analyst</strong> — y trabajo todos los días en el piso de un taller Toyota. Construyo arquitecturas web con <strong>Django</strong>, <strong>FastAPI</strong> y <strong>Node.js</strong>, modelos de <strong>machine learning</strong> (scikit-learn) y analítica en <strong>Pandas</strong> que resuelven cuellos de botella reales de BDC, taller y refacciones: cotizaciones que tardaban horas hoy salen en minutos.
                 </p>
                 <div class="hero-tech-pills fade-in-up">
                     <span class="tech-pill"><i class="fa-brands fa-python"></i> Python</span>
                     <span class="tech-pill"><i class="fa-solid fa-network-wired"></i> Django</span>
                     <span class="tech-pill"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+                    <span class="tech-pill"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                    <span class="tech-pill"><i class="fa-solid fa-brain"></i> scikit-learn</span>
                     <span class="tech-pill"><i class="fa-solid fa-table"></i> Pandas</span>
                     <span class="tech-pill"><i class="fa-solid fa-cloud"></i> Supabase</span>
                 </div>
@@ -133,7 +135,7 @@
                         <span class="stat-note"><i class="fa-solid fa-arrow-trend-up"></i> incremento estimado</span>
                     </div>
                     <div class="stat-card glass-panel">
-                        <span class="stat-value">4</span>
+                        <span class="stat-value">5</span>
                         <span class="stat-label">Sistemas propios en producción</span>
                         <span class="stat-note"><i class="fa-solid fa-circle-check"></i> usados a diario en la operación</span>
                     </div>
@@ -194,22 +196,25 @@
                     <div class="project-content">
                         <h4 class="project-title">Sistema Central Taller Toyota</h4>
                         <p class="project-text">
-                            Plataforma empresarial Django para la gestión integral de operaciones de taller, citas y control de pedidos especiales de refacciones.
+                            Plataforma empresarial Django de 10 módulos para la operación integral de taller, citas, refacciones y pedidos especiales. En producción diaria sobre Railway.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check"></i> Integración con <strong>Gemini AI</strong> para captura y clasificación inteligente de leads.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Logs dinámicos de interacciones de IA con consentimiento legal (PROFECO).</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Modelos híbridos vinculados a bases de datos en la nube (Supabase).</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Módulos CRM para la agenda de seguimiento telefónico y control de sesiones.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Machine Learning</strong>: inferencia de SKU desde descripción + modelo con <strong>TF-IDF (scikit-learn)</strong>, umbrales de confianza y reentrenamiento por comando.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>IA multimodal Gemini 2.5 Flash</strong>: diagnóstico por foto y extracción estructurada de PDFs a JSON, con consentimiento legal (PROFECO).</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Arquitectura resiliente</strong>: Outbox Pattern con cola asíncrona (DLQ), idempotencia y lock cooperativo vía Redis para edición concurrente.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Rendimiento</strong>: optimización de N+1 (de 40+ queries a 3) y generación de PDF con Playwright headless + firma digital.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Seguridad: bloqueo anti fuerza bruta (django-axes), HSTS y tokens UUID; notificaciones Web Push y soporte PWA.</li>
                         </ul>
                         <div class="project-tags">
-                            <span class="tag">Django</span>
+                            <span class="tag">Django 6</span>
                             <span class="tag">PostgreSQL</span>
+                            <span class="tag">scikit-learn</span>
                             <span class="tag">Gemini AI</span>
-                            <span class="tag">Bootstrap</span>
+                            <span class="tag">Playwright</span>
+                            <span class="tag">Redis</span>
                         </div>
                         <div class="project-links">
-                            <span class="repo-lock"><i class="fa-solid fa-lock"></i> Repositorio Privado</span>
+                            <span class="repo-lock"><i class="fa-solid fa-lock"></i> Sistema interno · Repositorio privado</span>
                         </div>
                     </div>
                 </article>
@@ -222,20 +227,21 @@
                     <div class="project-content">
                         <h4 class="project-title">Verificador Digital de Precios</h4>
                         <p class="project-text">
-                            Aplicación web de consulta y verificación de refacciones diseñada bajo las normativas PROFECO de exhibición comercial mexicana.
+                            Aplicación web instalable (PWA) de consulta y cotización de refacciones, diseñada bajo las normativas PROFECO de exhibición comercial mexicana.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check"></i> Búsqueda en milisegundos mediante SKU/número de parte con FastAPI.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Web Scraping</strong> OEM automático (BeautifulSoup de Partsouq, OEM Parts, Amayama).</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Tema responsivo adaptativo (modo día/noche según zona horaria CDMX).</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Desplegado en producción sobre contenedores Docker en Railway.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Búsqueda en milisegundos por SKU con FastAPI y <strong>Web Scraping</strong> anti-bot (curl_cffi + BeautifulSoup) de 4 fuentes OEM.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>PWA con Service Worker</strong>: instalable y funcional sin conexión, con tema día/noche según zona horaria CDMX.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Cotización multi-item persistida en Supabase con <strong>idempotencia por hash</strong> y <strong>Row Level Security</strong>.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Producción en Docker (imagen endurecida, usuario no-root) sobre Railway, con monitoreo de errores en <strong>Sentry</strong>.</li>
                         </ul>
                         <div class="project-tags">
                             <span class="tag">FastAPI</span>
+                            <span class="tag">PWA</span>
                             <span class="tag">Supabase</span>
                             <span class="tag">BeautifulSoup</span>
                             <span class="tag">Docker</span>
-                            <span class="tag">Railway</span>
+                            <span class="tag">Sentry</span>
                         </div>
                         <div class="project-links">
                             <span class="repo-lock"><i class="fa-solid fa-lock"></i> Repositorio Privado</span>
@@ -266,7 +272,7 @@
                             <span class="tag">OpenPyXL</span>
                         </div>
                         <div class="project-links">
-                            <span class="repo-lock"><i class="fa-solid fa-lock"></i> Repositorio Privado</span>
+                            <a class="project-link" href="https://github.com/OMAR57607/procesador_de_archivos" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Ver código en GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -298,7 +304,36 @@
                             <span class="tag">Pillow (PIL)</span>
                         </div>
                         <div class="project-links">
-                            <span class="repo-lock"><i class="fa-solid fa-lock"></i> Repositorio Privado</span>
+                            <a class="project-link" href="https://github.com/OMAR57607/tecnicos-Toyota" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Ver código en GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5: Node.js / Express -->
+                <article class="project-card" id="project-node">
+                    <div class="project-icon">
+                        <i class="fa-brands fa-node-js"></i>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Fuertes Trail Puebla — Sitio Web</h4>
+                        <p class="project-text">
+                            Sitio web oficial de una comunidad off-road 4x4, construido en Node.js con foco en seguridad y rendimiento. Mi único proyecto fuera del stack Python.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fa-solid fa-circle-check"></i> Servidor <strong>Express</strong> endurecido con <strong>Helmet</strong>: CSP, anti-XSS, anti-clickjacking y anti-MIME-sniffing.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Rate limiting</strong> contra fuerza bruta/DoS, trust proxy y apagado seguro (graceful shutdown).</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Frontend responsive mobile-first con imágenes optimizadas a <strong>WebP</strong>.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Desplegado en producción sobre Railway.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express</span>
+                            <span class="tag">Helmet</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Railway</span>
+                        </div>
+                        <div class="project-links">
+                            <a class="project-link demo-link" href="https://fuertes-trail-puebla-production.up.railway.app" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver demo en vivo</a>
                         </div>
                     </div>
                 </article>
@@ -470,6 +505,7 @@
                 <button class="filter-btn active" data-filter="all" id="filter-all">Todas</button>
                 <button class="filter-btn" data-filter="backend" id="filter-backend">Backend</button>
                 <button class="filter-btn" data-filter="data" id="filter-data">Datos & Analytics</button>
+                <button class="filter-btn" data-filter="ml" id="filter-ml">Machine Learning</button>
                 <button class="filter-btn" data-filter="cloud" id="filter-cloud">Cloud & DB</button>
                 <button class="filter-btn" data-filter="devops" id="filter-devops">DevOps</button>
                 <button class="filter-btn" data-filter="business" id="filter-business">Negocio & Metodología</button>
@@ -584,13 +620,103 @@
                     <span class="skill-name">Claude AI</span>
                 </div>
                 <!-- Ecosistema Gemini AI -->
-                <div class="skill-card" data-category="backend data">
+                <div class="skill-card" data-category="backend data ml">
                     <div class="skill-icon"><i class="fa-solid fa-wand-magic-sparkles text-blue"></i></div>
                     <span class="skill-name">Ecosistema Gemini AI</span>
                 </div>
+                <!-- scikit-learn -->
+                <div class="skill-card" data-category="ml data">
+                    <div class="skill-icon"><i class="fa-solid fa-brain text-orange"></i></div>
+                    <span class="skill-name">scikit-learn</span>
+                </div>
+                <!-- Inferencia ML / TF-IDF -->
+                <div class="skill-card" data-category="ml data">
+                    <div class="skill-icon"><i class="fa-solid fa-magnifying-glass-chart text-purple"></i></div>
+                    <span class="skill-name">Inferencia ML (TF-IDF)</span>
+                </div>
+                <!-- Forecasting / statsmodels -->
+                <div class="skill-card" data-category="ml data">
+                    <div class="skill-icon"><i class="fa-solid fa-chart-line text-teal"></i></div>
+                    <span class="skill-name">Forecasting (statsmodels)</span>
+                </div>
+                <!-- Node.js -->
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon"><i class="fa-brands fa-node-js text-green"></i></div>
+                    <span class="skill-name">Node.js</span>
+                </div>
+                <!-- Express -->
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon"><i class="fa-solid fa-bolt text-grey"></i></div>
+                    <span class="skill-name">Express</span>
+                </div>
+                <!-- JavaScript -->
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon"><i class="fa-brands fa-js text-yellow"></i></div>
+                    <span class="skill-name">JavaScript</span>
+                </div>
+                <!-- Seguridad Web -->
+                <div class="skill-card" data-category="devops backend">
+                    <div class="skill-icon"><i class="fa-solid fa-shield-halved text-red"></i></div>
+                    <span class="skill-name">Seguridad Web (Helmet/CSP)</span>
+                </div>
+                <!-- Web Scraping -->
+                <div class="skill-card" data-category="data backend">
+                    <div class="skill-icon"><i class="fa-solid fa-spider text-purple"></i></div>
+                    <span class="skill-name">Web Scraping</span>
+                </div>
+                <!-- Playwright -->
+                <div class="skill-card" data-category="devops backend">
+                    <div class="skill-icon"><i class="fa-solid fa-robot text-teal"></i></div>
+                    <span class="skill-name">Playwright</span>
+                </div>
+                <!-- PWA / Service Workers -->
+                <div class="skill-card" data-category="backend devops">
+                    <div class="skill-icon"><i class="fa-solid fa-mobile-screen-button text-blue"></i></div>
+                    <span class="skill-name">PWA / Service Workers</span>
+                </div>
 
+            </div>
+        </section>
 
+        <!-- Engineering Patterns Section -->
+        <section class="section-container" id="ingenieria">
+            <div class="section-header">
+                <span class="section-tag">Bajo el Capó</span>
+                <h3 class="section-title">Patrones de Ingeniería</h3>
+                <p class="section-desc">No solo construyo funciones: aplico patrones de software que mantienen los sistemas rápidos, confiables y seguros en producción.</p>
+            </div>
 
+            <div class="services-grid">
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                    <h4>Outbox Pattern + Colas Asíncronas</h4>
+                    <p>Consistencia eventual con cola persistente y Dead Letter Queue: las tareas costosas (subir imágenes, sincronizar) no bloquean la respuesta al usuario.</p>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                    <h4>Idempotencia</h4>
+                    <p>Operaciones seguras de reintentar: hash de contenido y claves idempotentes evitan cotizaciones y registros duplicados ante doble clic o reintentos de red.</p>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                    <h4>Optimización de Consultas (N+1)</h4>
+                    <p>Uso de select_related y prefetch_related para bajar expedientes de 40+ consultas a solo 3, logrando carga instantánea en alto volumen.</p>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i class="fa-solid fa-lock"></i></div>
+                    <h4>Concurrencia con Lock Cooperativo</h4>
+                    <p>Semáforos vía Redis para impedir que dos usuarios editen el mismo folio a la vez, con aviso visual en tiempo real.</p>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h4>Inferencia con Machine Learning</h4>
+                    <p>TF-IDF (scikit-learn) para predecir SKU desde texto libre, con umbrales de confianza y un plan de validación con métricas de acierto.</p>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>Seguridad por Capas</h4>
+                    <p>Helmet/CSP y rate limiting en Node; django-axes, HSTS y Row Level Security en el resto; contenedores Docker sin privilegios de root.</p>
+                </div>
             </div>
         </section>
 

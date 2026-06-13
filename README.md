@@ -5,9 +5,10 @@
 Este portfolio está construido utilizando **FastAPI** para servir la capa estática del frontend y estructurado de manera optimizada para su despliegue inmediato en **Railway** mediante contenedores **Docker**.
 
 ## 🚀 Características
-- **Proyectos Destacados:** Detalles estructurados del Sistema Central Toyota (Django), Verificador de Precios (FastAPI), Consolidador BDC (Flask/Pandas) y Capturador de Evidencias (Streamlit).
+- **Proyectos Destacados:** Detalles estructurados del Sistema Central Toyota (Django + Machine Learning), Verificador de Precios (FastAPI/PWA), Consolidador BDC (Flask/Pandas), Capturador de Evidencias (Streamlit) y el sitio Fuertes Trail Puebla (Node.js/Express).
 - **Simulador Analítico BDC:** Consola interactiva en JavaScript que demuestra el comportamiento de tus algoritmos de negocio (proyección de kilómetros CERT, segmentación CRT y alertas de riesgo de Churn).
-- **Filtrado de Skills:** Grid interactivo que agrupa y filtra tu Stack tecnológico en Backend, Datos, Nube y DevOps.
+- **Patrones de Ingeniería:** Sección que documenta los patrones reales aplicados en producción (Outbox Pattern, idempotencia, optimización de N+1, lock cooperativo, inferencia ML con TF-IDF y seguridad por capas).
+- **Filtrado de Skills:** Grid interactivo que agrupa y filtra tu Stack tecnológico en Backend, Datos, Machine Learning, Nube y DevOps.
 - **Diseño Ultra Premium:** Estilo de modo oscuro con Glassmorphism (vidrio translúcido), luces difusas de fondo y animaciones suaves al hacer scroll.
 
 ## 📁 Estructura del Proyecto
