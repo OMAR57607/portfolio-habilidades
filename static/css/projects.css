@@ -100,6 +100,24 @@
     color: var(--text-main);
 }
 
+.project-impact {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    font-size: 0.87rem;
+    line-height: 1.5;
+    color: #34d399;
+}
+
+.project-impact i {
+    margin-top: 3px;
+}
+
 .project-tags {
     display: flex;
     flex-wrap: wrap;
