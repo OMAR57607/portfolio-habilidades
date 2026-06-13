@@ -1,0 +1,61 @@
+/* Sección Servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.service-card {
+    padding: 30px 26px;
+    transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-glow);
+}
+
+.service-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(235, 10, 30, 0.1);
+    border: 1px solid rgba(235, 10, 30, 0.2);
+    color: #ff3e55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+}
+
+.service-card h4 {
+    font-family: var(--font-title);
+    font-size: 1.12rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.services-cta {
+    margin-top: 36px;
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.services-cta p {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-main);
+}

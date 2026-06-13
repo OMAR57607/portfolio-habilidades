@@ -120,3 +120,17 @@ body.light-theme .contact-btn:hover {
 body.light-theme .mobile-toggle {
     color: var(--text-main);
 }
+
+body.light-theme .about-highlight-item,
+body.light-theme .sim-term {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+body.light-theme .project-impact {
+    color: #047857;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+body.light-theme .stat-note i {
+    color: #059669;
+}
