@@ -28,6 +28,11 @@ async def read_js():
 async def read_logo():
     return FileResponse("static/logo.png")
 
+# Servir favicon.ico para navegadores que lo piden en la raíz
+@app.get("/favicon.ico")
+async def read_favicon():
+    return FileResponse("static/favicon.ico")
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
