@@ -29,6 +29,7 @@
     background: linear-gradient(180deg, rgba(235, 10, 30, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
     opacity: 0;
     transition: var(--transition-smooth);
+    pointer-events: none;
 }
 
 .project-card:hover {
@@ -59,6 +60,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .project-title {
