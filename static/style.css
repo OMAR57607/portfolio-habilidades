@@ -44,12 +44,58 @@ body.light-theme {
 
 body.light-theme {
     background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.015) 1px, transparent 1px) !important;
+        linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px) !important;
 }
 
 body.light-theme .blob-bg {
     opacity: 0.06;
+}
+
+body.light-theme .main-header {
+    background: rgba(247, 248, 250, 0.8) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme .nav-logo-img {
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.12);
+}
+
+body.light-theme .contact-btn {
+    background: rgba(0, 0, 0, 0.03) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    color: var(--text-main) !important;
+}
+
+body.light-theme .contact-btn:hover {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
+    box-shadow: var(--shadow-glow) !important;
+}
+
+body.light-theme .highlight-name {
+    background: linear-gradient(135deg, #111827 40%, var(--primary-color) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+body.light-theme .nav-menu.mobile-open {
+    background: #f7f8fa !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme .tech-pill {
+    background: rgba(0, 0, 0, 0.02) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    color: var(--text-muted) !important;
+}
+
+body.light-theme .badge-status {
+    background: rgba(235, 10, 30, 0.06) !important;
+    border-color: rgba(235, 10, 30, 0.15) !important;
+    color: var(--primary-color) !important;
 }
 
 body.light-theme .theme-toggle {
