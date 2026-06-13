@@ -254,31 +254,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 7. EFECTO DE INCLINACIÓN 3D DINÁMICO (3D TILT EFFECT)
-    // Rompe la rigidez haciendo que las tarjetas reaccionen de forma orgánica al cursor
-    const cardsToTilt = document.querySelectorAll('.project-card, .simulator-card, .simulator-results');
+    // Solo activado para dispositivos con mouse (hover) para evitar fallas en móviles
+    const isTouchDevice = !window.matchMedia('(hover: hover)').matches;
     
-    cardsToTilt.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left; // posición x dentro del elemento
-            const y = e.clientY - rect.top;  // posición y dentro del elemento
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            // Calculamos la rotación (máximo 6 grados de inclinación para sutileza premium)
-            const rotateX = ((centerY - y) / centerY) * 6;
-            const rotateY = ((x - centerX) / centerX) * 6;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px) scale(1.01)`;
-            card.style.transition = 'transform 0.08s ease-out';
-        });
+    if (!isTouchDevice) {
+        const cardsToTilt = document.querySelectorAll('.project-card, .simulator-card, .simulator-results');
         
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
-            card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        cardsToTilt.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left; // posición x dentro del elemento
+                const y = e.clientY - rect.top;  // posición y dentro del elemento
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Calculamos la rotación (máximo 6 grados de inclinación para sutileza premium)
+                const rotateX = ((centerY - y) / centerY) * 6;
+                const rotateY = ((x - centerX) / centerX) * 6;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px) scale(1.01)`;
+                card.style.transition = 'transform 0.08s ease-out';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
+                card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+            });
         });
-    });
+    }
 });
 
 // CSS inyectado para soporte de Intersection Observer Animations

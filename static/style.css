@@ -35,6 +35,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -47,6 +49,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
     position: relative;
 }
 
@@ -1047,6 +1050,24 @@ body {
         width: 60px;
         height: 60px;
     }
+    
+    /* Churn circular group stacks vertically on mobile */
+    .churn-output-group {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 15px !important;
+    }
+    
+    .churn-info {
+        align-items: center !important;
+    }
+    
+    /* Prevent links overflow on small displays */
+    .contact-link-item span {
+        word-break: break-all !important;
+        white-space: normal !important;
+    }
 }
 
 /* Mobile Nav Menu Toggled */
@@ -1062,6 +1083,7 @@ body {
     padding: 24px;
     gap: 18px;
     align-items: stretch;
+    box-sizing: border-box !important;
 }
 
 .nav-menu.mobile-open .nav-link {
