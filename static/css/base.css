@@ -25,6 +25,61 @@ body {
     position: relative;
 }
 
+/* Enlace de salto: invisible hasta recibir foco con teclado */
+.skip-link {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 300;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: #fff;
+    font-family: var(--font-title);
+    font-weight: 700;
+    text-decoration: none;
+    transform: translateY(-200%);
+    transition: transform 0.2s ease-out;
+}
+
+.skip-link:focus-visible {
+    transform: translateY(0);
+}
+
+/* Foco visible y consistente para navegación con teclado */
+:focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Utilitarios de color de iconos (fuente única para skills y simulador) */
+.text-blue { color: #3b82f6; }
+.text-green { color: #10b981; }
+.text-teal { color: #14b8a6; }
+.text-red { color: #f43f5e; }
+.text-purple { color: #8b5cf6; }
+.text-grey { color: #6b7280; }
+.text-orange { color: #f97316; }
+.text-yellow { color: #b45309; }
+
+.light-theme .text-blue { color: #1d4ed8; }
+.light-theme .text-green { color: #047857; }
+.light-theme .text-teal { color: #0f766e; }
+.light-theme .text-red { color: #be123c; }
+.light-theme .text-purple { color: #6d28d9; }
+.light-theme .text-grey { color: #4b5563; }
+.light-theme .text-orange { color: #c2410c; }
+
+/* Sobre el panel oscuro del simulador los tonos deben aclararse */
+.simulator-results .text-red { color: #f87171; }
+.simulator-results .text-yellow { color: #fbbf24; }
+.simulator-results .text-green { color: #34d399; }
+
+.light-theme .simulator-results .text-red { color: #be123c; }
+.light-theme .simulator-results .text-yellow { color: #b45309; }
+.light-theme .simulator-results .text-green { color: #047857; }
+
 /* Indicador de Progreso de Scroll */
 .scroll-indicator {
     position: fixed;
@@ -77,21 +132,21 @@ body {
     animation: float-blob 22s infinite alternate ease-in-out;
 }
 
-@keyframes float-blob {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(10%, 15%) scale(1.15); }
-}
+/* @keyframes float-blob y pulse viven en animations.css */
 
 /* Scrollbar Personalizado */
 ::-webkit-scrollbar {
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: #08080a;
+    background: var(--bg-color);
 }
 ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
+}
+.light-theme ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.18);
 }
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-color);
@@ -160,7 +215,7 @@ body {
 }
 
 .section-tag {
-    color: var(--primary-color);
+    color: var(--accent-text);
     font-family: var(--font-title);
     font-size: 0.9rem;
     font-weight: 700;

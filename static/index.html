@@ -6,40 +6,98 @@
     <meta name="description" content="Portfolio de Omar Fuentes - Full Stack Developer (Python & Node.js) & Data/ML Analyst en el piso de un taller Toyota. Machine learning para refacciones, automatización de cotizaciones y analítica BDC para concesionarias: de 3 horas a 15 minutos por cotización.">
     <meta name="keywords" content="Omar Fuentes, Python Developer, Node.js, Data Analyst, Machine Learning, scikit-learn, Django, FastAPI, Flask, Streamlit, Express, Pandas, Supabase, PostgreSQL, BDC, Automotriz, Programador Python, Automatización de Concesionarias, Taller Automotriz, Cotizaciones de Taller, Analítica BDC">
     <meta name="author" content="Omar Fuentes">
+    <meta name="theme-color" content="#08080a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
+    <link rel="canonical" href="__SITE_URL__/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Omar Fuentes">
+    <meta property="og:locale" content="es_MX">
     <meta property="og:title" content="Omar Fuentes | Tecnología y Analítica para Concesionarias Automotrices">
     <meta property="og:description" content="Cotizaciones de taller de 3 horas a 15 minutos promedio. Sistemas y analítica BDC construidos desde el piso de una concesionaria Toyota.">
-    <meta property="og:url" content="https://github.com/OMAR57607">
-    <meta property="og:image" content="https://raw.githubusercontent.com/OMAR57607/portfolio-habilidades/main/static/logo.png">
+    <meta property="og:url" content="__SITE_URL__/">
+    <meta property="og:image" content="__SITE_URL__/static/logo.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="558">
+    <meta property="og:image:alt" content="Logo de Omar Fuentes: creador de tecnología, logística y eficiencia">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Omar Fuentes | Tecnología y Analítica para Concesionarias Automotrices">
     <meta name="twitter:description" content="Cotizaciones de taller de 3 horas a 15 minutos promedio. Sistemas y analítica BDC construidos desde la operación real.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/OMAR57607/portfolio-habilidades/main/static/logo.png">
+    <meta name="twitter:image" content="__SITE_URL__/static/logo.png">
+    <meta name="twitter:image:alt" content="Logo de Omar Fuentes: creador de tecnología, logística y eficiencia">
 
     <title>Omar Fuentes | Tecnología y Analítica para Concesionarias Automotrices</title>
 
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
-    <link rel="shortcut icon" href="static/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="static/apple-touch-icon.png">
+    <!-- Favicons y manifiesto PWA -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="manifest" href="/static/manifest.webmanifest">
+
+    <!-- Evita el parpadeo de tema (FOUC): se aplica antes del primer pintado -->
+    <script nonce="__CSP_NONCE__">
+        (function () {
+            try {
+                var stored = localStorage.getItem('theme') || 'system';
+                var isLight = stored === 'light' ||
+                    (stored === 'system' && window.matchMedia('(prefers-color-scheme: light)').matches);
+                if (isLight) {
+                    document.documentElement.classList.add('light-theme');
+                }
+            } catch (e) { /* localStorage bloqueado: se queda el tema oscuro */ }
+        })();
+    </script>
 
     <!-- Google Fonts: Outfit & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="static/style.css">
+    <!-- Hojas de estilo por componente (enlazadas en paralelo, no encadenadas con @import) -->
+    <link rel="stylesheet" href="/static/css/variables.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/hero.css">
+    <link rel="stylesheet" href="/static/css/about.css">
+    <link rel="stylesheet" href="/static/css/projects.css">
+    <link rel="stylesheet" href="/static/css/simulator.css">
+    <link rel="stylesheet" href="/static/css/services.css">
+    <link rel="stylesheet" href="/static/css/skills.css">
+    <link rel="stylesheet" href="/static/css/contact.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+
+    <!-- Datos estructurados para buscadores -->
+    <script type="application/ld+json" nonce="__CSP_NONCE__">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Omar Fuentes",
+        "url": "__SITE_URL__/",
+        "image": "__SITE_URL__/static/logo.png",
+        "jobTitle": "Full Stack Developer & Data/ML Analyst",
+        "description": "Desarrollador full stack y analista de datos especializado en digitalizar y automatizar la operación de concesionarias automotrices.",
+        "address": { "@type": "PostalAddress", "addressRegion": "Puebla", "addressCountry": "MX" },
+        "knowsAbout": [
+            "Python", "Django", "FastAPI", "Node.js", "scikit-learn", "Pandas",
+            "Analítica BDC", "Concesionarias automotrices", "Toyota Way"
+        ],
+        "sameAs": [
+            "https://github.com/OMAR57607",
+            "https://www.facebook.com/share/18gQBhdY94/"
+        ]
+    }
+    </script>
 </head>
-<body class="dark-theme">
+<body>
+    <a class="skip-link" href="#inicio">Saltar al contenido principal</a>
 
     <!-- Scroll Progress Indicator -->
     <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true"></div>
@@ -52,36 +110,37 @@
     <!-- Navigation Header -->
     <header class="main-header" id="header-nav">
         <div class="header-container">
-            <a href="#" class="logo-wrapper" id="logo-link">
-                <img src="static/logo.png" alt="Omar Fuentes Logo" class="nav-logo-img">
+            <a href="#inicio" class="logo-wrapper" id="logo-link" aria-label="Inicio">
+                <img src="/static/logo-mark.png" alt="Logo de Omar Fuentes" class="nav-logo-img" width="44" height="44">
             </a>
-            <nav class="nav-menu" id="nav-menu">
-                <a href="#sobre-mi" class="nav-link"><i class="fa-solid fa-user-gear"></i> Sobre mí</a>
-                <a href="#proyectos" class="nav-link"><i class="fa-solid fa-code"></i> Proyectos</a>
-                <a href="#simulador" class="nav-link"><i class="fa-solid fa-chart-line"></i> Simulador BDC</a>
-                <a href="#servicios" class="nav-link"><i class="fa-solid fa-handshake"></i> Servicios</a>
-                <a href="#habilidades" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Skills</a>
-                <a href="#contacto" class="nav-link contact-btn"><i class="fa-solid fa-paper-plane"></i> Contacto</a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
+                <a href="#sobre-mi" class="nav-link"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> Sobre mí</a>
+                <a href="#proyectos" class="nav-link"><i class="fa-solid fa-code" aria-hidden="true"></i> Proyectos</a>
+                <a href="#simulador" class="nav-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Simulador BDC</a>
+                <a href="#servicios" class="nav-link"><i class="fa-solid fa-handshake" aria-hidden="true"></i> Servicios</a>
+                <a href="#habilidades" class="nav-link"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Skills</a>
+                <a href="#ingenieria" class="nav-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> Ingeniería</a>
+                <a href="#contacto" class="nav-link contact-btn"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Contacto</a>
             </nav>
             <div class="nav-right-group">
                 <div class="theme-select-container">
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-expanded="false" aria-haspopup="true">
-                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-expanded="false" aria-haspopup="true" aria-controls="theme-dropdown">
+                        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
                     </button>
-                    <div class="theme-dropdown" id="theme-dropdown">
-                        <button class="theme-dropdown-item" data-theme="light">
-                            <i class="fa-solid fa-sun"></i> Claro
+                    <div class="theme-dropdown" id="theme-dropdown" role="menu">
+                        <button class="theme-dropdown-item" data-theme="light" role="menuitem">
+                            <i class="fa-solid fa-sun" aria-hidden="true"></i> Claro
                         </button>
-                        <button class="theme-dropdown-item" data-theme="dark">
-                            <i class="fa-solid fa-moon"></i> Oscuro
+                        <button class="theme-dropdown-item" data-theme="dark" role="menuitem">
+                            <i class="fa-solid fa-moon" aria-hidden="true"></i> Oscuro
                         </button>
-                        <button class="theme-dropdown-item" data-theme="system">
-                            <i class="fa-solid fa-circle-half-stroke"></i> Sistema
+                        <button class="theme-dropdown-item" data-theme="system" role="menuitem">
+                            <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Sistema
                         </button>
                     </div>
                 </div>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
-                    <i class="fa-solid fa-bars"></i>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
@@ -105,20 +164,20 @@
                     <strong>Full Stack Developer & Data/ML Analyst</strong> — y trabajo todos los días en el piso de un taller Toyota. Construyo arquitecturas web con <strong>Django</strong>, <strong>FastAPI</strong> y <strong>Node.js</strong>, modelos de <strong>machine learning</strong> (scikit-learn) y analítica en <strong>Pandas</strong> que resuelven cuellos de botella reales de BDC, taller y refacciones: cotizaciones que tardaban horas hoy salen en minutos.
                 </p>
                 <div class="hero-tech-pills fade-in-up">
-                    <span class="tech-pill"><i class="fa-brands fa-python"></i> Python</span>
-                    <span class="tech-pill"><i class="fa-solid fa-network-wired"></i> Django</span>
-                    <span class="tech-pill"><i class="fa-solid fa-bolt"></i> FastAPI</span>
-                    <span class="tech-pill"><i class="fa-brands fa-node-js"></i> Node.js</span>
-                    <span class="tech-pill"><i class="fa-solid fa-brain"></i> scikit-learn</span>
-                    <span class="tech-pill"><i class="fa-solid fa-table"></i> Pandas</span>
-                    <span class="tech-pill"><i class="fa-solid fa-cloud"></i> Supabase</span>
+                    <span class="tech-pill"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</span>
+                    <span class="tech-pill"><i class="fa-solid fa-network-wired" aria-hidden="true"></i> Django</span>
+                    <span class="tech-pill"><i class="fa-solid fa-bolt" aria-hidden="true"></i> FastAPI</span>
+                    <span class="tech-pill"><i class="fa-brands fa-node-js" aria-hidden="true"></i> Node.js</span>
+                    <span class="tech-pill"><i class="fa-solid fa-brain" aria-hidden="true"></i> scikit-learn</span>
+                    <span class="tech-pill"><i class="fa-solid fa-table" aria-hidden="true"></i> Pandas</span>
+                    <span class="tech-pill"><i class="fa-solid fa-cloud" aria-hidden="true"></i> Supabase</span>
                 </div>
                 <div class="hero-actions fade-in-up">
                     <a href="#proyectos" class="btn btn-primary" id="btn-view-projects">
-                        Ver Proyectos <i class="fa-solid fa-arrow-right"></i>
+                        Ver Proyectos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     <a href="#simulador" class="btn btn-secondary" id="btn-try-simulator">
-                        Probar Simulador BDC <i class="fa-solid fa-circle-play"></i>
+                        Probar Simulador BDC <i class="fa-solid fa-circle-play" aria-hidden="true"></i>
                     </a>
                 </div>
 
@@ -127,17 +186,17 @@
                     <div class="stat-card glass-panel">
                         <span class="stat-value">15 <small>min</small></span>
                         <span class="stat-label">Tiempo promedio de cotización en taller</span>
-                        <span class="stat-note"><i class="fa-solid fa-arrow-trend-down"></i> antes tomaba hasta 3 horas</span>
+                        <span class="stat-note"><i class="fa-solid fa-arrow-trend-down" aria-hidden="true"></i> antes tomaba hasta 3 horas</span>
                     </div>
                     <div class="stat-card glass-panel">
                         <span class="stat-value">+$1,500 <small>MXN</small></span>
                         <span class="stat-label">Ticket promedio por orden de servicio</span>
-                        <span class="stat-note"><i class="fa-solid fa-arrow-trend-up"></i> incremento estimado</span>
+                        <span class="stat-note"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> incremento estimado</span>
                     </div>
                     <div class="stat-card glass-panel">
                         <span class="stat-value">5</span>
                         <span class="stat-label">Sistemas propios en producción</span>
-                        <span class="stat-note"><i class="fa-solid fa-circle-check"></i> usados a diario en la operación</span>
+                        <span class="stat-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> usados a diario en la operación</span>
                     </div>
                 </div>
             </div>
@@ -159,19 +218,19 @@
                 </div>
                 <div class="about-highlights glass-panel">
                     <div class="about-highlight-item">
-                        <i class="fa-solid fa-wrench text-red"></i>
+                        <i class="fa-solid fa-wrench text-red" aria-hidden="true"></i>
                         <span><strong>Operación real</strong>Trabajo en el taller: conozco de primera mano el proceso que automatizo.</span>
                     </div>
                     <div class="about-highlight-item">
-                        <i class="fa-solid fa-gears text-blue"></i>
+                        <i class="fa-solid fa-gears text-blue" aria-hidden="true"></i>
                         <span><strong>Formación interna Toyota</strong>Toyota Way, Metodología Kodawari y administración de inventarios Max Max.</span>
                     </div>
                     <div class="about-highlight-item">
-                        <i class="fa-solid fa-rocket text-teal"></i>
-                        <span><strong>Sistemas en producción</strong>4 desarrollos propios usados a diario por la operación.</span>
+                        <i class="fa-solid fa-rocket text-teal" aria-hidden="true"></i>
+                        <span><strong>Sistemas en producción</strong>5 desarrollos propios usados a diario por la operación.</span>
                     </div>
                     <div class="about-highlight-item">
-                        <i class="fa-solid fa-chart-line text-green"></i>
+                        <i class="fa-solid fa-chart-line text-green" aria-hidden="true"></i>
                         <span><strong>Resultados medidos</strong>KPIs antes y después: tiempo de cotización, ticket promedio y retención.</span>
                     </div>
                 </div>
@@ -191,7 +250,7 @@
                 <!-- Project 1: Django -->
                 <article class="project-card" id="project-django">
                     <div class="project-icon">
-                        <i class="fa-solid fa-network-wired"></i>
+                        <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
                     </div>
                     <div class="project-content">
                         <h4 class="project-title">Sistema Central Taller Toyota</h4>
@@ -199,11 +258,11 @@
                             Plataforma empresarial Django de 10 módulos para la operación integral de taller, citas, refacciones y pedidos especiales. En producción diaria sobre Railway.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Machine Learning</strong>: inferencia de SKU desde descripción + modelo con <strong>TF-IDF (scikit-learn)</strong>, umbrales de confianza y reentrenamiento por comando.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>IA multimodal Gemini 2.5 Flash</strong>: diagnóstico por foto y extracción estructurada de PDFs a JSON, con consentimiento legal (PROFECO).</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Arquitectura resiliente</strong>: Outbox Pattern con cola asíncrona (DLQ), idempotencia y lock cooperativo vía Redis para edición concurrente.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Rendimiento</strong>: optimización de N+1 (de 40+ queries a 3) y generación de PDF con Playwright headless + firma digital.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Seguridad: bloqueo anti fuerza bruta (django-axes), HSTS y tokens UUID; notificaciones Web Push y soporte PWA.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>Machine Learning</strong>: inferencia de SKU desde descripción + modelo con <strong>TF-IDF (scikit-learn)</strong>, umbrales de confianza y reentrenamiento por comando.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>IA multimodal Gemini 2.5 Flash</strong>: diagnóstico por foto y extracción estructurada de PDFs a JSON, con consentimiento legal (PROFECO).</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>Arquitectura resiliente</strong>: Outbox Pattern con cola asíncrona (DLQ), idempotencia y lock cooperativo vía Redis para edición concurrente.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>Rendimiento</strong>: optimización de N+1 (de 40+ queries a 3) y generación de PDF con Playwright headless + firma digital.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Seguridad: bloqueo anti fuerza bruta (django-axes), HSTS y tokens UUID; notificaciones Web Push y soporte PWA.</li>
                         </ul>
                         <div class="project-tags">
                             <span class="tag">Django 6</span>
@@ -214,7 +273,7 @@
                             <span class="tag">Redis</span>
                         </div>
                         <div class="project-links">
-                            <span class="repo-lock"><i class="fa-solid fa-lock"></i> Sistema interno · Repositorio privado</span>
+                            <span class="repo-lock"><i class="fa-solid fa-lock" aria-hidden="true"></i> Sistema interno · Repositorio privado</span>
                         </div>
                     </div>
                 </article>
@@ -222,7 +281,7 @@
                 <!-- Project 2: FastAPI -->
                 <article class="project-card" id="project-fastapi">
                     <div class="project-icon">
-                        <i class="fa-solid fa-bolt"></i>
+                        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
                     </div>
                     <div class="project-content">
                         <h4 class="project-title">Verificador Digital de Precios</h4>
@@ -230,10 +289,10 @@
                             Aplicación web instalable (PWA) de consulta y cotización de refacciones, diseñada bajo las normativas PROFECO de exhibición comercial mexicana.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check"></i> Búsqueda en milisegundos por SKU con FastAPI y <strong>Web Scraping</strong> anti-bot (curl_cffi + BeautifulSoup) de 4 fuentes OEM.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>PWA con Service Worker</strong>: instalable y funcional sin conexión, con tema día/noche según zona horaria CDMX.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Cotización multi-item persistida en Supabase con <strong>idempotencia por hash</strong> y <strong>Row Level Security</strong>.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Producción en Docker (imagen endurecida, usuario no-root) sobre Railway, con monitoreo de errores en <strong>Sentry</strong>.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Búsqueda en milisegundos por SKU con FastAPI y <strong>Web Scraping</strong> anti-bot (curl_cffi + BeautifulSoup) de 4 fuentes OEM.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>PWA con Service Worker</strong>: instalable y funcional sin conexión, con tema día/noche según zona horaria CDMX.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Cotización multi-item persistida en Supabase con <strong>idempotencia por hash</strong> y <strong>Row Level Security</strong>.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Producción en Docker (imagen endurecida, usuario no-root) sobre Railway, con monitoreo de errores en <strong>Sentry</strong>.</li>
                         </ul>
                         <div class="project-tags">
                             <span class="tag">FastAPI</span>
@@ -244,7 +303,7 @@
                             <span class="tag">Sentry</span>
                         </div>
                         <div class="project-links">
-                            <span class="repo-lock"><i class="fa-solid fa-lock"></i> Repositorio Privado</span>
+                            <span class="repo-lock"><i class="fa-solid fa-lock" aria-hidden="true"></i> Repositorio Privado</span>
                         </div>
                     </div>
                 </article>
@@ -252,7 +311,7 @@
                 <!-- Project 3: Flask & Pandas -->
                 <article class="project-card" id="project-flask">
                     <div class="project-icon">
-                        <i class="fa-solid fa-chart-pie"></i>
+                        <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
                     </div>
                     <div class="project-content">
                         <h4 class="project-title">Consolidador BDC y Analítica Automotriz</h4>
@@ -260,10 +319,10 @@
                             Motor de analítica y consolidación que unifica hojas de cálculo del DMS (Quiter) y del CRM para predecir retención de clientes.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check"></i> Consolidación automática de reportes de servicio (U297, U307, TDM).</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Clasificación de retención mediante el algoritmo <strong>CRT</strong> (Pura, Conquista, Fuga).</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Algoritmo de proyección predictiva de kilometraje (<strong>CERT</strong>).</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Alertas y priorización de llamadas según índice de riesgo de abandono (Churn).</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Consolidación automática de reportes de servicio (U297, U307, TDM).</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Clasificación de retención mediante el algoritmo <strong>CRT</strong> (Pura, Conquista, Fuga).</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Algoritmo de proyección predictiva de kilometraje (<strong>CERT</strong>).</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Alertas y priorización de llamadas según índice de riesgo de abandono (Churn).</li>
                         </ul>
                         <div class="project-tags">
                             <span class="tag">Flask</span>
@@ -272,7 +331,7 @@
                             <span class="tag">OpenPyXL</span>
                         </div>
                         <div class="project-links">
-                            <a class="project-link" href="https://github.com/OMAR57607/procesador_de_archivos" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Ver código en GitHub</a>
+                            <a class="project-link" href="https://github.com/OMAR57607/procesador_de_archivos" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Ver código en GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -280,7 +339,7 @@
                 <!-- Project 4: Streamlit -->
                 <article class="project-card" id="project-streamlit">
                     <div class="project-icon">
-                        <i class="fa-solid fa-images"></i>
+                        <i class="fa-solid fa-images" aria-hidden="true"></i>
                     </div>
                     <div class="project-content">
                         <h4 class="project-title">Sistema de Evidencia y Diagnóstico Taller</h4>
@@ -288,13 +347,13 @@
                             Aplicación móvil de captura rápida para técnicos que agiliza la subida de cotizaciones de servicio con evidencias visuales.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check"></i> Interfaz en Streamlit con login seguro conectado a Supabase Auth.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Compresión de imágenes en cliente</strong> (PIL) para ahorrar datos móviles.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Generación en tiempo real y descarga de reportes avanzados con <strong>FPDF</strong>.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Subida asíncrona de reportes y fotografías a Supabase Storage.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Interfaz en Streamlit con login seguro conectado a Supabase Auth.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>Compresión de imágenes en cliente</strong> (PIL) para ahorrar datos móviles.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Generación en tiempo real y descarga de reportes avanzados con <strong>FPDF</strong>.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Subida asíncrona de reportes y fotografías a Supabase Storage.</li>
                         </ul>
                         <div class="project-impact">
-                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
                             <span><strong>Impacto:</strong> cotizaciones de taller en 15 min promedio (antes hasta 3 h) y un incremento estimado de $1,500 MXN al ticket promedio por orden.</span>
                         </div>
                         <div class="project-tags">
@@ -304,7 +363,7 @@
                             <span class="tag">Pillow (PIL)</span>
                         </div>
                         <div class="project-links">
-                            <a class="project-link" href="https://github.com/OMAR57607/tecnicos-Toyota" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Ver código en GitHub</a>
+                            <a class="project-link" href="https://github.com/OMAR57607/tecnicos-Toyota" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Ver código en GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -312,7 +371,7 @@
                 <!-- Project 5: Node.js / Express -->
                 <article class="project-card" id="project-node">
                     <div class="project-icon">
-                        <i class="fa-brands fa-node-js"></i>
+                        <i class="fa-brands fa-node-js" aria-hidden="true"></i>
                     </div>
                     <div class="project-content">
                         <h4 class="project-title">Fuertes Trail Puebla — Sitio Web</h4>
@@ -320,10 +379,10 @@
                             Sitio web oficial de una comunidad off-road 4x4, construido en Node.js con foco en seguridad y rendimiento. Mi único proyecto fuera del stack Python.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check"></i> Servidor <strong>Express</strong> endurecido con <strong>Helmet</strong>: CSP, anti-XSS, anti-clickjacking y anti-MIME-sniffing.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Rate limiting</strong> contra fuerza bruta/DoS, trust proxy y apagado seguro (graceful shutdown).</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Frontend responsive mobile-first con imágenes optimizadas a <strong>WebP</strong>.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Desplegado en producción sobre Railway.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Servidor <strong>Express</strong> endurecido con <strong>Helmet</strong>: CSP, anti-XSS, anti-clickjacking y anti-MIME-sniffing.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>Rate limiting</strong> contra fuerza bruta/DoS, trust proxy y apagado seguro (graceful shutdown).</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Frontend responsive mobile-first con imágenes optimizadas a <strong>WebP</strong>.</li>
+                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Desplegado en producción sobre Railway.</li>
                         </ul>
                         <div class="project-tags">
                             <span class="tag">Node.js</span>
@@ -333,7 +392,7 @@
                             <span class="tag">Railway</span>
                         </div>
                         <div class="project-links">
-                            <a class="project-link demo-link" href="https://fuertes-trail-puebla-production.up.railway.app" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver demo en vivo</a>
+                            <a class="project-link demo-link" href="https://fuertes-trail-puebla-production.up.railway.app" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver demo en vivo</a>
                         </div>
                     </div>
                 </article>
@@ -368,24 +427,24 @@
                         <span class="console-title">kpi_engine_v1.py</span>
                     </div>
                     <div class="simulator-card-body">
-                        <form id="bdc-sim-form" onsubmit="return false;">
+                        <form id="bdc-sim-form">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="input-km"><i class="fa-solid fa-tachometer-alt"></i> Kilometraje Actual</label>
+                                    <label for="input-km"><i class="fa-solid fa-tachometer-alt" aria-hidden="true"></i> Kilometraje Actual</label>
                                     <input type="number" id="input-km" value="38500" min="0" placeholder="Ej: 40000" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="input-days"><i class="fa-solid fa-calendar-day"></i> Días sin Visitas</label>
+                                    <label for="input-days"><i class="fa-solid fa-calendar-day" aria-hidden="true"></i> Días sin Visitas</label>
                                     <input type="number" id="input-days" value="280" min="0" placeholder="Ej: 150" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="input-interval"><i class="fa-solid fa-history"></i> DERT Promedio (Días entre servicios)</label>
+                                    <label for="input-interval"><i class="fa-solid fa-history" aria-hidden="true"></i> DERT Promedio (Días entre servicios)</label>
                                     <input type="number" id="input-interval" value="180" min="1" placeholder="Ej: 180" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="select-model"><i class="fa-solid fa-car"></i> Modelo de Vehículo</label>
+                                    <label for="select-model"><i class="fa-solid fa-car" aria-hidden="true"></i> Modelo de Vehículo</label>
                                     <select id="select-model">
                                         <option value="Hilux">Hilux</option>
                                         <option value="Yaris">Yaris</option>
@@ -406,17 +465,17 @@
                                     <label for="check-local">¿Vendido en esta Agencia?</label>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-primary btn-full" id="btn-run-sim">
-                                <i class="fa-solid fa-play"></i> Ejecutar Algoritmo de Priorización
+                            <button type="submit" class="btn btn-primary btn-full" id="btn-run-sim">
+                                <i class="fa-solid fa-play" aria-hidden="true"></i> Ejecutar Algoritmo de Priorización
                             </button>
                         </form>
                     </div>
                 </div>
 
                 <!-- Simulation Output -->
-                <div class="simulator-results glass-panel" id="sim-results">
+                <div class="simulator-results glass-panel" id="sim-results" role="status" aria-live="polite">
                     <div class="results-header">
-                        <i class="fa-solid fa-terminal"></i> Salida del Algoritmo (Output)
+                        <i class="fa-solid fa-terminal" aria-hidden="true"></i> Salida del Algoritmo (Output)
                     </div>
                     <div class="results-body">
                         <div class="output-item">
@@ -446,7 +505,7 @@
                         </div>
                         <div class="output-item strategy-output">
                             <span class="output-label">Acción Estratégica sugerida:</span>
-                            <div class="strategy-badge" id="out-strategy">0. CRÍTICO TDM</div>
+                            <div class="strategy-badge is-critical" id="out-strategy">0. CRÍTICO TDM</div>
                         </div>
                     </div>
                 </div>
@@ -463,22 +522,22 @@
 
             <div class="services-grid">
                 <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i></div>
                     <h4>Cotizaciones de Taller con Evidencia</h4>
                     <p>Apps móviles para técnicos y asesores: fotos, diagnóstico y PDF de cotización en minutos, no en horas. Probado: de hasta 3 h a 15 min promedio.</p>
                 </div>
                 <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-table"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-table" aria-hidden="true"></i></div>
                     <h4>Automatización de Reportes DMS/CRM</h4>
                     <p>Consolidación automática de Quiter, Excel y CRM. Lo que se hacía a mano en horas, en un clic y sin errores de captura.</p>
                 </div>
                 <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
                     <h4>Analítica BDC y Retención</h4>
                     <p>Priorización de llamadas por riesgo de churn, proyección de kilometraje y clasificación CRT para llenar la agenda de citas.</p>
                 </div>
                 <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-barcode"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-barcode" aria-hidden="true"></i></div>
                     <h4>Verificación de Precios y PROFECO</h4>
                     <p>Verificadores digitales de refacciones con búsqueda por SKU y scraping OEM, alineados a la normativa mexicana de exhibición de precios.</p>
                 </div>
@@ -487,7 +546,7 @@
             <div class="services-cta glass-panel">
                 <p>¿Tu agencia vive alguno de estos cuellos de botella?</p>
                 <a class="btn btn-primary" href="https://wa.me/522227703715?text=Hola%20Omar%2C%20vi%20tu%20portfolio%20y%20me%20interesa%20una%20soluci%C3%B3n%20para%20mi%20agencia." target="_blank" id="btn-services-whatsapp">
-                    Cuéntamelo por WhatsApp <i class="fa-brands fa-whatsapp"></i>
+                    Cuéntamelo por WhatsApp <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                 </a>
             </div>
         </section>
@@ -502,176 +561,176 @@
 
             <!-- Filters -->
             <div class="skills-filters">
-                <button class="filter-btn active" data-filter="all" id="filter-all">Todas</button>
-                <button class="filter-btn" data-filter="backend" id="filter-backend">Backend</button>
-                <button class="filter-btn" data-filter="data" id="filter-data">Datos & Analytics</button>
-                <button class="filter-btn" data-filter="ml" id="filter-ml">Machine Learning</button>
-                <button class="filter-btn" data-filter="cloud" id="filter-cloud">Cloud & DB</button>
-                <button class="filter-btn" data-filter="devops" id="filter-devops">DevOps</button>
-                <button class="filter-btn" data-filter="business" id="filter-business">Negocio & Metodología</button>
+                <button type="button" class="filter-btn active" data-filter="all" id="filter-all" aria-pressed="true">Todas</button>
+                <button type="button" class="filter-btn" data-filter="backend" id="filter-backend" aria-pressed="false">Backend</button>
+                <button type="button" class="filter-btn" data-filter="data" id="filter-data" aria-pressed="false">Datos &amp; Analytics</button>
+                <button type="button" class="filter-btn" data-filter="ml" id="filter-ml" aria-pressed="false">Machine Learning</button>
+                <button type="button" class="filter-btn" data-filter="cloud" id="filter-cloud" aria-pressed="false">Cloud &amp; DB</button>
+                <button type="button" class="filter-btn" data-filter="devops" id="filter-devops" aria-pressed="false">DevOps</button>
+                <button type="button" class="filter-btn" data-filter="business" id="filter-business" aria-pressed="false">Negocio &amp; Metodología</button>
             </div>
 
             <!-- Skills Grid -->
-            <div class="skills-grid" id="skills-grid-container">
+            <div class="skills-grid" id="skills-grid-container" role="list" aria-live="polite">
 
                 <!-- Python -->
-                <div class="skill-card" data-category="backend data">
-                    <div class="skill-icon"><i class="fa-brands fa-python text-blue"></i></div>
+                <div class="skill-card" role="listitem" data-category="backend data">
+                    <div class="skill-icon"><i class="fa-brands fa-python text-blue" aria-hidden="true"></i></div>
                     <span class="skill-name">Python</span>
                 </div>
                 <!-- Django -->
-                <div class="skill-card" data-category="backend">
-                    <div class="skill-icon"><i class="fa-solid fa-network-wired text-green"></i></div>
+                <div class="skill-card" role="listitem" data-category="backend">
+                    <div class="skill-icon"><i class="fa-solid fa-network-wired text-green" aria-hidden="true"></i></div>
                     <span class="skill-name">Django</span>
                 </div>
                 <!-- FastAPI -->
-                <div class="skill-card" data-category="backend">
-                    <div class="skill-icon"><i class="fa-solid fa-bolt text-teal"></i></div>
+                <div class="skill-card" role="listitem" data-category="backend">
+                    <div class="skill-icon"><i class="fa-solid fa-bolt text-teal" aria-hidden="true"></i></div>
                     <span class="skill-name">FastAPI</span>
                 </div>
                 <!-- Flask -->
-                <div class="skill-card" data-category="backend">
-                    <div class="skill-icon"><i class="fa-solid fa-leaf text-grey"></i></div>
+                <div class="skill-card" role="listitem" data-category="backend">
+                    <div class="skill-icon"><i class="fa-solid fa-leaf text-grey" aria-hidden="true"></i></div>
                     <span class="skill-name">Flask</span>
                 </div>
                 <!-- Streamlit -->
-                <div class="skill-card" data-category="backend data">
-                    <div class="skill-icon"><i class="fa-solid fa-cubes text-red"></i></div>
+                <div class="skill-card" role="listitem" data-category="backend data">
+                    <div class="skill-icon"><i class="fa-solid fa-cubes text-red" aria-hidden="true"></i></div>
                     <span class="skill-name">Streamlit</span>
                 </div>
                 <!-- Pandas -->
-                <div class="skill-card" data-category="data">
-                    <div class="skill-icon"><i class="fa-solid fa-table text-purple"></i></div>
+                <div class="skill-card" role="listitem" data-category="data">
+                    <div class="skill-icon"><i class="fa-solid fa-table text-purple" aria-hidden="true"></i></div>
                     <span class="skill-name">Pandas</span>
                 </div>
                 <!-- NumPy -->
-                <div class="skill-card" data-category="data">
-                    <div class="skill-icon"><i class="fa-solid fa-square-root-variable text-blue"></i></div>
+                <div class="skill-card" role="listitem" data-category="data">
+                    <div class="skill-icon"><i class="fa-solid fa-square-root-variable text-blue" aria-hidden="true"></i></div>
                     <span class="skill-name">NumPy</span>
                 </div>
                 <!-- OpenPyXL -->
-                <div class="skill-card" data-category="data">
-                    <div class="skill-icon"><i class="fa-regular fa-file-excel text-green"></i></div>
+                <div class="skill-card" role="listitem" data-category="data">
+                    <div class="skill-icon"><i class="fa-regular fa-file-excel text-green" aria-hidden="true"></i></div>
                     <span class="skill-name">OpenPyXL</span>
                 </div>
                 <!-- R / RStudio -->
-                <div class="skill-card" data-category="data">
-                    <div class="skill-icon"><i class="fa-solid fa-registered text-blue"></i></div>
+                <div class="skill-card" role="listitem" data-category="data">
+                    <div class="skill-icon"><i class="fa-solid fa-registered text-blue" aria-hidden="true"></i></div>
                     <span class="skill-name">RStudio / R</span>
                 </div>
                 <!-- Supabase -->
-                <div class="skill-card" data-category="cloud">
-                    <div class="skill-icon"><i class="fa-solid fa-cloud text-teal"></i></div>
+                <div class="skill-card" role="listitem" data-category="cloud">
+                    <div class="skill-icon"><i class="fa-solid fa-cloud text-teal" aria-hidden="true"></i></div>
                     <span class="skill-name">Supabase</span>
                 </div>
                 <!-- PostgreSQL -->
-                <div class="skill-card" data-category="cloud">
-                    <div class="skill-icon"><i class="fa-solid fa-database text-blue"></i></div>
+                <div class="skill-card" role="listitem" data-category="cloud">
+                    <div class="skill-icon"><i class="fa-solid fa-database text-blue" aria-hidden="true"></i></div>
                     <span class="skill-name">PostgreSQL</span>
                 </div>
                 <!-- SQLite -->
-                <div class="skill-card" data-category="cloud">
-                    <div class="skill-icon"><i class="fa-solid fa-server text-grey"></i></div>
+                <div class="skill-card" role="listitem" data-category="cloud">
+                    <div class="skill-icon"><i class="fa-solid fa-server text-grey" aria-hidden="true"></i></div>
                     <span class="skill-name">SQLite</span>
                 </div>
                 <!-- Docker -->
-                <div class="skill-card" data-category="devops">
-                    <div class="skill-icon"><i class="fa-brands fa-docker text-blue"></i></div>
+                <div class="skill-card" role="listitem" data-category="devops">
+                    <div class="skill-icon"><i class="fa-brands fa-docker text-blue" aria-hidden="true"></i></div>
                     <span class="skill-name">Docker</span>
                 </div>
                 <!-- Railway -->
-                <div class="skill-card" data-category="devops cloud">
-                    <div class="skill-icon"><i class="fa-solid fa-train text-purple"></i></div>
+                <div class="skill-card" role="listitem" data-category="devops cloud">
+                    <div class="skill-icon"><i class="fa-solid fa-train text-purple" aria-hidden="true"></i></div>
                     <span class="skill-name">Railway</span>
                 </div>
                 <!-- Sentry -->
-                <div class="skill-card" data-category="devops">
-                    <div class="skill-icon"><i class="fa-solid fa-bug text-red"></i></div>
+                <div class="skill-card" role="listitem" data-category="devops">
+                    <div class="skill-icon"><i class="fa-solid fa-bug text-red" aria-hidden="true"></i></div>
                     <span class="skill-name">Sentry SDK</span>
                 </div>
                 <!-- Tableau -->
-                <div class="skill-card" data-category="data">
-                    <div class="skill-icon"><i class="fa-solid fa-chart-column text-teal"></i></div>
+                <div class="skill-card" role="listitem" data-category="data">
+                    <div class="skill-icon"><i class="fa-solid fa-chart-column text-teal" aria-hidden="true"></i></div>
                     <span class="skill-name">Tableau</span>
                 </div>
                 <!-- Excel Avanzado -->
-                <div class="skill-card" data-category="data">
-                    <div class="skill-icon"><i class="fa-regular fa-file-excel text-green"></i></div>
+                <div class="skill-card" role="listitem" data-category="data">
+                    <div class="skill-icon"><i class="fa-regular fa-file-excel text-green" aria-hidden="true"></i></div>
                     <span class="skill-name">Excel Avanzado</span>
                 </div>
                 <!-- Toyota Way -->
-                <div class="skill-card" data-category="business">
-                    <div class="skill-icon"><i class="fa-solid fa-gears text-red"></i></div>
+                <div class="skill-card" role="listitem" data-category="business">
+                    <div class="skill-icon"><i class="fa-solid fa-gears text-red" aria-hidden="true"></i></div>
                     <span class="skill-name">Toyota Way</span>
                 </div>
                 <!-- Administración de Inventarios Toyota Max Max -->
-                <div class="skill-card" data-category="business">
-                    <div class="skill-icon"><i class="fa-solid fa-boxes-stacked text-yellow"></i></div>
+                <div class="skill-card" role="listitem" data-category="business">
+                    <div class="skill-icon"><i class="fa-solid fa-boxes-stacked text-yellow" aria-hidden="true"></i></div>
                     <span class="skill-name">Administración de Inventarios (Toyota Max Max)</span>
                 </div>
                 <!-- Metodología Kodawari -->
-                <div class="skill-card" data-category="business">
-                    <div class="skill-icon"><i class="fa-solid fa-gem text-teal"></i></div>
+                <div class="skill-card" role="listitem" data-category="business">
+                    <div class="skill-icon"><i class="fa-solid fa-gem text-teal" aria-hidden="true"></i></div>
                     <span class="skill-name">Metodología Kodawari</span>
                 </div>
                 <!-- Claude AI -->
-                <div class="skill-card" data-category="backend data">
-                    <div class="skill-icon"><i class="fa-solid fa-brain text-purple"></i></div>
+                <div class="skill-card" role="listitem" data-category="backend data">
+                    <div class="skill-icon"><i class="fa-solid fa-brain text-purple" aria-hidden="true"></i></div>
                     <span class="skill-name">Claude AI</span>
                 </div>
                 <!-- Ecosistema Gemini AI -->
-                <div class="skill-card" data-category="backend data ml">
-                    <div class="skill-icon"><i class="fa-solid fa-wand-magic-sparkles text-blue"></i></div>
+                <div class="skill-card" role="listitem" data-category="backend data ml">
+                    <div class="skill-icon"><i class="fa-solid fa-wand-magic-sparkles text-blue" aria-hidden="true"></i></div>
                     <span class="skill-name">Ecosistema Gemini AI</span>
                 </div>
                 <!-- scikit-learn -->
-                <div class="skill-card" data-category="ml data">
-                    <div class="skill-icon"><i class="fa-solid fa-brain text-orange"></i></div>
+                <div class="skill-card" role="listitem" data-category="ml data">
+                    <div class="skill-icon"><i class="fa-solid fa-brain text-orange" aria-hidden="true"></i></div>
                     <span class="skill-name">scikit-learn</span>
                 </div>
                 <!-- Inferencia ML / TF-IDF -->
-                <div class="skill-card" data-category="ml data">
-                    <div class="skill-icon"><i class="fa-solid fa-magnifying-glass-chart text-purple"></i></div>
+                <div class="skill-card" role="listitem" data-category="ml data">
+                    <div class="skill-icon"><i class="fa-solid fa-magnifying-glass-chart text-purple" aria-hidden="true"></i></div>
                     <span class="skill-name">Inferencia ML (TF-IDF)</span>
                 </div>
                 <!-- Forecasting / statsmodels -->
-                <div class="skill-card" data-category="ml data">
-                    <div class="skill-icon"><i class="fa-solid fa-chart-line text-teal"></i></div>
+                <div class="skill-card" role="listitem" data-category="ml data">
+                    <div class="skill-icon"><i class="fa-solid fa-chart-line text-teal" aria-hidden="true"></i></div>
                     <span class="skill-name">Forecasting (statsmodels)</span>
                 </div>
                 <!-- Node.js -->
-                <div class="skill-card" data-category="backend">
-                    <div class="skill-icon"><i class="fa-brands fa-node-js text-green"></i></div>
+                <div class="skill-card" role="listitem" data-category="backend">
+                    <div class="skill-icon"><i class="fa-brands fa-node-js text-green" aria-hidden="true"></i></div>
                     <span class="skill-name">Node.js</span>
                 </div>
                 <!-- Express -->
-                <div class="skill-card" data-category="backend">
-                    <div class="skill-icon"><i class="fa-solid fa-bolt text-grey"></i></div>
+                <div class="skill-card" role="listitem" data-category="backend">
+                    <div class="skill-icon"><i class="fa-solid fa-bolt text-grey" aria-hidden="true"></i></div>
                     <span class="skill-name">Express</span>
                 </div>
                 <!-- JavaScript -->
-                <div class="skill-card" data-category="backend">
-                    <div class="skill-icon"><i class="fa-brands fa-js text-yellow"></i></div>
+                <div class="skill-card" role="listitem" data-category="backend">
+                    <div class="skill-icon"><i class="fa-brands fa-js text-yellow" aria-hidden="true"></i></div>
                     <span class="skill-name">JavaScript</span>
                 </div>
                 <!-- Seguridad Web -->
-                <div class="skill-card" data-category="devops backend">
-                    <div class="skill-icon"><i class="fa-solid fa-shield-halved text-red"></i></div>
+                <div class="skill-card" role="listitem" data-category="devops backend">
+                    <div class="skill-icon"><i class="fa-solid fa-shield-halved text-red" aria-hidden="true"></i></div>
                     <span class="skill-name">Seguridad Web (Helmet/CSP)</span>
                 </div>
                 <!-- Web Scraping -->
-                <div class="skill-card" data-category="data backend">
-                    <div class="skill-icon"><i class="fa-solid fa-spider text-purple"></i></div>
+                <div class="skill-card" role="listitem" data-category="data backend">
+                    <div class="skill-icon"><i class="fa-solid fa-spider text-purple" aria-hidden="true"></i></div>
                     <span class="skill-name">Web Scraping</span>
                 </div>
                 <!-- Playwright -->
-                <div class="skill-card" data-category="devops backend">
-                    <div class="skill-icon"><i class="fa-solid fa-robot text-teal"></i></div>
+                <div class="skill-card" role="listitem" data-category="devops backend">
+                    <div class="skill-icon"><i class="fa-solid fa-robot text-teal" aria-hidden="true"></i></div>
                     <span class="skill-name">Playwright</span>
                 </div>
                 <!-- PWA / Service Workers -->
-                <div class="skill-card" data-category="backend devops">
-                    <div class="skill-icon"><i class="fa-solid fa-mobile-screen-button text-blue"></i></div>
+                <div class="skill-card" role="listitem" data-category="backend devops">
+                    <div class="skill-icon"><i class="fa-solid fa-mobile-screen-button text-blue" aria-hidden="true"></i></div>
                     <span class="skill-name">PWA / Service Workers</span>
                 </div>
 
@@ -688,32 +747,32 @@
 
             <div class="services-grid">
                 <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
                     <h4>Outbox Pattern + Colas Asíncronas</h4>
                     <p>Consistencia eventual con cola persistente y Dead Letter Queue: las tareas costosas (subir imágenes, sincronizar) no bloquean la respuesta al usuario.</p>
                 </div>
                 <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-fingerprint" aria-hidden="true"></i></div>
                     <h4>Idempotencia</h4>
                     <p>Operaciones seguras de reintentar: hash de contenido y claves idempotentes evitan cotizaciones y registros duplicados ante doble clic o reintentos de red.</p>
                 </div>
                 <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></div>
                     <h4>Optimización de Consultas (N+1)</h4>
                     <p>Uso de select_related y prefetch_related para bajar expedientes de 40+ consultas a solo 3, logrando carga instantánea en alto volumen.</p>
                 </div>
                 <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-lock"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></div>
                     <h4>Concurrencia con Lock Cooperativo</h4>
                     <p>Semáforos vía Redis para impedir que dos usuarios editen el mismo folio a la vez, con aviso visual en tiempo real.</p>
                 </div>
                 <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
                     <h4>Inferencia con Machine Learning</h4>
                     <p>TF-IDF (scikit-learn) para predecir SKU desde texto libre, con umbrales de confianza y un plan de validación con métricas de acierto.</p>
                 </div>
                 <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
                     <h4>Seguridad por Capas</h4>
                     <p>Helmet/CSP y rate limiting en Node; django-axes, HSTS y Row Level Security en el resto; contenedores Docker sin privilegios de root.</p>
                 </div>
@@ -735,30 +794,30 @@
                     
                     <div class="contact-links-list">
                         <a href="https://github.com/OMAR57607" target="_blank" class="contact-link-item" id="github-link">
-                            <i class="fa-brands fa-github"></i>
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
                             <span>GitHub (OMAR57607)</span>
                         </a>
                         <a href="mailto:desable999@gmail.com" class="contact-link-item" id="email-link">
-                            <i class="fa-solid fa-envelope"></i>
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                             <span>desable999@gmail.com</span>
                         </a>
                         <a href="https://wa.me/522227703715" target="_blank" class="contact-link-item" id="whatsapp-link">
-                            <i class="fa-brands fa-whatsapp text-green"></i>
+                            <i class="fa-brands fa-whatsapp text-green" aria-hidden="true"></i>
                             <span>WhatsApp (+52 222 770 3715)</span>
                         </a>
                         <a href="https://www.facebook.com/share/18gQBhdY94/" target="_blank" class="contact-link-item" id="facebook-link">
-                            <i class="fa-brands fa-facebook text-blue"></i>
+                            <i class="fa-brands fa-facebook text-blue" aria-hidden="true"></i>
                             <span>Facebook</span>
                         </a>
                     </div>
 
                     <div class="toyota-badge">
-                        <i class="fa-solid fa-wrench"></i> Especialista en Desarrollo para Sistemas de Taller Automotriz
+                        <i class="fa-solid fa-wrench" aria-hidden="true"></i> Especialista en Desarrollo para Sistemas de Taller Automotriz
                     </div>
                 </div>
 
                 <div class="contact-form-container glass-panel">
-                    <form id="contact-form" onsubmit="return false;">
+                    <form id="contact-form">
                         <div class="form-group">
                             <label for="form-name">Nombre</label>
                             <input type="text" id="form-name" placeholder="Tu nombre" required>
@@ -772,11 +831,11 @@
                             <textarea id="form-msg" rows="4" placeholder="¿En qué puedo ayudarte?" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full" id="btn-send-message">
-                            Enviar por WhatsApp <i class="fa-brands fa-whatsapp"></i>
+                            Enviar por WhatsApp <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                         </button>
                     </form>
-                    <div class="form-feedback hidden" id="form-feedback">
-                        <i class="fa-brands fa-whatsapp"></i> <span id="form-feedback-text">Abriendo WhatsApp con tu mensaje listo para enviar...</span>
+                    <div class="form-feedback hidden" id="form-feedback" role="status" aria-live="polite">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <span id="form-feedback-text">Abriendo WhatsApp con tu mensaje listo para enviar...</span>
                     </div>
                 </div>
             </div>
@@ -793,6 +852,6 @@
     </footer>
 
     <!-- Custom JS -->
-    <script type="module" src="static/app.js"></script>
+    <script type="module" src="/static/app.js"></script>
 </body>
 </html>

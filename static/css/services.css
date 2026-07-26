@@ -22,7 +22,7 @@
     border-radius: 12px;
     background: rgba(235, 10, 30, 0.1);
     border: 1px solid rgba(235, 10, 30, 0.2);
-    color: #ff3e55;
+    color: var(--accent-text);
     display: flex;
     align-items: center;
     justify-content: center;
