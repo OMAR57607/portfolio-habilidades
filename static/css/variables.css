@@ -11,8 +11,13 @@
     
     --text-main: #f3f4f6;
     --text-muted: #9ca3af;
-    --text-dark: #6b7280;
-    
+    /* #6b7280 daba 3.7:1 sobre el fondo oscuro; este tono cumple AA (6.4:1). */
+    --text-dark: #8b93a0;
+
+    /* Rojo de marca legible como texto. --primary-color se reserva para
+       rellenos y bordes, donde el contraste no aplica igual. */
+    --accent-text: #ff5468;
+
     --font-title: 'Outfit', 'Inter', sans-serif;
     --font-body: 'Inter', sans-serif;
     
@@ -23,7 +28,7 @@
 }
 
 /* Light Theme Variables */
-body.light-theme {
+.light-theme {
     --bg-color: #f7f8fa;
     --card-bg: rgba(255, 255, 255, 0.75);
     --border-color: rgba(0, 0, 0, 0.08);
@@ -31,106 +36,110 @@ body.light-theme {
     
     --text-main: #111827;
     --text-muted: #4b5563;
-    --text-dark: #9ca3af;
-    
+    /* #9ca3af daba 2.4:1 sobre el fondo claro; este tono cumple AA (5.6:1). */
+    --text-dark: #5b6472;
+
+    /* Sobre fondo claro el rojo de marca necesita oscurecerse para ser legible. */
+    --accent-text: #c00818;
+
     --primary-color: #eb0a1e;
     --primary-glow: rgba(235, 10, 30, 0.2);
     --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
 }
 
-body.light-theme {
+.light-theme body {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px) !important;
 }
 
-body.light-theme .blob-bg {
+.light-theme .blob-bg {
     opacity: 0.06;
 }
 
-body.light-theme .theme-toggle {
+.light-theme .theme-toggle {
     background: rgba(0, 0, 0, 0.04);
     color: #111827;
     border-color: rgba(0, 0, 0, 0.08);
 }
 
-body.light-theme .theme-toggle:hover {
+.light-theme .theme-toggle:hover {
     background: rgba(0, 0, 0, 0.08);
     border-color: rgba(0, 0, 0, 0.15);
     color: var(--primary-color);
 }
 
-body.light-theme .contact-link-item {
+.light-theme .contact-link-item {
     background: rgba(0, 0, 0, 0.02);
 }
 
-body.light-theme .contact-link-item:hover {
+.light-theme .contact-link-item:hover {
     background: rgba(0, 0, 0, 0.04);
 }
 
-body.light-theme .skill-card {
+.light-theme .skill-card {
     background: rgba(255, 255, 255, 0.8);
 }
 
-body.light-theme .btn-secondary {
+.light-theme .btn-secondary {
     background-color: rgba(0, 0, 0, 0.02);
     color: var(--text-main);
 }
 
-body.light-theme .btn-secondary:hover {
+.light-theme .btn-secondary:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-body.light-theme .simulator-card-header {
+.light-theme .simulator-card-header {
     background: rgba(0, 0, 0, 0.03);
 }
 
-body.light-theme .main-header {
+.light-theme .main-header {
     background: rgba(247, 248, 250, 0.78);
 }
 
-body.light-theme .highlight-name {
+.light-theme .highlight-name {
     background: linear-gradient(135deg, #111827 30%, var(--primary-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-body.light-theme .theme-dropdown {
+.light-theme .theme-dropdown {
     background: rgba(255, 255, 255, 0.97);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-body.light-theme .theme-dropdown-item:hover {
+.light-theme .theme-dropdown-item:hover {
     background: rgba(0, 0, 0, 0.05);
 }
 
-body.light-theme .nav-menu.mobile-open {
+.light-theme .nav-menu.mobile-open {
     background: #f7f8fa;
 }
 
-body.light-theme .contact-btn {
+.light-theme .contact-btn {
     background: rgba(0, 0, 0, 0.04);
 }
 
-body.light-theme .contact-btn:hover {
+.light-theme .contact-btn:hover {
     background: var(--primary-color);
     color: #fff;
 }
 
-body.light-theme .mobile-toggle {
+.light-theme .mobile-toggle {
     color: var(--text-main);
 }
 
-body.light-theme .about-highlight-item,
-body.light-theme .sim-term {
+.light-theme .about-highlight-item,
+.light-theme .sim-term {
     background: rgba(0, 0, 0, 0.03);
 }
 
-body.light-theme .project-impact {
+.light-theme .project-impact {
     color: #047857;
     background: rgba(16, 185, 129, 0.1);
 }
 
-body.light-theme .stat-note i {
+.light-theme .stat-note i {
     color: #059669;
 }

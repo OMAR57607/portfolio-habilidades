@@ -1,0 +1,16 @@
+{
+  "name": "Omar Fuentes | Tecnología y Analítica Automotriz",
+  "short_name": "Omar Fuentes",
+  "description": "Portfolio de desarrollo full stack y analítica de datos para concesionarias automotrices.",
+  "lang": "es-MX",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#08080a",
+  "theme_color": "#08080a",
+  "icons": [
+    { "src": "/static/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/static/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/static/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

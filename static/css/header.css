@@ -29,6 +29,7 @@
 .nav-logo-img {
     height: 44px;
     width: 44px;
+    object-fit: cover;
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 0 15px rgba(6, 182, 212, 0.2); /* cyan glow matching the logo */
@@ -73,7 +74,7 @@
     background: rgba(255, 255, 255, 0.12);
     transform: scale(1.05);
     border-color: rgba(255, 255, 255, 0.2);
-    color: #ff3e55;
+    color: var(--accent-text);
     box-shadow: 0 0 12px rgba(255, 62, 85, 0.25);
 }
 
@@ -133,7 +134,7 @@
 
 .theme-dropdown-item.active {
     background: rgba(235, 10, 30, 0.12);
-    color: #ff3e55;
+    color: var(--accent-text);
     font-weight: 600;
 }
 
@@ -158,6 +159,12 @@
     color: var(--text-main);
 }
 
+/* Sección que se está leyendo actualmente */
+.nav-link.is-current:not(.contact-btn) {
+    color: var(--text-main);
+    text-shadow: 0 0 12px var(--primary-glow);
+}
+
 .contact-btn {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
@@ -180,6 +187,13 @@
     color: var(--text-main);
     font-size: 1.5rem;
     cursor: pointer;
+    /* Medidas propias: el botón solo contiene un icono de fuente externa y sin
+       ella colapsaba a 0x0, dejando el menú móvil inalcanzable. */
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
 }
 
 /* En anchos medios el menú de 6 enlaces necesita compactarse */
@@ -204,7 +218,7 @@
     }
     
     .mobile-toggle {
-        display: block;
+        display: flex;
     }
 }
 

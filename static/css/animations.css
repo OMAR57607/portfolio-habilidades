@@ -65,3 +65,30 @@
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
+
+/* Respeto por quien pide menos movimiento en el sistema operativo.
+   El contenido sigue siendo visible: solo se apaga la animación. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .fade-in-up,
+    .fade-in-hidden {
+        opacity: 1;
+        transform: none;
+    }
+
+    .blob-bg {
+        animation: none;
+    }
+}

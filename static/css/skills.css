@@ -53,6 +53,19 @@
     text-align: center;
 }
 
+/* `display: flex` gana al [hidden] de la hoja del navegador, así que hay que
+   declararlo explícitamente para que el filtro oculte de verdad la tarjeta. */
+.skill-card[hidden] {
+    display: none;
+}
+
+/* Animación de entrada al cambiar de filtro */
+.skill-card.is-entering {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: none;
+}
+
 .skill-card:hover {
     transform: translateY(-4px);
     border-color: rgba(255, 255, 255, 0.15);
@@ -73,12 +86,3 @@
     font-weight: 600;
     color: var(--text-main);
 }
-
-/* Iconos de colores de Skills */
-.text-blue { color: #3b82f6; }
-.text-green { color: #10b981; }
-.text-teal { color: #14b8a6; }
-.text-red { color: #f43f5e; }
-.text-purple { color: #8b5cf6; }
-.text-grey { color: #9ca3af; }
-.text-orange { color: #f97316; }
