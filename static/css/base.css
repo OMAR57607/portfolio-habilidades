@@ -21,6 +21,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
     position: relative;
 }
@@ -265,4 +266,63 @@ body {
 
 .footer-legal {
     font-size: 0.75rem;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    color: var(--text-muted);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-nav a:hover {
+    color: var(--accent-text);
+}
+
+.footer-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* CTA flotante de WhatsApp: solo en móvil, donde el botón de contacto del
+   header queda oculto dentro del menú. */
+.floating-cta {
+    position: fixed;
+    right: 18px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    z-index: 90;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #25d366;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: translateY(16px) scale(0.9);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.floating-cta.is-visible {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+@media (max-width: 767px) {
+    .floating-cta {
+        display: flex;
+    }
 }

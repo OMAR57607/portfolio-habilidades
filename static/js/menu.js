@@ -8,9 +8,7 @@ export function initMenu() {
         navMenu.classList.toggle('mobile-open', isOpen);
         mobileToggle.setAttribute('aria-expanded', String(isOpen));
         mobileToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-        mobileToggle.innerHTML = isOpen
-            ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
-            : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+        // El icono (hamburguesa / X) lo resuelve el CSS a partir de aria-expanded.
     };
 
     mobileToggle.addEventListener('click', () => {

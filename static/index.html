@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
-                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                    <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
                 </button>
             </div>
         </div>
@@ -149,55 +149,60 @@
     <main class="content-wrapper">
 
         <!-- Hero Section -->
-        <section class="hero-section" id="inicio">
+        <!-- Dos columnas en escritorio: propuesta de valor + prueba medible,
+             para que los CTA y los resultados queden visibles sin hacer scroll. -->
+        <section class="hero-section" id="inicio" aria-labelledby="hero-title">
             <div class="hero-content">
                 <div class="badge-status fade-in">
                     <span class="status-dot"></span> Disponible para nuevos proyectos
                 </div>
-                <h1 class="hero-title fade-in-up">
-                    Hola, soy <span class="highlight-name">Omar Fuentes</span>
-                </h1>
-                <h2 class="hero-subtitle fade-in-up">
-                    Digitalizo y automatizo la operación de concesionarias automotrices
-                </h2>
-                <p class="hero-desc fade-in-up">
-                    <strong>Full Stack Developer & Data/ML Analyst</strong> — y trabajo todos los días en el piso de un taller Toyota. Construyo arquitecturas web con <strong>Django</strong>, <strong>FastAPI</strong> y <strong>Node.js</strong>, modelos de <strong>machine learning</strong> (scikit-learn) y analítica en <strong>Pandas</strong> que resuelven cuellos de botella reales de BDC, taller y refacciones: cotizaciones que tardaban horas hoy salen en minutos.
+                <p class="hero-eyebrow fade-in-up">
+                    Hola, soy <span class="highlight-name">Omar Fuentes</span> · Full Stack Developer &amp; Data/ML Analyst
                 </p>
-                <div class="hero-tech-pills fade-in-up">
-                    <span class="tech-pill"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</span>
-                    <span class="tech-pill"><i class="fa-solid fa-network-wired" aria-hidden="true"></i> Django</span>
-                    <span class="tech-pill"><i class="fa-solid fa-bolt" aria-hidden="true"></i> FastAPI</span>
-                    <span class="tech-pill"><i class="fa-brands fa-node-js" aria-hidden="true"></i> Node.js</span>
-                    <span class="tech-pill"><i class="fa-solid fa-brain" aria-hidden="true"></i> scikit-learn</span>
-                    <span class="tech-pill"><i class="fa-solid fa-table" aria-hidden="true"></i> Pandas</span>
-                    <span class="tech-pill"><i class="fa-solid fa-cloud" aria-hidden="true"></i> Supabase</span>
-                </div>
+                <h1 class="hero-title fade-in-up" id="hero-title">
+                    Digitalizo y automatizo la operación de <span class="highlight-name">concesionarias automotrices</span>
+                </h1>
+                <p class="hero-desc fade-in-up">
+                    Trabajo todos los días en el piso de un taller Toyota. Construyo sistemas con <strong>Django</strong>, <strong>FastAPI</strong> y <strong>Node.js</strong>, modelos de <strong>machine learning</strong> y analítica en <strong>Pandas</strong> que resuelven cuellos de botella reales de BDC, taller y refacciones.
+                </p>
                 <div class="hero-actions fade-in-up">
-                    <a href="#proyectos" class="btn btn-primary" id="btn-view-projects">
+                    <a href="https://wa.me/522227703715?text=Hola%20Omar%2C%20vi%20tu%20portfolio%20y%20me%20interesa%20una%20soluci%C3%B3n%20para%20mi%20agencia." class="btn btn-primary" id="btn-hero-whatsapp" target="_blank" rel="noopener noreferrer">
+                        Hablemos de tu agencia <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                    <a href="#proyectos" class="btn btn-secondary" id="btn-view-projects">
                         Ver Proyectos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                     </a>
-                    <a href="#simulador" class="btn btn-secondary" id="btn-try-simulator">
-                        Probar Simulador BDC <i class="fa-solid fa-circle-play" aria-hidden="true"></i>
-                    </a>
                 </div>
+                <a href="#simulador" class="hero-link fade-in-up" id="btn-try-simulator">
+                    <i class="fa-solid fa-circle-play" aria-hidden="true"></i> o prueba el Simulador BDC en vivo
+                </a>
+                <ul class="hero-tech-pills fade-in-up" aria-label="Stack principal">
+                    <li class="tech-pill"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</li>
+                    <li class="tech-pill"><i class="fa-solid fa-network-wired" aria-hidden="true"></i> Django</li>
+                    <li class="tech-pill"><i class="fa-solid fa-bolt" aria-hidden="true"></i> FastAPI</li>
+                    <li class="tech-pill"><i class="fa-brands fa-node-js" aria-hidden="true"></i> Node.js</li>
+                    <li class="tech-pill"><i class="fa-solid fa-brain" aria-hidden="true"></i> scikit-learn</li>
+                    <li class="tech-pill"><i class="fa-solid fa-table" aria-hidden="true"></i> Pandas</li>
+                    <li class="tech-pill"><i class="fa-solid fa-cloud" aria-hidden="true"></i> Supabase</li>
+                </ul>
+            </div>
 
-                <!-- Resultados medibles en la operación -->
-                <div class="impact-stats fade-in-up" id="impacto">
-                    <div class="stat-card glass-panel">
-                        <span class="stat-value">15 <small>min</small></span>
-                        <span class="stat-label">Tiempo promedio de cotización en taller</span>
-                        <span class="stat-note"><i class="fa-solid fa-arrow-trend-down" aria-hidden="true"></i> antes tomaba hasta 3 horas</span>
-                    </div>
-                    <div class="stat-card glass-panel">
-                        <span class="stat-value">+$1,500 <small>MXN</small></span>
-                        <span class="stat-label">Ticket promedio por orden de servicio</span>
-                        <span class="stat-note"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> incremento estimado</span>
-                    </div>
-                    <div class="stat-card glass-panel">
-                        <span class="stat-value">5</span>
-                        <span class="stat-label">Sistemas propios en producción</span>
-                        <span class="stat-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> usados a diario en la operación</span>
-                    </div>
+            <!-- Resultados medibles en la operación -->
+            <div class="impact-stats fade-in-up" id="impacto" aria-label="Resultados medidos en la operación">
+                <div class="stat-card glass-panel">
+                    <span class="stat-value">15 <small>min</small></span>
+                    <span class="stat-label">Tiempo promedio de cotización en taller</span>
+                    <span class="stat-note"><i class="fa-solid fa-arrow-trend-down" aria-hidden="true"></i> antes tomaba hasta 3 horas</span>
+                </div>
+                <div class="stat-card glass-panel">
+                    <span class="stat-value">+$1,500 <small>MXN</small></span>
+                    <span class="stat-label">Ticket promedio por orden de servicio</span>
+                    <span class="stat-note"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> incremento estimado</span>
+                </div>
+                <div class="stat-card glass-panel">
+                    <span class="stat-value">5</span>
+                    <span class="stat-label">Sistemas propios en producción</span>
+                    <span class="stat-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> usados a diario en la operación</span>
                 </div>
             </div>
         </section>
@@ -206,7 +211,7 @@
         <section class="section-container" id="sobre-mi">
             <div class="section-header">
                 <span class="section-tag">Mi Historia</span>
-                <h3 class="section-title">Del Piso del Taller al Código</h3>
+                <h2 class="section-title">Del Piso del Taller al Código</h2>
                 <p class="section-desc">No desarrollo para concesionarias desde fuera: trabajo dentro de una, todos los días.</p>
             </div>
 
@@ -241,7 +246,7 @@
         <section class="section-container" id="proyectos">
             <div class="section-header">
                 <span class="section-tag">Mis Desarrollos</span>
-                <h3 class="section-title">Proyectos Destacados</h3>
+                <h2 class="section-title">Proyectos Destacados</h2>
                 <p class="section-desc">Sistemas empresariales y de analítica implementados y optimizados para entornos de producción.</p>
             </div>
 
@@ -253,7 +258,7 @@
                         <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
                     </div>
                     <div class="project-content">
-                        <h4 class="project-title">Sistema Central Taller Toyota</h4>
+                        <h3 class="project-title">Sistema Central Taller Toyota</h3>
                         <p class="project-text">
                             Plataforma empresarial Django de 10 módulos para la operación integral de taller, citas, refacciones y pedidos especiales. En producción diaria sobre Railway.
                         </p>
@@ -284,7 +289,7 @@
                         <i class="fa-solid fa-bolt" aria-hidden="true"></i>
                     </div>
                     <div class="project-content">
-                        <h4 class="project-title">Verificador Digital de Precios</h4>
+                        <h3 class="project-title">Verificador Digital de Precios</h3>
                         <p class="project-text">
                             Aplicación web instalable (PWA) de consulta y cotización de refacciones, diseñada bajo las normativas PROFECO de exhibición comercial mexicana.
                         </p>
@@ -314,7 +319,7 @@
                         <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
                     </div>
                     <div class="project-content">
-                        <h4 class="project-title">Consolidador BDC y Analítica Automotriz</h4>
+                        <h3 class="project-title">Consolidador BDC y Analítica Automotriz</h3>
                         <p class="project-text">
                             Motor de analítica y consolidación que unifica hojas de cálculo del DMS (Quiter) y del CRM para predecir retención de clientes.
                         </p>
@@ -331,7 +336,7 @@
                             <span class="tag">OpenPyXL</span>
                         </div>
                         <div class="project-links">
-                            <a class="project-link" href="https://github.com/OMAR57607/procesador_de_archivos" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Ver código en GitHub</a>
+                            <a class="project-link" href="https://github.com/OMAR57607/procesador_de_archivos" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Ver código en GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -342,7 +347,7 @@
                         <i class="fa-solid fa-images" aria-hidden="true"></i>
                     </div>
                     <div class="project-content">
-                        <h4 class="project-title">Sistema de Evidencia y Diagnóstico Taller</h4>
+                        <h3 class="project-title">Sistema de Evidencia y Diagnóstico Taller</h3>
                         <p class="project-text">
                             Aplicación móvil de captura rápida para técnicos que agiliza la subida de cotizaciones de servicio con evidencias visuales.
                         </p>
@@ -363,7 +368,7 @@
                             <span class="tag">Pillow (PIL)</span>
                         </div>
                         <div class="project-links">
-                            <a class="project-link" href="https://github.com/OMAR57607/tecnicos-Toyota" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Ver código en GitHub</a>
+                            <a class="project-link" href="https://github.com/OMAR57607/tecnicos-Toyota" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Ver código en GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -374,7 +379,7 @@
                         <i class="fa-brands fa-node-js" aria-hidden="true"></i>
                     </div>
                     <div class="project-content">
-                        <h4 class="project-title">Fuertes Trail Puebla — Sitio Web</h4>
+                        <h3 class="project-title">Fuertes Trail Puebla — Sitio Web</h3>
                         <p class="project-text">
                             Sitio web oficial de una comunidad off-road 4x4, construido en Node.js con foco en seguridad y rendimiento. Mi único proyecto fuera del stack Python.
                         </p>
@@ -392,7 +397,7 @@
                             <span class="tag">Railway</span>
                         </div>
                         <div class="project-links">
-                            <a class="project-link demo-link" href="https://fuertes-trail-puebla-production.up.railway.app" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver demo en vivo</a>
+                            <a class="project-link demo-link" href="https://fuertes-trail-puebla-production.up.railway.app" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver demo en vivo</a>
                         </div>
                     </div>
                 </article>
@@ -404,7 +409,7 @@
         <section class="section-container" id="simulador">
             <div class="section-header">
                 <span class="section-tag">Simulador Interactivo</span>
-                <h3 class="section-title">Consola Analítica BDC</h3>
+                <h2 class="section-title">Consola Analítica BDC</h2>
                 <p class="section-desc">Pon a prueba el motor matemático que implementé en mis proyectos de analítica. Ingresa datos de un vehículo de ejemplo para ver cómo calcula y clasifica a un cliente.</p>
             </div>
 
@@ -516,36 +521,36 @@
         <section class="section-container" id="servicios">
             <div class="section-header">
                 <span class="section-tag">Servicios</span>
-                <h3 class="section-title">¿Qué Puedo Construir para tu Agencia?</h3>
+                <h2 class="section-title">¿Qué Puedo Construir para tu Agencia?</h2>
                 <p class="section-desc">Soluciones probadas en la operación real de una concesionaria, adaptables a la tuya.</p>
             </div>
 
             <div class="services-grid">
                 <div class="service-card glass-panel">
                     <div class="service-icon"><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i></div>
-                    <h4>Cotizaciones de Taller con Evidencia</h4>
+                    <h3>Cotizaciones de Taller con Evidencia</h3>
                     <p>Apps móviles para técnicos y asesores: fotos, diagnóstico y PDF de cotización en minutos, no en horas. Probado: de hasta 3 h a 15 min promedio.</p>
                 </div>
                 <div class="service-card glass-panel">
                     <div class="service-icon"><i class="fa-solid fa-table" aria-hidden="true"></i></div>
-                    <h4>Automatización de Reportes DMS/CRM</h4>
+                    <h3>Automatización de Reportes DMS/CRM</h3>
                     <p>Consolidación automática de Quiter, Excel y CRM. Lo que se hacía a mano en horas, en un clic y sin errores de captura.</p>
                 </div>
                 <div class="service-card glass-panel">
                     <div class="service-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
-                    <h4>Analítica BDC y Retención</h4>
+                    <h3>Analítica BDC y Retención</h3>
                     <p>Priorización de llamadas por riesgo de churn, proyección de kilometraje y clasificación CRT para llenar la agenda de citas.</p>
                 </div>
                 <div class="service-card glass-panel">
                     <div class="service-icon"><i class="fa-solid fa-barcode" aria-hidden="true"></i></div>
-                    <h4>Verificación de Precios y PROFECO</h4>
+                    <h3>Verificación de Precios y PROFECO</h3>
                     <p>Verificadores digitales de refacciones con búsqueda por SKU y scraping OEM, alineados a la normativa mexicana de exhibición de precios.</p>
                 </div>
             </div>
 
             <div class="services-cta glass-panel">
                 <p>¿Tu agencia vive alguno de estos cuellos de botella?</p>
-                <a class="btn btn-primary" href="https://wa.me/522227703715?text=Hola%20Omar%2C%20vi%20tu%20portfolio%20y%20me%20interesa%20una%20soluci%C3%B3n%20para%20mi%20agencia." target="_blank" id="btn-services-whatsapp">
+                <a class="btn btn-primary" href="https://wa.me/522227703715?text=Hola%20Omar%2C%20vi%20tu%20portfolio%20y%20me%20interesa%20una%20soluci%C3%B3n%20para%20mi%20agencia." target="_blank" rel="noopener noreferrer" id="btn-services-whatsapp">
                     Cuéntamelo por WhatsApp <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                 </a>
             </div>
@@ -555,7 +560,7 @@
         <section class="section-container" id="habilidades">
             <div class="section-header">
                 <span class="section-tag">Tecnologías</span>
-                <h3 class="section-title">Habilidades & Stack</h3>
+                <h2 class="section-title">Habilidades & Stack</h2>
                 <p class="section-desc">Herramientas y tecnologías que domino para el desarrollo de software y ciencia de datos.</p>
             </div>
 
@@ -741,39 +746,39 @@
         <section class="section-container" id="ingenieria">
             <div class="section-header">
                 <span class="section-tag">Bajo el Capó</span>
-                <h3 class="section-title">Patrones de Ingeniería</h3>
+                <h2 class="section-title">Patrones de Ingeniería</h2>
                 <p class="section-desc">No solo construyo funciones: aplico patrones de software que mantienen los sistemas rápidos, confiables y seguros en producción.</p>
             </div>
 
             <div class="services-grid">
                 <div class="service-card glass-panel">
                     <div class="service-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
-                    <h4>Outbox Pattern + Colas Asíncronas</h4>
+                    <h3>Outbox Pattern + Colas Asíncronas</h3>
                     <p>Consistencia eventual con cola persistente y Dead Letter Queue: las tareas costosas (subir imágenes, sincronizar) no bloquean la respuesta al usuario.</p>
                 </div>
                 <div class="service-card glass-panel">
                     <div class="service-icon"><i class="fa-solid fa-fingerprint" aria-hidden="true"></i></div>
-                    <h4>Idempotencia</h4>
+                    <h3>Idempotencia</h3>
                     <p>Operaciones seguras de reintentar: hash de contenido y claves idempotentes evitan cotizaciones y registros duplicados ante doble clic o reintentos de red.</p>
                 </div>
                 <div class="service-card glass-panel">
                     <div class="service-icon"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></div>
-                    <h4>Optimización de Consultas (N+1)</h4>
+                    <h3>Optimización de Consultas (N+1)</h3>
                     <p>Uso de select_related y prefetch_related para bajar expedientes de 40+ consultas a solo 3, logrando carga instantánea en alto volumen.</p>
                 </div>
                 <div class="service-card glass-panel">
                     <div class="service-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></div>
-                    <h4>Concurrencia con Lock Cooperativo</h4>
+                    <h3>Concurrencia con Lock Cooperativo</h3>
                     <p>Semáforos vía Redis para impedir que dos usuarios editen el mismo folio a la vez, con aviso visual en tiempo real.</p>
                 </div>
                 <div class="service-card glass-panel">
                     <div class="service-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
-                    <h4>Inferencia con Machine Learning</h4>
+                    <h3>Inferencia con Machine Learning</h3>
                     <p>TF-IDF (scikit-learn) para predecir SKU desde texto libre, con umbrales de confianza y un plan de validación con métricas de acierto.</p>
                 </div>
                 <div class="service-card glass-panel">
                     <div class="service-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
-                    <h4>Seguridad por Capas</h4>
+                    <h3>Seguridad por Capas</h3>
                     <p>Helmet/CSP y rate limiting en Node; django-axes, HSTS y Row Level Security en el resto; contenedores Docker sin privilegios de root.</p>
                 </div>
             </div>
@@ -783,17 +788,17 @@
         <section class="section-container" id="contacto">
             <div class="section-header">
                 <span class="section-tag">Conectemos</span>
-                <h3 class="section-title">Contacto</h3>
+                <h2 class="section-title">Contacto</h2>
                 <p class="section-desc">¿Tienes alguna duda sobre mis sistemas o quieres colaborar en algún desarrollo?</p>
             </div>
 
             <div class="contact-wrapper">
                 <div class="contact-info glass-panel">
-                    <h4>Información de Enlaces</h4>
-                    <p>Puedes ver parte de mi código público y mis contribuciones académicas o personales directamente en mis redes.</p>
+                    <h3>Otras formas de contacto</h3>
+                    <p>Escríbeme por el canal que prefieras o revisa mi código público en GitHub.</p>
                     
                     <div class="contact-links-list">
-                        <a href="https://github.com/OMAR57607" target="_blank" class="contact-link-item" id="github-link">
+                        <a href="https://github.com/OMAR57607" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="github-link">
                             <i class="fa-brands fa-github" aria-hidden="true"></i>
                             <span>GitHub (OMAR57607)</span>
                         </a>
@@ -801,11 +806,11 @@
                             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                             <span>desable999@gmail.com</span>
                         </a>
-                        <a href="https://wa.me/522227703715" target="_blank" class="contact-link-item" id="whatsapp-link">
+                        <a href="https://wa.me/522227703715" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="whatsapp-link">
                             <i class="fa-brands fa-whatsapp text-green" aria-hidden="true"></i>
                             <span>WhatsApp (+52 222 770 3715)</span>
                         </a>
-                        <a href="https://www.facebook.com/share/18gQBhdY94/" target="_blank" class="contact-link-item" id="facebook-link">
+                        <a href="https://www.facebook.com/share/18gQBhdY94/" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="facebook-link">
                             <i class="fa-brands fa-facebook text-blue" aria-hidden="true"></i>
                             <span>Facebook</span>
                         </a>
@@ -843,11 +848,23 @@
 
     </main>
 
+    <!-- CTA flotante (móvil): visible fuera del hero y de la sección de contacto -->
+    <a class="floating-cta" id="floating-cta" href="https://wa.me/522227703715?text=Hola%20Omar%2C%20vi%20tu%20portfolio%20y%20me%20interesa%20una%20soluci%C3%B3n%20para%20mi%20agencia." target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp" tabindex="-1" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+    </a>
+
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-container">
+            <nav class="footer-nav" aria-label="Navegación del pie de página">
+                <a href="#proyectos">Proyectos</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#simulador">Simulador BDC</a>
+                <a href="#contacto">Contacto</a>
+                <a href="#inicio" class="footer-top">Volver arriba <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+            </nav>
             <p>&copy; 2026 Omar Fuentes. Todos los derechos reservados.</p>
-            <p class="footer-legal">Cumplimiento del portfolio con fines informativos y demostrativos.</p>
+            <p class="footer-legal">Sitio con fines informativos y demostrativos. Las cifras de impacto son promedios y estimaciones de la operación interna.</p>
         </div>
     </footer>
 

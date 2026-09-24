@@ -22,19 +22,22 @@
     animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.hero-title.fade-in-up {
+.hero-eyebrow.fade-in-up {
     animation-delay: 0.1s;
 }
-.hero-subtitle.fade-in-up {
+.hero-title.fade-in-up {
     animation-delay: 0.2s;
 }
 .hero-desc.fade-in-up {
     animation-delay: 0.3s;
 }
-.hero-tech-pills.fade-in-up {
+.hero-actions.fade-in-up {
     animation-delay: 0.4s;
 }
-.hero-actions.fade-in-up {
+.hero-link.fade-in-up {
+    animation-delay: 0.45s;
+}
+.hero-tech-pills.fade-in-up {
     animation-delay: 0.5s;
 }
 

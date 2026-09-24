@@ -107,9 +107,42 @@ function initActiveSection() {
     sections.forEach((section) => observer.observe(section));
 }
 
+function initFloatingCta() {
+    const cta = document.getElementById('floating-cta');
+    const hero = document.getElementById('inicio');
+    const contact = document.getElementById('contacto');
+    if (!cta || !hero || !('IntersectionObserver' in window)) return;
+
+    // Solo aparece cuando los CTA del hero ya no se ven y aún no se llega a
+    // Contacto, donde duplicaría el formulario.
+    const visible = new Set();
+    const update = () => {
+        const show = !visible.has(hero) && !visible.has(contact);
+        cta.classList.toggle('is-visible', show);
+        // Oculto también para lectores de pantalla y teclado mientras no se muestra.
+        cta.setAttribute('aria-hidden', String(!show));
+        cta.tabIndex = show ? 0 : -1;
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                visible.add(entry.target);
+            } else {
+                visible.delete(entry.target);
+            }
+        });
+        update();
+    }, { threshold: 0.1 });
+
+    observer.observe(hero);
+    if (contact) observer.observe(contact);
+}
+
 export function initEffects() {
     initScrollProgress();
     initScrollReveal();
     initTilt();
     initActiveSection();
+    initFloatingCta();
 }
