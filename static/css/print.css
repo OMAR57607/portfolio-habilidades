@@ -29,7 +29,11 @@ body {
 }
 
 body::before,
-body::after,
+.aurora,
+.grain,
+.marquee,
+.cmdk,
+.footer-giant,
 .main-header,
 .scroll-indicator,
 .skip-link,
@@ -163,4 +167,23 @@ body::after,
 
 .cert-card {
     break-inside: avoid;
+}
+
+.highlight-name {
+    background: none;
+    color: #b00716;
+    -webkit-text-fill-color: #b00716;
+}
+
+.hero-word {
+    animation: none;
+}
+
+.impact-panel::before,
+.spot::after {
+    display: none;
+}
+
+.about-wrapper {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }

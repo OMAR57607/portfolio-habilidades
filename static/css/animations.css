@@ -22,6 +22,45 @@
     to { transform: scaleX(1); }
 }
 
+@keyframes wordRise {
+    from { transform: translateY(105%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes borderSpin {
+    to { --border-angle: 360deg; }
+}
+
+@keyframes auroraA {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(-160px, 90px, 0) scale(1.18); }
+}
+
+@keyframes auroraB {
+    from { transform: translate3d(0, 0, 0) scale(1.05); }
+    to { transform: translate3d(180px, 60px, 0) scale(0.9); }
+}
+
+@keyframes marquee {
+    to { transform: translateX(-50%); }
+}
+
+@keyframes themeReveal {
+    from { clip-path: circle(0 at var(--vt-x, 100%) var(--vt-y, 0%)); }
+    to { clip-path: circle(150vmax at var(--vt-x, 100%) var(--vt-y, 0%)); }
+}
+
+@keyframes cmdkIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 @keyframes dropdownIn {
     from {
         opacity: 0;
@@ -43,7 +82,6 @@
 .hero-title.fade-in-up { animation-delay: 0.08s; }
 .hero-desc.fade-in-up { animation-delay: 0.16s; }
 .hero-actions.fade-in-up { animation-delay: 0.24s; }
-.hero-tech-pills.fade-in-up { animation-delay: 0.32s; }
 .impact-panel.fade-in-up { animation-delay: 0.3s; }
 
 /* Aparición al hacer scroll (IntersectionObserver en effects.js) */
@@ -78,5 +116,21 @@
     .fade-in-hidden {
         opacity: 1;
         transform: none;
+    }
+
+    /* Los bucles decorativos se detienen por completo */
+    .aurora-blob,
+    .marquee-track,
+    .impact-panel::before {
+        animation: none !important;
+    }
+
+    /* Sin movimiento, la cinta se convierte en una lista que se puede desplazar */
+    .marquee {
+        overflow-x: auto;
+    }
+
+    .marquee-group[aria-hidden="true"] {
+        display: none;
     }
 }

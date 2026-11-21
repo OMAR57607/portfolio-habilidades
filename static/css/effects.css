@@ -1,0 +1,205 @@
+/* Capa de efectos: fondo vivo, luz bajo el cursor, cinta de tecnologías,
+   transición de tema y piezas tipográficas grandes. */
+
+/* Ángulo animable para el filo de luz del panel (sin @property no interpola) */
+@property --border-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+/* ---------- Aurora de marca ---------- */
+.aurora {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 900px;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(#000 55%, transparent);
+    mask-image: linear-gradient(#000 55%, transparent);
+}
+
+/* Degradados radiales sin filtro de desenfoque: se animan solo con transform */
+.aurora-blob {
+    position: absolute;
+    width: 880px;
+    height: 880px;
+    border-radius: 50%;
+    will-change: transform;
+}
+
+.aurora-blob.is-a {
+    top: -420px;
+    right: -180px;
+    background: radial-gradient(circle, rgba(235, 10, 30, 0.3) 0%, rgba(235, 10, 30, 0.08) 40%, transparent 68%);
+    animation: auroraA 22s ease-in-out infinite alternate;
+}
+
+.aurora-blob.is-b {
+    top: -260px;
+    left: -340px;
+    background: radial-gradient(circle, rgba(255, 122, 69, 0.14) 0%, rgba(255, 122, 69, 0.04) 42%, transparent 68%);
+    animation: auroraB 28s ease-in-out infinite alternate;
+}
+
+.light-theme .aurora-blob.is-a {
+    background: radial-gradient(circle, rgba(235, 10, 30, 0.16) 0%, rgba(235, 10, 30, 0.04) 40%, transparent 68%);
+}
+
+.light-theme .aurora-blob.is-b {
+    background: radial-gradient(circle, rgba(255, 122, 69, 0.14) 0%, rgba(255, 122, 69, 0.03) 42%, transparent 68%);
+}
+
+/* ---------- Grano: quita el aspecto plano de los degradados ---------- */
+.grain {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.055;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.light-theme .grain {
+    opacity: 0.04;
+    filter: invert(1);
+}
+
+/* ---------- Luz que sigue al cursor ----------
+   effects.js escribe --mx / --my en la tarjeta bajo el puntero. */
+.spot {
+    position: relative;
+}
+
+.spot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(235, 10, 30, 0.13), transparent 62%);
+    opacity: 0;
+    transition: opacity 0.35s ease-out;
+    pointer-events: none;
+}
+
+.spot:hover::after {
+    opacity: 1;
+}
+
+/* El contenido queda por encima de la luz */
+.spot > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- Cinta de tecnologías ---------- */
+.marquee {
+    margin-top: 8px;
+    padding: 22px 0;
+    border-block: 1px solid var(--border-color);
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 38s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    color: var(--text-muted);
+    font-family: var(--font-title);
+    font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+}
+
+.marquee-item::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    margin: 0 clamp(18px, 3vw, 32px);
+    border-radius: 50%;
+    background: var(--primary-color);
+}
+
+/* ---------- Cambio de tema con revelado circular (View Transitions) ---------- */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+    animation: themeReveal 0.55s var(--ease-out);
+}
+
+/* ---------- Títulos y pie a gran escala ---------- */
+#contacto .section-title {
+    max-width: none;
+    font-size: clamp(2.2rem, 7.4vw, 5.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+}
+
+.footer-giant {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 36px var(--page-gutter) 0;
+    overflow: hidden;
+    color: transparent;
+    font-family: var(--font-title);
+    font-size: min(9.2vw, 7.2rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.055em;
+    white-space: nowrap;
+    -webkit-text-stroke: 1px var(--text-dark);
+    opacity: 0.45;
+    user-select: none;
+}
+
+/* ---------- Botón principal con destello al pasar el cursor ---------- */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+    transform: skewX(-18deg);
+    transition: left 0.6s var(--ease-out);
+    pointer-events: none;
+}
+
+.btn-primary:hover::before {
+    left: 130%;
+}
+
+/* ---------- Aparición escalonada dentro de las retículas ---------- */
+.projects-grid > .fade-in-hidden:nth-child(odd),
+.about-wrapper .about-highlight-item:nth-child(2) { transition-delay: 0.06s; }
+.about-wrapper .about-highlight-item:nth-child(3) { transition-delay: 0.12s; }
+.about-wrapper .about-highlight-item:nth-child(4) { transition-delay: 0.18s; }

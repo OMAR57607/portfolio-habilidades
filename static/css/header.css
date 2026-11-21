@@ -1,50 +1,63 @@
-/* Cabecera (Header) */
+/* Cabecera: cápsula flotante centrada sobre el contenido */
 .main-header {
     position: fixed;
-    top: 0;
+    top: 14px;
     left: 0;
     width: 100%;
     z-index: 100;
-    border-bottom: 1px solid transparent;
-    transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
-}
-
-/* El fondo translúcido solo aparece al hacer scroll o con el menú móvil abierto */
-.main-header.is-scrolled,
-.main-header.is-menu-open {
-    background: rgba(11, 11, 12, 0.82);
-    -webkit-backdrop-filter: blur(14px) saturate(1.4);
-    backdrop-filter: blur(14px) saturate(1.4);
-    border-bottom-color: var(--border-color);
-}
-
-.light-theme .main-header.is-scrolled,
-.light-theme .main-header.is-menu-open {
-    background: rgba(246, 245, 241, 0.86);
+    padding: 0 var(--page-gutter);
+    pointer-events: none;
 }
 
 .header-container {
+    position: relative;
     max-width: var(--page-max);
-    height: var(--header-h);
+    height: 56px;
     margin: 0 auto;
-    padding: 0 var(--page-gutter);
+    padding: 0 8px 0 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
+    background: rgba(17, 17, 19, 0.72);
+    -webkit-backdrop-filter: blur(18px) saturate(1.5);
+    backdrop-filter: blur(18px) saturate(1.5);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    box-shadow: 0 12px 40px -18px rgba(0, 0, 0, 0.8);
+    pointer-events: auto;
+    transition: background-color var(--transition-smooth), border-color var(--transition-smooth),
+        box-shadow var(--transition-smooth);
+}
+
+/* Al hacer scroll la cápsula gana presencia */
+.main-header.is-scrolled .header-container,
+.main-header.is-menu-open .header-container {
+    background: rgba(17, 17, 19, 0.9);
+    border-color: var(--border-strong);
+}
+
+.light-theme .header-container {
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 12px 34px -20px rgba(20, 20, 19, 0.4);
+}
+
+.light-theme .main-header.is-scrolled .header-container,
+.light-theme .main-header.is-menu-open .header-container {
+    background: rgba(255, 255, 255, 0.92);
 }
 
 .logo-wrapper {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     color: var(--text-main);
     text-decoration: none;
 }
 
 .nav-logo-img {
-    height: 36px;
-    width: 36px;
+    height: 32px;
+    width: 32px;
     object-fit: cover;
     border-radius: 50%;
     border: 1px solid var(--border-strong);
@@ -52,13 +65,13 @@
 }
 
 .logo-wrapper:hover .nav-logo-img {
-    transform: rotate(-8deg);
+    transform: rotate(-8deg) scale(1.06);
 }
 
 .logo-wordmark {
     color: var(--text-main);
     font-family: var(--font-title);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 800;
     letter-spacing: -0.02em;
     white-space: nowrap;
@@ -67,7 +80,7 @@
 .nav-right-group {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
 }
 
 .theme-select-container {
@@ -76,17 +89,17 @@
 
 .theme-toggle,
 .mobile-toggle {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background: transparent;
     border: 1px solid transparent;
-    border-radius: var(--radius-md);
+    border-radius: 50%;
     color: var(--text-muted);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: color var(--transition-smooth), border-color var(--transition-smooth),
         background-color var(--transition-smooth);
@@ -102,7 +115,7 @@
 
 .theme-dropdown {
     position: absolute;
-    top: calc(100% + 8px);
+    top: calc(100% + 14px);
     right: 0;
     min-width: 150px;
     padding: 6px;
@@ -112,7 +125,7 @@
     z-index: 150;
     background: var(--card-bg);
     border: 1px solid var(--border-strong);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-premium);
 }
 
@@ -130,7 +143,7 @@
     gap: 10px;
     background: transparent;
     border: none;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     color: var(--text-muted);
     font-family: var(--font-body);
     font-size: 0.9rem;
@@ -153,60 +166,41 @@
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
     margin-left: auto;
 }
 
 .nav-link {
     position: relative;
-    padding: 10px 12px;
+    padding: 8px 12px;
     display: flex;
     align-items: center;
     gap: 8px;
-    border-radius: var(--radius-sm);
+    border-radius: 999px;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 500;
     text-decoration: none;
     white-space: nowrap;
-    transition: color var(--transition-smooth);
+    transition: color var(--transition-smooth), background-color var(--transition-smooth);
 }
 
 .nav-link:hover {
     color: var(--text-main);
 }
 
-/* Sección que se está leyendo actualmente */
+/* Sección que se está leyendo actualmente: pastilla rellena */
 .nav-link.is-current:not(.contact-btn) {
     color: var(--text-main);
-}
-
-.nav-link:not(.contact-btn)::after {
-    content: '';
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: 4px;
-    height: 2px;
-    border-radius: 2px;
-    background: var(--primary-color);
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform var(--transition-smooth);
-}
-
-.nav-link.is-current:not(.contact-btn)::after {
-    transform: scaleX(1);
+    background: var(--border-color);
 }
 
 .contact-btn {
-    margin-left: 10px;
+    margin-left: 8px;
     padding: 9px 16px;
     background: var(--text-main);
-    border-radius: var(--radius-md);
     color: var(--bg-color);
     font-weight: 600;
-    transition: background-color var(--transition-smooth), color var(--transition-smooth);
 }
 
 .contact-btn:hover {
@@ -217,27 +211,24 @@
 .mobile-toggle {
     display: none;
     color: var(--text-main);
-    font-size: 1.35rem;
+    font-size: 1.3rem;
 }
 
 /* En anchos medios el menú necesita compactarse */
-@media (min-width: 901px) and (max-width: 1080px) {
-    .logo-wordmark {
+@media (min-width: 901px) and (max-width: 1120px) {
+    .logo-wordmark,
+    .cmdk-trigger-text,
+    .cmdk-trigger .cmdk-kbd {
         display: none;
     }
 
     .nav-link {
         padding-inline: 9px;
-        font-size: 0.86rem;
-    }
-
-    .nav-link:not(.contact-btn)::after {
-        left: 9px;
-        right: 9px;
+        font-size: 0.84rem;
     }
 }
 
-/* Menú móvil */
+/* Menú móvil: panel redondeado bajo la cápsula */
 @media (max-width: 900px) {
     .nav-menu {
         display: none;
@@ -253,30 +244,28 @@
         align-items: stretch;
         gap: 0;
         position: absolute;
-        top: 100%;
+        top: calc(100% + 10px);
         left: 0;
         width: 100%;
-        max-height: calc(100vh - var(--header-h));
-        max-height: calc(100dvh - var(--header-h));
+        max-height: calc(100vh - var(--header-h) - 24px);
+        max-height: calc(100dvh - var(--header-h) - 24px);
         margin: 0;
-        padding: 8px var(--page-gutter) 24px;
+        padding: 8px 20px 20px;
         overflow-y: auto;
-        background: var(--bg-color);
-        border-bottom: 1px solid var(--border-color);
+        background: var(--card-bg);
+        border: 1px solid var(--border-strong);
+        border-radius: 24px;
         box-shadow: var(--shadow-premium);
         animation: dropdownIn 0.2s var(--ease-out);
     }
 
     .nav-menu.mobile-open .nav-link {
-        padding: 15px 0;
+        padding: 15px 4px;
         border-bottom: 1px solid var(--border-color);
         border-radius: 0;
+        background: none;
         font-size: 1.02rem;
         color: var(--text-main);
-    }
-
-    .nav-menu.mobile-open .nav-link:not(.contact-btn)::after {
-        display: none;
     }
 
     .nav-menu.mobile-open .nav-link.is-current:not(.contact-btn) {
@@ -285,10 +274,18 @@
 
     .nav-menu.mobile-open .contact-btn {
         justify-content: center;
-        margin: 20px 0 0;
+        margin: 18px 0 0;
         padding: 14px 16px;
         border: none;
-        border-radius: var(--radius-md);
+        border-radius: 999px;
+        background: var(--text-main);
         color: var(--bg-color);
+    }
+}
+
+/* En pantallas muy angostas la cápsula se queda con el emblema */
+@media (max-width: 380px) {
+    .logo-wordmark {
+        display: none;
     }
 }

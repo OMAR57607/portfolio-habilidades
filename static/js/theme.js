@@ -24,6 +24,26 @@ function storeTheme(theme) {
     }
 }
 
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+// Cambia el tema con un revelado circular que nace en el botón (View
+// Transitions). Donde la API no existe, o si se pidió menos movimiento, el
+// cambio es inmediato.
+function withReveal(origin, change) {
+    if (!document.startViewTransition || reducedMotion.matches) {
+        change();
+        return;
+    }
+    const rect = origin?.getBoundingClientRect();
+    const root = document.documentElement;
+    root.style.setProperty('--vt-x', `${rect ? rect.left + rect.width / 2 : window.innerWidth}px`);
+    root.style.setProperty('--vt-y', `${rect ? rect.top + rect.height / 2 : 0}px`);
+    document.startViewTransition(change);
+}
+
+// Otros módulos (la paleta de comandos) cambian el tema con este evento.
+export const THEME_EVENT = 'portfolio:set-theme';
+
 export function initTheme() {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeDropdown = document.getElementById('theme-dropdown');
@@ -80,10 +100,17 @@ export function initTheme() {
     dropdownItems.forEach((item) => {
         item.addEventListener('click', () => {
             storeTheme(item.getAttribute('data-theme'));
-            applyTheme(item.getAttribute('data-theme'));
+            withReveal(themeToggleBtn, () => applyTheme(item.getAttribute('data-theme')));
             closeDropdown();
             themeToggleBtn?.focus();
         });
+    });
+
+    document.addEventListener(THEME_EVENT, (e) => {
+        const theme = e.detail;
+        if (!THEME_ICONS[theme]) return;
+        storeTheme(theme);
+        withReveal(themeToggleBtn, () => applyTheme(theme));
     });
 
     // Si el usuario dejó "Sistema", seguir los cambios del sistema en vivo.

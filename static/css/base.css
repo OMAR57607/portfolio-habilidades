@@ -45,21 +45,6 @@ body::before {
     mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, #000 35%, transparent 100%);
 }
 
-/* Resplandor de marca: una sola luz fija, sin animación ni blur costoso */
-body::after {
-    content: '';
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 780px;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(620px circle at 88% -6%, rgba(235, 10, 30, 0.2) 0%, rgba(235, 10, 30, 0.06) 42%, transparent 72%);
-}
-
-.light-theme body::after {
-    background: radial-gradient(620px circle at 88% -6%, rgba(235, 10, 30, 0.11) 0%, rgba(235, 10, 30, 0.03) 42%, transparent 72%);
-}
-
 img,
 svg {
     display: block;

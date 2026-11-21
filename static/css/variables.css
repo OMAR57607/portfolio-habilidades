@@ -72,9 +72,12 @@
     --shadow-premium: 0 24px 60px -30px rgba(0, 0, 0, 0.9);
     --shadow-glow: 0 10px 30px -12px rgba(235, 10, 30, 0.55);
 
+    /* Segundo tono cálido para degradados de marca (nunca como texto corrido) */
+    --ember-color: #ff7a45;
+
     --page-max: 1180px;
     --page-gutter: clamp(20px, 4vw, 32px);
-    --header-h: 68px;
+    --header-h: 84px;
 }
 
 /* Light Theme Variables */

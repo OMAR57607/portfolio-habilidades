@@ -70,6 +70,8 @@
     <link rel="stylesheet" href="/static/css/services.css?v=__ASSET_VERSION__">
     <link rel="stylesheet" href="/static/css/skills.css?v=__ASSET_VERSION__">
     <link rel="stylesheet" href="/static/css/contact.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/effects.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/palette.css?v=__ASSET_VERSION__">
     <link rel="stylesheet" href="/static/css/animations.css?v=__ASSET_VERSION__">
     <link rel="stylesheet" href="/static/css/print.css?v=__ASSET_VERSION__" media="print">
 
@@ -101,6 +103,10 @@
     <!-- Sprite de iconos SVG: el servidor lo incrusta desde static/icons.svg -->
     <!-- __ICON_SPRITE__ -->
 
+    <!-- Fondo vivo: aurora de marca y textura de grano (decorativos) -->
+    <div class="aurora" aria-hidden="true"><span class="aurora-blob is-a"></span><span class="aurora-blob is-b"></span></div>
+    <div class="grain" aria-hidden="true"></div>
+
     <!-- Scroll Progress Indicator -->
     <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true"></div>
 
@@ -121,6 +127,11 @@
                 <a href="#contacto" class="nav-link contact-btn">Contacto <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
             </nav>
             <div class="nav-right-group">
+                <button class="cmdk-trigger" id="cmdk-trigger" type="button" aria-label="Abrir buscador y comandos" aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K">
+                    <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+                    <span class="cmdk-trigger-text">Buscar</span>
+                    <kbd class="cmdk-kbd">Ctrl K</kbd>
+                </button>
                 <div class="theme-select-container">
                     <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-expanded="false" aria-haspopup="true" aria-controls="theme-dropdown">
                         <svg class="icon" aria-hidden="true"><use href="#i-sun-moon"/></svg>
@@ -155,7 +166,7 @@
                     <span class="badge-location"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg> Puebla, México</span>
                 </p>
                 <h1 class="hero-title fade-in-up">
-                    <span class="hero-name">Omar <span class="highlight-name">Fuentes</span></span>
+                    <span class="hero-name"><span class="hero-line"><span class="hero-word">Omar</span></span> <span class="hero-line"><span class="hero-word highlight-name">Fuentes</span></span></span>
                     <span class="hero-role">Full Stack Developer <span class="amp">&amp;</span> Data/ML Analyst</span>
                 </h1>
                 <p class="hero-desc fade-in-up">
@@ -172,15 +183,6 @@
                         <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> GitHub
                     </a>
                 </div>
-                <ul class="hero-tech-pills fade-in-up" aria-label="Stack principal">
-                    <li class="tech-pill">Python</li>
-                    <li class="tech-pill">Django</li>
-                    <li class="tech-pill">FastAPI</li>
-                    <li class="tech-pill">Node.js</li>
-                    <li class="tech-pill">scikit-learn</li>
-                    <li class="tech-pill">Pandas</li>
-                    <li class="tech-pill">Supabase</li>
-                </ul>
             </div>
 
             <!-- Resultados medibles en la operación -->
@@ -200,25 +202,59 @@
                     <div class="compare-row is-now">
                         <span class="compare-label">Hoy</span>
                         <span class="compare-track"><span class="compare-bar is-now"></span></span>
-                        <span class="compare-value">15 min</span>
+                        <span class="compare-value"><span data-count="15">15</span> min</span>
                     </div>
                     <p class="impact-note"><svg class="icon" aria-hidden="true"><use href="#i-trending-down"/></svg> Promedio actual; hasta 12 veces más rápido que el proceso manual.</p>
                 </div>
 
                 <div class="impact-stats">
                     <div class="stat-card">
-                        <span class="stat-value">+$1,500 <small>MXN</small></span>
+                        <span class="stat-value">+$<span data-count="1500">1,500</span> <small>MXN</small></span>
                         <span class="stat-label">Ticket promedio por orden de servicio</span>
                         <span class="stat-note">incremento estimado</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-value">7</span>
+                        <span class="stat-value"><span data-count="7">7</span></span>
                         <span class="stat-label">Sistemas propios desplegados</span>
                         <span class="stat-note">en Railway y Vercel</span>
                     </div>
                 </div>
             </aside>
         </section>
+
+        <!-- Cinta de tecnologías: la segunda copia es solo visual, para el bucle -->
+        <div class="marquee" aria-label="Stack principal">
+            <div class="marquee-track">
+                <ul class="marquee-group">
+                    <li class="marquee-item">Python</li>
+                    <li class="marquee-item">Django</li>
+                    <li class="marquee-item">FastAPI</li>
+                    <li class="marquee-item">Node.js</li>
+                    <li class="marquee-item">TypeScript</li>
+                    <li class="marquee-item">React</li>
+                    <li class="marquee-item">Next.js</li>
+                    <li class="marquee-item">scikit-learn</li>
+                    <li class="marquee-item">Pandas</li>
+                    <li class="marquee-item">PostgreSQL</li>
+                    <li class="marquee-item">Supabase</li>
+                    <li class="marquee-item">Docker</li>
+                </ul>
+                <ul class="marquee-group" aria-hidden="true">
+                    <li class="marquee-item">Python</li>
+                    <li class="marquee-item">Django</li>
+                    <li class="marquee-item">FastAPI</li>
+                    <li class="marquee-item">Node.js</li>
+                    <li class="marquee-item">TypeScript</li>
+                    <li class="marquee-item">React</li>
+                    <li class="marquee-item">Next.js</li>
+                    <li class="marquee-item">scikit-learn</li>
+                    <li class="marquee-item">Pandas</li>
+                    <li class="marquee-item">PostgreSQL</li>
+                    <li class="marquee-item">Supabase</li>
+                    <li class="marquee-item">Docker</li>
+                </ul>
+            </div>
+        </div>
 
         <!-- About Section -->
         <section class="section-container" id="sobre-mi">
@@ -905,6 +941,7 @@
 
     <!-- Footer -->
     <footer class="main-footer">
+        <p class="footer-giant" aria-hidden="true">Omar Fuentes</p>
         <div class="footer-container">
             <div class="footer-brand">
                 <span class="logo-wordmark">Omar Fuentes</span>
@@ -915,6 +952,21 @@
             <a href="#inicio" class="footer-top"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg> Volver arriba</a>
         </div>
     </footer>
+
+    <!-- Paleta de comandos (Ctrl/⌘ + K): navegación y acciones rápidas -->
+    <dialog class="cmdk" id="cmdk" aria-label="Buscador y comandos">
+        <div class="cmdk-head">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <input class="cmdk-input" id="cmdk-input" type="text" role="combobox" aria-expanded="true" aria-controls="cmdk-list" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="Busca una sección, un proyecto o una acción…">
+            <kbd class="cmdk-kbd">Esc</kbd>
+        </div>
+        <ul class="cmdk-list" id="cmdk-list" role="listbox" aria-label="Resultados"></ul>
+        <p class="cmdk-empty hidden" id="cmdk-empty">Sin resultados. Prueba con «proyectos», «whatsapp» o «tema».</p>
+        <div class="cmdk-foot" aria-hidden="true">
+            <span><kbd class="cmdk-kbd">↑</kbd><kbd class="cmdk-kbd">↓</kbd> navegar</span>
+            <span><kbd class="cmdk-kbd">Enter</kbd> abrir</span>
+        </div>
+    </dialog>
 
     <!-- Custom JS -->
     <script type="module" src="/static/app.js?v=__ASSET_VERSION__"></script>
