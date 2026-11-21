@@ -10,8 +10,9 @@ contenedores **Docker**.
 
 - **Proyectos destacados:** solo los que están desplegados: Sistema Central Toyota (Django + Machine Learning), Verificador de Precios (FastAPI/PWA), Estacionamiento IRcars (Django REST Framework), Catálogo de Accesorios (Next.js, en Vercel), RJ Cars (Node + Claude API), Nitro Garage (tienda en línea, en Vercel) y Punto de Venta para Restaurantes (Django, piloto).
 - **Certificaciones:** Google, Johns Hopkins University y Microsoft (Coursera).
-- **Simulador analítico BDC:** consola interactiva en JavaScript que reproduce los algoritmos de negocio reales (proyección de kilómetros CERT, clasificación CRT y alertas de riesgo de churn).
-- **Patrones de ingeniería:** los patrones aplicados en producción (Outbox Pattern, idempotencia, optimización de N+1, lock cooperativo en base de datos, inferencia ML con TF-IDF y seguridad por capas).
+- **Simulador de seguimiento de clientes:** reproduce en el navegador las reglas reales del motor de analítica (kilometraje estimado, tipo de cliente, riesgo de que deje de venir y qué hacer), mostradas en palabras simples.
+- **Cómo construyo mis sistemas:** cada práctica de ingeniería explicada por lo que gana el usuario, con su nombre técnico como etiqueta.
+- **Dos niveles de lectura:** cada proyecto dice primero qué resuelve y para quién; el detalle técnico va plegado en «Cómo está hecho». La sección de stack se mantiene técnica para reclutadores.
 - **Stack agrupado por área y verificado:** Backend, Frontend, Datos, Machine Learning e IA, Nube, DevOps y Negocio. Solo incluye tecnologías presentes en el código de los repositorios.
 - **Resultado medido en portada:** comparativa a escala real del tiempo de cotización (hasta 3 h → 15 min promedio).
 - **Paleta de comandos (Ctrl/⌘ + K o `/`):** salta a cualquier sección o proyecto, copia el correo, abre WhatsApp o cambia el tema. La búsqueda no distingue mayúsculas ni acentos.
