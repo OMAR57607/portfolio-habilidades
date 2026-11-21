@@ -278,11 +278,12 @@
                             Plataforma empresarial Django de 10 módulos para la operación integral de taller, citas, refacciones y pedidos especiales. En producción diaria sobre Railway.
                         </p>
                         <ul class="project-features">
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Machine Learning</strong>: inferencia de SKU desde descripción + modelo con <strong>TF-IDF (scikit-learn)</strong>, umbrales de confianza y reentrenamiento por comando.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Machine Learning</strong>: inferencia de SKU desde descripción + modelo con <strong>TF-IDF (scikit-learn)</strong>, forecasting de demanda (Holt-Winters), detección de anomalías (Isolation Forest) y clustering (KMeans).</span></li>
                             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>IA multimodal Gemini 2.5 Flash</strong>: diagnóstico por foto y extracción estructurada de PDFs a JSON, con consentimiento legal (PROFECO).</span></li>
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Arquitectura resiliente</strong>: Outbox Pattern con cola asíncrona (DLQ), idempotencia y lock cooperativo vía Redis para edición concurrente.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Arquitectura resiliente</strong>: Outbox Pattern con cola asíncrona (DLQ), idempotencia y lock cooperativo respaldado en base de datos para edición concurrente.</span></li>
                             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Rendimiento</strong>: optimización de N+1 (de 40+ queries a 3) y generación de PDF con Playwright headless + firma digital.</span></li>
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Seguridad: bloqueo anti fuerza bruta (django-axes), HSTS y tokens UUID; notificaciones Web Push y soporte PWA.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Seguridad</strong>: bloqueo anti fuerza bruta (django-axes), doble factor TOTP (django-otp), HSTS y tokens UUID; notificaciones Web Push y soporte PWA.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Calidad</strong>: más de 3,200 pruebas automatizadas y CI en GitHub Actions, con la suite corriendo también contra PostgreSQL 17.</span></li>
                         </ul>
                         <ul class="project-tags" aria-label="Tecnologías">
                             <li class="tag">Django 6</li>
@@ -290,7 +291,7 @@
                             <li class="tag">scikit-learn</li>
                             <li class="tag">Gemini AI</li>
                             <li class="tag">Playwright</li>
-                            <li class="tag">Redis</li>
+                            <li class="tag">GitHub Actions</li>
                         </ul>
                         <div class="project-links">
                             <span class="repo-lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Sistema interno · Repositorio privado</span>
@@ -311,7 +312,7 @@
                             Aplicación web instalable (PWA) de consulta y cotización de refacciones, diseñada bajo las normativas PROFECO de exhibición comercial mexicana.
                         </p>
                         <ul class="project-features">
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Búsqueda en milisegundos por SKU con FastAPI y <strong>Web Scraping</strong> anti-bot (curl_cffi + BeautifulSoup) de 4 fuentes OEM.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Búsqueda en milisegundos por SKU con FastAPI y cliente HTTP con huella TLS de navegador (<strong>curl_cffi</strong>) para fuentes detrás de Cloudflare.</span></li>
                             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>PWA con Service Worker</strong>: instalable y funcional sin conexión, con tema día/noche según zona horaria CDMX.</span></li>
                             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Cotización multi-item persistida en Supabase con <strong>idempotencia por hash</strong> y <strong>Row Level Security</strong>.</span></li>
                             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Producción en Docker (imagen endurecida, usuario no-root) sobre Railway, con monitoreo de errores en <strong>Sentry</strong>.</span></li>
@@ -320,7 +321,7 @@
                             <li class="tag">FastAPI</li>
                             <li class="tag">PWA</li>
                             <li class="tag">Supabase</li>
-                            <li class="tag">BeautifulSoup</li>
+                            <li class="tag">ReportLab</li>
                             <li class="tag">Docker</li>
                             <li class="tag">Sentry</li>
                         </ul>
@@ -404,7 +405,7 @@
                     <div class="project-content">
                         <h3 class="project-title">Fuertes Trail Puebla — Sitio Web</h3>
                         <p class="project-text">
-                            Sitio web oficial de una comunidad off-road 4x4, construido en Node.js con foco en seguridad y rendimiento. Mi único proyecto fuera del stack Python.
+                            Sitio web oficial de una comunidad off-road 4x4, construido en Node.js con foco en seguridad y rendimiento.
                         </p>
                         <ul class="project-features">
                             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Servidor <strong>Express</strong> endurecido con <strong>Helmet</strong>: CSP, anti-XSS, anti-clickjacking y anti-MIME-sniffing.</span></li>
@@ -582,7 +583,7 @@
                         <span class="pattern-index">04</span>
                     </div>
                     <h3>Concurrencia con Lock Cooperativo</h3>
-                    <p>Semáforos vía Redis para impedir que dos usuarios editen el mismo folio a la vez, con aviso visual en tiempo real.</p>
+                    <p>Bloqueo de edición respaldado en base de datos y <code>select_for_update</code> para impedir que dos usuarios editen el mismo folio a la vez, con aviso visual en modo solo lectura.</p>
                 </li>
                 <li class="pattern-card">
                     <div class="pattern-head">
@@ -608,7 +609,7 @@
             <header class="section-header">
                 <p class="section-tag"><span class="section-num">05</span> Tecnologías</p>
                 <h2 class="section-title">Habilidades &amp; stack</h2>
-                <p class="section-desc">Herramientas y tecnologías que domino para el desarrollo de software y ciencia de datos.</p>
+                <p class="section-desc">Tecnologías que uso en mis repositorios: nada en esta lista está de adorno.</p>
             </header>
 
             <!-- Skills agrupadas por área -->
@@ -618,12 +619,26 @@
                     <ul class="skill-list">
                         <li class="skill-card">Python</li>
                         <li class="skill-card">Django</li>
+                        <li class="skill-card">Django REST Framework</li>
                         <li class="skill-card">FastAPI</li>
                         <li class="skill-card">Flask</li>
+                        <li class="skill-card">Streamlit</li>
                         <li class="skill-card">Node.js</li>
                         <li class="skill-card">Express</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg> Frontend</h3>
+                    <ul class="skill-list">
                         <li class="skill-card">JavaScript</li>
-                        <li class="skill-card">Streamlit</li>
+                        <li class="skill-card">TypeScript</li>
+                        <li class="skill-card">React</li>
+                        <li class="skill-card">Next.js</li>
+                        <li class="skill-card">Tailwind CSS</li>
+                        <li class="skill-card">Alpine.js</li>
+                        <li class="skill-card">Bootstrap</li>
+                        <li class="skill-card">Chart.js</li>
+                        <li class="skill-card">Three.js</li>
                         <li class="skill-card">PWA / Service Workers</li>
                     </ul>
                 </div>
@@ -632,42 +647,49 @@
                     <ul class="skill-list">
                         <li class="skill-card">Pandas</li>
                         <li class="skill-card">NumPy</li>
-                        <li class="skill-card">OpenPyXL</li>
-                        <li class="skill-card">RStudio / R</li>
-                        <li class="skill-card">Tableau</li>
-                        <li class="skill-card">Excel Avanzado</li>
-                        <li class="skill-card">Web Scraping</li>
+                        <li class="skill-card">SQL</li>
+                        <li class="skill-card">OpenPyXL / XlsxWriter</li>
+                        <li class="skill-card">Reportes PDF (ReportLab, PyMuPDF)</li>
+                        <li class="skill-card">Web Scraping (curl_cffi)</li>
                     </ul>
                 </div>
                 <div class="skill-group">
                     <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-brain"/></svg> Machine Learning &amp; IA</h3>
                     <ul class="skill-list">
                         <li class="skill-card">scikit-learn</li>
-                        <li class="skill-card">Inferencia ML (TF-IDF)</li>
-                        <li class="skill-card">Forecasting (statsmodels)</li>
-                        <li class="skill-card">Ecosistema Gemini AI</li>
-                        <li class="skill-card">Claude AI</li>
+                        <li class="skill-card">NLP con TF-IDF</li>
+                        <li class="skill-card">Clustering (KMeans)</li>
+                        <li class="skill-card">Detección de anomalías (Isolation Forest)</li>
+                        <li class="skill-card">Forecasting Holt-Winters (statsmodels)</li>
+                        <li class="skill-card">Gemini API</li>
+                        <li class="skill-card">Claude API</li>
                     </ul>
                 </div>
                 <div class="skill-group">
                     <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg> Cloud &amp; Bases de datos</h3>
                     <ul class="skill-list">
-                        <li class="skill-card">Supabase</li>
                         <li class="skill-card">PostgreSQL</li>
+                        <li class="skill-card">Supabase (Auth, Storage, RLS)</li>
                         <li class="skill-card">SQLite</li>
                         <li class="skill-card">Railway</li>
                     </ul>
                 </div>
                 <div class="skill-group">
-                    <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg> DevOps &amp; Seguridad</h3>
+                    <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg> DevOps, Calidad &amp; Seguridad</h3>
                     <ul class="skill-list">
-                        <li class="skill-card">Docker</li>
-                        <li class="skill-card">Sentry SDK</li>
+                        <li class="skill-card">Docker / Docker Compose</li>
+                        <li class="skill-card">GitHub Actions (CI)</li>
+                        <li class="skill-card">pytest / Django tests</li>
+                        <li class="skill-card">Vitest</li>
                         <li class="skill-card">Playwright</li>
-                        <li class="skill-card">Seguridad Web (Helmet/CSP)</li>
+                        <li class="skill-card">Sentry</li>
+                        <li class="skill-card">2FA TOTP (django-otp)</li>
+                        <li class="skill-card">django-axes</li>
+                        <li class="skill-card">Helmet / CSP / Rate limiting</li>
+                        <li class="skill-card">PowerShell</li>
                     </ul>
                 </div>
-                <div class="skill-group">
+                <div class="skill-group is-wide">
                     <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-cog"/></svg> Negocio &amp; Metodología</h3>
                     <ul class="skill-list">
                         <li class="skill-card">Toyota Way</li>
@@ -676,6 +698,7 @@
                     </ul>
                 </div>
             </div>
+            <p class="skills-note"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Lista verificada contra el código de mis repositorios en GitHub: cada tecnología aparece en dependencias e imports reales. El bloque de negocio corresponde a formación interna.</p>
         </section>
 
         <!-- Services Section -->

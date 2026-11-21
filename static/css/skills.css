@@ -68,3 +68,25 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Grupo a todo el ancho (cierra la retícula sin celdas vacías) */
+.skill-group.is-wide {
+    grid-column: 1 / -1;
+}
+
+.skills-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 78ch;
+    margin-top: 18px;
+    color: var(--text-dark);
+    font-size: 0.86rem;
+    line-height: 1.55;
+}
+
+.skills-note .icon {
+    margin-top: 3px;
+    color: var(--ok-color);
+    stroke-width: 2.5;
+}
