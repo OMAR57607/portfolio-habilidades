@@ -90,3 +90,61 @@
     color: var(--ok-color);
     stroke-width: 2.5;
 }
+
+/* Certificaciones */
+.certs-title {
+    margin: 44px 0 16px;
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    padding: 20px 22px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 2px solid var(--primary-color);
+    border-radius: var(--radius-md);
+}
+
+.cert-issuer {
+    color: var(--accent-text);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.cert-name {
+    color: var(--text-main);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-wrap: balance;
+}
+
+.cert-date {
+    margin-top: auto;
+    color: var(--text-dark);
+    font-size: 0.84rem;
+}
+
+@media (max-width: 860px) {
+    .certs-grid {
+        grid-template-columns: 1fr;
+    }
+}

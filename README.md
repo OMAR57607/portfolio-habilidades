@@ -8,7 +8,8 @@ contenedores **Docker**.
 
 ## 🚀 Características
 
-- **Proyectos destacados:** Sistema Central Toyota (Django + Machine Learning), Verificador de Precios (FastAPI/PWA), Consolidador BDC (Flask/Pandas), Capturador de Evidencias (Streamlit) y el sitio Fuertes Trail Puebla (Node.js/Express).
+- **Proyectos destacados:** Sistema Central Toyota (Django + Machine Learning), Verificador de Precios (FastAPI/PWA), Consolidador BDC (Flask/Pandas), Capturador de Evidencias (Streamlit), Fuertes Trail Puebla (Node.js/Express), Estacionamiento IRcars (Django REST Framework), Catálogo de Accesorios (Next.js), RJ Cars (Node + Claude API) y Punto de Venta para Restaurantes (Django).
+- **Certificaciones:** Google, Johns Hopkins University y Microsoft (Coursera).
 - **Simulador analítico BDC:** consola interactiva en JavaScript que reproduce los algoritmos de negocio reales (proyección de kilómetros CERT, clasificación CRT y alertas de riesgo de churn).
 - **Patrones de ingeniería:** los patrones aplicados en producción (Outbox Pattern, idempotencia, optimización de N+1, lock cooperativo en base de datos, inferencia ML con TF-IDF y seguridad por capas).
 - **Stack agrupado por área y verificado:** Backend, Frontend, Datos, Machine Learning e IA, Nube, DevOps y Negocio. Solo incluye tecnologías presentes en el código de los repositorios.

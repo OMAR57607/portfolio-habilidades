@@ -248,3 +248,12 @@
         display: none;
     }
 }
+
+/* Estado distinto de "en producción" (por ejemplo, un piloto) */
+.project-status.is-pilot {
+    color: var(--warn-color);
+}
+
+.project-status.is-pilot .status-dot {
+    background-color: var(--warn-color);
+}

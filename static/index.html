@@ -259,8 +259,8 @@
         <section class="section-container" id="proyectos">
             <header class="section-header">
                 <p class="section-tag"><span class="section-num">02</span> Mis desarrollos</p>
-                <h2 class="section-title">Proyectos en producción</h2>
-                <p class="section-desc">Sistemas empresariales y de analítica implementados y optimizados para entornos de producción.</p>
+                <h2 class="section-title">Proyectos destacados</h2>
+                <p class="section-desc">Sistemas empresariales, de analítica y sitios web construidos de punta a punta, del modelo de datos al despliegue.</p>
             </header>
 
             <div class="projects-grid">
@@ -422,6 +422,131 @@
                         </ul>
                         <div class="project-links">
                             <a class="project-link demo-link" href="https://fuertes-trail-puebla-production.up.railway.app" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg> Ver demo en vivo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6: Control de estacionamiento -->
+                <article class="project-card" id="project-estacionamiento">
+                    <div class="project-meta">
+                        <span class="project-index">06</span>
+                        <span class="project-kind">Control de estacionamiento</span>
+                        <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En operación</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Controlador de Estacionamiento IRcars</h3>
+                        <p class="project-text">
+                            Sistema web de control de estacionamiento con cobro por hora y fracción proporcional, control de turnos y corte de caja con cierre ciego. Se opera desde teléfono, tableta o computadora.
+                        </p>
+                        <ul class="project-features">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Boleto por código QR</strong>: el cliente consulta su tiempo e importe en una dirección UUID no enumerable, de solo lectura y con la placa enmascarada.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Un solo motor de cobro</strong>: el importe del teléfono sale del mismo cálculo que cobra la caja; incluye pensión diaria con sus reglas de vigencia.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>API con <strong>Django REST Framework</strong> y PostgreSQL, con restricciones únicas parciales en la base.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>537 pruebas</strong> con pytest, CI en GitHub Actions y entorno con Docker Compose.</span></li>
+                        </ul>
+                        <ul class="project-tags" aria-label="Tecnologías">
+                            <li class="tag">Django</li>
+                            <li class="tag">Django REST Framework</li>
+                            <li class="tag">PostgreSQL</li>
+                            <li class="tag">pytest</li>
+                            <li class="tag">Docker Compose</li>
+                            <li class="tag">ReportLab</li>
+                        </ul>
+                        <div class="project-links">
+                            <a class="project-link" href="https://github.com/OMAR57607/estacionamiento-IRcars" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Ver código en GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 7: Catálogo para clientes -->
+                <article class="project-card" id="project-catalogo">
+                    <div class="project-meta">
+                        <span class="project-index">07</span>
+                        <span class="project-kind">Catálogo para clientes</span>
+                        <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> Desplegado en Vercel</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Catálogo de Accesorios con Visualizador</h3>
+                        <p class="project-text">
+                            Catálogo de accesorios para clientes de la agencia, con buscador global, cotización descargable en PDF y un probador con IA que monta los accesorios sobre la foto del vehículo.
+                        </p>
+                        <ul class="project-features">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Next.js 16, React 19 y TypeScript</strong> con Tailwind; precios resueltos en vivo desde Supabase con IVA calculado en un solo servicio.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Modelos 3D</strong> con Three.js (React Three Fiber), visor 360° y probador con <strong>Gemini</strong>.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Cotización con enlace de aprobación por token: el cliente aprueba o rechaza cada accesorio sin cuenta.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Editor protegido con sesión firmada y <strong>2FA TOTP</strong>; 89 pruebas con Vitest y CI de typecheck, pruebas y build.</span></li>
+                        </ul>
+                        <ul class="project-tags" aria-label="Tecnologías">
+                            <li class="tag">Next.js</li>
+                            <li class="tag">React</li>
+                            <li class="tag">TypeScript</li>
+                            <li class="tag">Tailwind CSS</li>
+                            <li class="tag">Three.js</li>
+                            <li class="tag">Supabase</li>
+                            <li class="tag">Vitest</li>
+                        </ul>
+                        <div class="project-links">
+                            <span class="repo-lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Repositorio privado</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 8: Sitio web con IA -->
+                <article class="project-card" id="project-rjcars">
+                    <div class="project-meta">
+                        <span class="project-index">08</span>
+                        <span class="project-kind">Sitio web con IA</span>
+                        <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">RJ Cars — Venta de Autos Seminuevos</h3>
+                        <p class="project-text">
+                            Sitio de venta y consignación de autos seminuevos en Tehuacán, Puebla: catálogo con búsqueda, filtros y panel de administración, servido por un servidor Node sin frameworks.
+                        </p>
+                        <ul class="project-features">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Estimador de precio con Claude API</strong> y búsqueda web, integrado al panel de administración.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Servidor HTTP propio con API REST, sesión firmada con <strong>HMAC-SHA256</strong>, rate limiting y Content-Security-Policy.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Panel de inventario con subida de fotos a Cloudinary y generador de anuncios para Marketplace, MercadoLibre y WhatsApp.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Frontend en JavaScript modular, accesible y con SEO (Open Graph y datos estructurados).</span></li>
+                        </ul>
+                        <ul class="project-tags" aria-label="Tecnologías">
+                            <li class="tag">Node.js</li>
+                            <li class="tag">JavaScript</li>
+                            <li class="tag">Claude API</li>
+                            <li class="tag">Cloudinary</li>
+                            <li class="tag">Railway</li>
+                        </ul>
+                        <div class="project-links">
+                            <span class="repo-lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Repositorio privado</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 9: Punto de venta -->
+                <article class="project-card" id="project-pos">
+                    <div class="project-meta">
+                        <span class="project-index">09</span>
+                        <span class="project-kind">Punto de venta</span>
+                        <span class="project-status is-pilot"><span class="status-dot" aria-hidden="true"></span> Piloto</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Punto de Venta para Restaurantes</h3>
+                        <p class="project-text">
+                            Sistema web para administrar la venta de comida en varias marcas y varias sucursales desde un solo sitio: funciona en celular, tableta y PC.
+                        </p>
+                        <ul class="project-features">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Módulos de <strong>venta, órdenes, cocina, caja y reportes</strong>, con tablero de comandas y ticket imprimible de 80 mm.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Matriz de permisos</strong> por rol (propietario, gerente, cajero, mesero, cocina) definida en un único lugar.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Búsqueda del menú sin distinguir mayúsculas ni acentos; corte de caja con diferencia.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Multi-marca y multi-sucursal sobre Django y PostgreSQL, listo para Railway.</span></li>
+                        </ul>
+                        <ul class="project-tags" aria-label="Tecnologías">
+                            <li class="tag">Django</li>
+                            <li class="tag">PostgreSQL</li>
+                            <li class="tag">Railway</li>
+                        </ul>
+                        <div class="project-links">
+                            <span class="repo-lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Repositorio privado</span>
                         </div>
                     </div>
                 </article>
@@ -648,6 +773,8 @@
                         <li class="skill-card">Pandas</li>
                         <li class="skill-card">NumPy</li>
                         <li class="skill-card">SQL</li>
+                        <li class="skill-card">R / RStudio</li>
+                        <li class="skill-card">Tableau</li>
                         <li class="skill-card">OpenPyXL / XlsxWriter</li>
                         <li class="skill-card">Reportes PDF (ReportLab, PyMuPDF)</li>
                         <li class="skill-card">Web Scraping (curl_cffi)</li>
@@ -698,7 +825,26 @@
                     </ul>
                 </div>
             </div>
-            <p class="skills-note"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Lista verificada contra el código de mis repositorios en GitHub: cada tecnología aparece en dependencias e imports reales. El bloque de negocio corresponde a formación interna.</p>
+            <p class="skills-note"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Lista verificada contra el código de mis repositorios en GitHub. R y Tableau provienen de formación certificada; el bloque de negocio, de formación interna.</p>
+
+            <h3 class="certs-title">Certificaciones</h3>
+            <ul class="certs-grid">
+                <li class="cert-card">
+                    <span class="cert-issuer">Google · Coursera</span>
+                    <span class="cert-name">Análisis de datos con programación en R</span>
+                    <span class="cert-date">Abril 2023</span>
+                </li>
+                <li class="cert-card">
+                    <span class="cert-issuer">Johns Hopkins University · Coursera</span>
+                    <span class="cert-name">The Data Scientist’s Toolbox</span>
+                    <span class="cert-date">Junio 2023</span>
+                </li>
+                <li class="cert-card">
+                    <span class="cert-issuer">Microsoft · Coursera</span>
+                    <span class="cert-name">Introduction to Microsoft Azure Cloud Services</span>
+                    <span class="cert-date">Septiembre 2025</span>
+                </li>
+            </ul>
         </section>
 
         <!-- Services Section -->

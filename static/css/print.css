@@ -156,3 +156,11 @@ body::after,
 .service-icon {
     margin-bottom: 8pt;
 }
+
+.certs-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cert-card {
+    break-inside: avoid;
+}
