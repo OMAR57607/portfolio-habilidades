@@ -1,9 +1,10 @@
 // Umbrales del índice de churn (días transcurridos / DERT promedio, en %).
+// `levelClass` elige el color en simulator.css, así sigue al tema activo.
 const CHURN_LEVELS = [
-    { min: 150, label: '1. CHURN CONFIRMADO', colorClass: 'text-red', dialColor: '#ef4444' },
-    { min: 100, label: '2. RIESGO CRÍTICO', colorClass: 'text-red', dialColor: '#f97316' },
-    { min: 80, label: '3. RIESGO ALTO', colorClass: 'text-yellow', dialColor: '#eab308' },
-    { min: -Infinity, label: '4. SANO', colorClass: 'text-green', dialColor: '#10b981' },
+    { min: 150, label: '1. CHURN CONFIRMADO', levelClass: 'is-danger' },
+    { min: 100, label: '2. RIESGO CRÍTICO', levelClass: 'is-orange' },
+    { min: 80, label: '3. RIESGO ALTO', levelClass: 'is-warning' },
+    { min: -Infinity, label: '4. SANO', levelClass: 'is-healthy' },
 ];
 
 // Variante visual de la insignia según el prefijo numérico de la estrategia.
@@ -77,14 +78,17 @@ function renderResults(results) {
     if (dialFill) {
         // El anillo se llena hasta 100% aunque el índice lo supere.
         dialFill.setAttribute('stroke-dashoffset', String(100 - Math.min(results.churnPct, 100)));
-        dialFill.style.stroke = results.churn.dialColor;
-        dialFill.style.filter = `drop-shadow(0 0 5px ${results.churn.dialColor})`;
+    }
+
+    const dial = document.getElementById('churn-dial');
+    if (dial) {
+        dial.className = `churn-dial-container ${results.churn.levelClass}`;
     }
 
     const churnAlert = document.getElementById('out-churn-alert');
     if (churnAlert) {
         churnAlert.textContent = results.churn.label;
-        churnAlert.className = `churn-alert-tag ${results.churn.colorClass}`;
+        churnAlert.className = `churn-alert-tag ${results.churn.levelClass}`;
     }
 
     const outStrategy = document.getElementById('out-strategy');
@@ -95,22 +99,34 @@ function renderResults(results) {
     }
 }
 
+// Lee el formulario saneando la entrada: nunca llegan NaN ni negativos al motor.
+function readInputs() {
+    const number = (id, fallback, min) => {
+        const value = parseFloat(document.getElementById(id).value);
+        return Number.isFinite(value) ? Math.max(value, min) : fallback;
+    };
+
+    return {
+        kmActual: number('input-km', 0, 0),
+        diasSinVenir: Math.round(number('input-days', 0, 0)),
+        dertPromedio: Math.round(number('input-interval', 180, 1)),
+        modelo: document.getElementById('select-model').value,
+        isTdm: document.getElementById('check-tdm').checked,
+        isLocal: document.getElementById('check-local').checked,
+    };
+}
+
 export function initSimulator() {
     const form = document.getElementById('bdc-sim-form');
     const outResults = document.getElementById('sim-results');
     if (!form) return;
 
+    let flashTimer = null;
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const results = computeKpis({
-            kmActual: parseFloat(document.getElementById('input-km').value) || 0,
-            diasSinVenir: parseInt(document.getElementById('input-days').value, 10) || 0,
-            dertPromedio: parseInt(document.getElementById('input-interval').value, 10) || 180,
-            modelo: document.getElementById('select-model').value,
-            isTdm: document.getElementById('check-tdm').checked,
-            isLocal: document.getElementById('check-local').checked,
-        });
+        const results = computeKpis(readInputs());
 
         if (!outResults) {
             renderResults(results);
@@ -119,9 +135,16 @@ export function initSimulator() {
 
         // Parpadeo breve del panel para que se note que hubo un recálculo.
         outResults.classList.add('is-recalculating');
-        setTimeout(() => {
+        clearTimeout(flashTimer);
+        flashTimer = setTimeout(() => {
             renderResults(results);
             outResults.classList.remove('is-recalculating');
         }, 200);
     });
+
+    // Recalcula en vivo al editar cualquier dato, sin esperar al botón.
+    form.addEventListener('input', () => renderResults(computeKpis(readInputs())));
+
+    // La salida inicial sale del mismo motor: el HTML nunca se desincroniza.
+    renderResults(computeKpis(readInputs()));
 }

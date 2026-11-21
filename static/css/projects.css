@@ -1,215 +1,264 @@
 /* Grilla de Proyectos */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .project-card {
-    background: var(--card-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 35px;
-    display: flex;
-    gap: 30px;
-    box-shadow: var(--shadow-premium);
-    transition: var(--transition-smooth);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
     overflow: hidden;
+    transition: border-color var(--transition-smooth), transform var(--transition-smooth),
+        box-shadow var(--transition-smooth);
 }
 
+/* Filo rojo que se dibuja al pasar el cursor */
 .project-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(235, 10, 30, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
-    opacity: 0;
-    transition: var(--transition-smooth);
-    pointer-events: none;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s var(--ease-out);
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--border-glow);
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 25px -10px rgba(235, 10, 30, 0.1);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-premium);
+    transform: translateY(-3px);
 }
 
 .project-card:hover::before {
-    opacity: 1;
+    transform: scaleX(1);
 }
 
-.project-icon {
-    font-size: 2.2rem;
-    color: var(--accent-text);
-    background: rgba(235, 10, 30, 0.08);
-    border: 1px solid rgba(235, 10, 30, 0.15);
-    width: 70px;
-    height: 70px;
-    border-radius: 16px;
+/* El proyecto principal ocupa todo el ancho */
+.project-card.is-featured {
+    grid-column: 1 / -1;
+}
+
+.project-meta {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    gap: 14px;
+    padding: 14px clamp(20px, 3vw, 30px);
+    border-bottom: 1px solid var(--border-color);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.project-index {
+    color: var(--accent-text);
+    font-weight: 700;
+}
+
+.project-kind {
+    color: var(--text-dark);
+}
+
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    color: var(--ok-color);
+    white-space: nowrap;
 }
 
 .project-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    position: relative;
-    z-index: 1;
+    flex: 1;
+    padding: clamp(22px, 3vw, 30px);
 }
 
 .project-title {
-    font-family: var(--font-title);
-    font-size: 1.5rem;
-    font-weight: 700;
     margin-bottom: 12px;
+    font-family: var(--font-title);
+    font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+.is-featured .project-title {
+    font-size: clamp(1.4rem, 3vw, 2rem);
 }
 
 .project-text {
+    max-width: 70ch;
+    margin-bottom: 22px;
     color: var(--text-muted);
     font-size: 0.98rem;
-    margin-bottom: 20px;
+    text-wrap: pretty;
+}
+
+.is-featured .project-text {
+    font-size: 1.05rem;
 }
 
 .project-features {
-    list-style: none;
+    display: grid;
+    gap: 12px;
     margin-bottom: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+}
+
+.is-featured .project-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 36px;
 }
 
 .project-features li {
-    font-size: 0.92rem;
-    color: var(--text-muted);
     display: flex;
     align-items: flex-start;
     gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
 }
 
-.project-features li i {
+.project-features li .icon {
+    margin-top: 4px;
     color: var(--accent-text);
     font-size: 0.85rem;
-    margin-top: 4px;
+    stroke-width: 2.5;
 }
 
 .project-features li strong {
     color: var(--text-main);
+    font-weight: 600;
 }
 
 .project-impact {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    background: rgba(16, 185, 129, 0.08);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 8px;
+    margin-bottom: 22px;
     padding: 12px 14px;
-    margin-bottom: 18px;
-    font-size: 0.87rem;
+    background: var(--ok-soft);
+    border: 1px solid var(--ok-border);
+    border-radius: var(--radius-md);
+    color: var(--text-main);
+    font-size: 0.88rem;
     line-height: 1.5;
-    color: #34d399;
 }
 
-.project-impact i {
+.project-impact .icon {
     margin-top: 3px;
+    color: var(--ok-color);
+}
+
+.project-impact strong {
+    color: var(--ok-color);
 }
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
+    gap: 6px;
+    margin-top: auto;
+    margin-bottom: 22px;
 }
 
 .project-tags .tag {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
     padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
     color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 500;
 }
 
 .project-links {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
-    flex-wrap: wrap;
-    font-size: 0.85rem;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.88rem;
     font-weight: 600;
 }
 
 .repo-lock {
-    color: var(--text-dark);
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.02);
-    padding: 6px 12px;
-    border-radius: 6px;
-    border: 1px dashed var(--border-color);
+    gap: 8px;
+    min-height: 40px;
+    color: var(--text-dark);
+    font-weight: 500;
 }
 
 .project-link {
-    color: var(--text-main);
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.02);
-    padding: 6px 12px;
-    border-radius: 6px;
-    border: 1px solid var(--border-color);
+    gap: 8px;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    color: var(--text-main);
     text-decoration: none;
-    transition: var(--transition-smooth);
+    transition: border-color var(--transition-smooth), background-color var(--transition-smooth),
+        color var(--transition-smooth);
 }
 
 .project-link:hover {
-    border-color: var(--border-glow);
-    background: rgba(235, 10, 30, 0.08);
-    color: var(--accent-text);
+    border-color: var(--text-main);
 }
 
 .demo-link {
-    color: #34d399;
-    border-color: rgba(16, 185, 129, 0.25);
+    border-color: var(--ok-border);
+    color: var(--ok-color);
 }
 
 .demo-link:hover {
-    border-color: rgba(16, 185, 129, 0.5);
-    background: rgba(16, 185, 129, 0.1);
-    color: #34d399;
+    background: var(--ok-soft);
+    border-color: var(--ok-color);
 }
 
 /* Responsive adjustments */
-@media (min-width: 768px) {
+@media (max-width: 860px) {
     .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .is-featured .project-features {
         grid-template-columns: 1fr;
     }
 }
 
-@media (min-width: 992px) {
-    .projects-grid {
-        grid-template-columns: 1fr 1fr;
+@media (max-width: 480px) {
+    .project-kind {
+        display: none;
     }
 }
 
-@media (max-width: 767px) {
-    .project-card {
-        flex-direction: column;
-        padding: 24px;
-        gap: 20px;
-    }
-    
-    .project-icon {
-        width: 60px;
-        height: 60px;
-    }
+/* Estado distinto de "en producción" (por ejemplo, un piloto) */
+.project-status.is-pilot {
+    color: var(--warn-color);
+}
+
+.project-status.is-pilot .status-dot {
+    background-color: var(--warn-color);
+}
+
+/* Si la última tarjeta queda sola en su fila, ocupa todo el ancho */
+.project-card:last-child:nth-child(even) {
+    grid-column: 1 / -1;
 }

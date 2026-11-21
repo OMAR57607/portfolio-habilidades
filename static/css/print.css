@@ -1,0 +1,166 @@
+/* Impresión / "Guardar como PDF": versión limpia en papel, tipo hoja de vida. */
+@page {
+    margin: 16mm 14mm;
+}
+
+:root,
+.light-theme {
+    --bg-color: #fff;
+    --bg-raised: #fff;
+    --card-bg: #fff;
+    --card-bg-hover: #fff;
+    --border-color: #d4d4d0;
+    --border-strong: #a3a39e;
+    --border-glow: #d4d4d0;
+    --primary-soft: #fff;
+    --text-main: #000;
+    --text-muted: #2b2b29;
+    --text-dark: #4a4a46;
+    --accent-text: #b00716;
+    --ok-color: #0b6b43;
+    --ok-soft: #fff;
+    --ok-border: #a3a39e;
+    --shadow-premium: none;
+    --shadow-glow: none;
+}
+
+body {
+    font-size: 10.5pt;
+}
+
+body::before,
+body::after,
+.main-header,
+.scroll-indicator,
+.skip-link,
+.hero-actions,
+#simulador,
+.contact-form-container,
+.services-cta .btn,
+.footer-top,
+.contact-link-arrow {
+    display: none !important;
+}
+
+/* Nada queda oculto por animaciones de entrada */
+.fade-in-up,
+.fade-in-hidden {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.hero-section {
+    min-height: 0;
+    padding-top: 0;
+    grid-template-columns: 1.2fr 1fr;
+}
+
+.hero-name {
+    font-size: 34pt;
+}
+
+.section-container {
+    padding-top: 22pt;
+}
+
+.section-title {
+    font-size: 17pt;
+}
+
+.contact-wrapper {
+    grid-template-columns: 1fr;
+}
+
+.project-card,
+.service-card,
+.pattern-card,
+.skill-group,
+.about-highlight-item,
+.impact-panel,
+.section-header {
+    break-inside: avoid;
+}
+
+.section-header {
+    break-after: avoid;
+}
+
+/* Los enlaces externos muestran su destino en papel */
+.project-link[href^="http"]::after {
+    content: ' (' attr(href) ')';
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+.main-footer {
+    margin-top: 24pt;
+    background: none;
+}
+
+/* El papel A4 cae por debajo de los puntos de corte móviles: se restauran
+   las columnas para no desperdiciar hojas. */
+.about-wrapper {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 20pt;
+}
+
+.projects-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10pt;
+}
+
+.is-featured .project-features {
+    grid-template-columns: 1fr 1fr;
+}
+
+.services-grid,
+.patterns-grid,
+.skills-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-content,
+.service-card,
+.pattern-card,
+.skill-group {
+    padding: 12pt;
+}
+
+.project-features li,
+.project-text,
+.service-card p,
+.pattern-card p {
+    font-size: 9pt;
+}
+
+.impact-panel {
+    max-width: none;
+}
+
+.stat-value {
+    font-size: 15pt;
+    white-space: normal;
+}
+
+.compare-row.is-now .compare-value {
+    font-size: 20pt;
+}
+
+.project-link {
+    flex-wrap: wrap;
+    padding: 0;
+    border: none;
+}
+
+.service-icon {
+    margin-bottom: 8pt;
+}
+
+.certs-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cert-card {
+    break-inside: avoid;
+}

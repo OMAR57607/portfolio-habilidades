@@ -1,145 +1,114 @@
+/* Fuentes autoalojadas (licencia SIL OFL 1.1). `swap` evita texto invisible. */
+@font-face {
+    font-family: 'Archivo Expanded';
+    src: url('../fonts/archivo-expanded-latin.woff2') format('woff2');
+    font-weight: 500 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/inter-latin.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/jetbrains-mono-latin.woff2') format('woff2');
+    font-weight: 100 800;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Variables CSS */
 :root {
-    --bg-color: #08080a;
-    --card-bg: rgba(18, 18, 24, 0.65);
-    --border-color: rgba(255, 255, 255, 0.06);
-    --border-glow: rgba(235, 10, 30, 0.15);
-    
+    color-scheme: dark;
+
+    --bg-color: #0b0b0c;
+    --bg-raised: #111113;
+    --card-bg: #141416;
+    --card-bg-hover: #18181b;
+    --border-color: rgba(255, 255, 255, 0.09);
+    --border-strong: rgba(255, 255, 255, 0.18);
+    --border-glow: rgba(235, 10, 30, 0.45);
+    --grid-line: rgba(255, 255, 255, 0.035);
+
     --primary-color: #eb0a1e;
     --primary-glow: rgba(235, 10, 30, 0.35);
     --primary-hover: #ff2a3c;
-    
-    --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
-    /* #6b7280 daba 3.7:1 sobre el fondo oscuro; este tono cumple AA (6.4:1). */
-    --text-dark: #8b93a0;
+    --primary-soft: rgba(235, 10, 30, 0.1);
+
+    --text-main: #f4f3f0;
+    --text-muted: #adaca7;
+    /* Texto terciario: 5.9:1 sobre el fondo oscuro (cumple AA). */
+    --text-dark: #8f8e89;
 
     /* Rojo de marca legible como texto. --primary-color se reserva para
        rellenos y bordes, donde el contraste no aplica igual. */
-    --accent-text: #ff5468;
+    --accent-text: #ff5a6a;
 
-    --font-title: 'Outfit', 'Inter', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    
-    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    --glass-blur: blur(14px);
-    --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
-    --shadow-glow: 0 0 25px -5px rgba(235, 10, 30, 0.2);
+    /* Colores de estado (simulador, impacto, "en producción") */
+    --ok-color: #3ecf8e;
+    --ok-soft: rgba(62, 207, 142, 0.1);
+    --ok-border: rgba(62, 207, 142, 0.28);
+    --warn-color: #fbbf24;
+    --danger-color: #ff6b6b;
+    --orange-color: #fb923c;
+    --violet-color: #a78bfa;
+
+    --font-title: 'Archivo Expanded', 'Archivo', 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: 0.25s var(--ease-out);
+    --shadow-premium: 0 24px 60px -30px rgba(0, 0, 0, 0.9);
+    --shadow-glow: 0 10px 30px -12px rgba(235, 10, 30, 0.55);
+
+    --page-max: 1180px;
+    --page-gutter: clamp(20px, 4vw, 32px);
+    --header-h: 68px;
 }
 
 /* Light Theme Variables */
 .light-theme {
-    --bg-color: #f7f8fa;
-    --card-bg: rgba(255, 255, 255, 0.75);
-    --border-color: rgba(0, 0, 0, 0.08);
-    --border-glow: rgba(235, 10, 30, 0.2);
-    
-    --text-main: #111827;
-    --text-muted: #4b5563;
-    /* #9ca3af daba 2.4:1 sobre el fondo claro; este tono cumple AA (5.6:1). */
-    --text-dark: #5b6472;
+    color-scheme: light;
+
+    --bg-color: #f6f5f1;
+    --bg-raised: #fbfaf7;
+    --card-bg: #ffffff;
+    --card-bg-hover: #ffffff;
+    --border-color: rgba(20, 20, 19, 0.11);
+    --border-strong: rgba(20, 20, 19, 0.24);
+    --border-glow: rgba(235, 10, 30, 0.4);
+    --grid-line: rgba(20, 20, 19, 0.045);
+
+    --primary-soft: rgba(235, 10, 30, 0.07);
+    --primary-glow: rgba(235, 10, 30, 0.2);
+
+    --text-main: #141413;
+    --text-muted: #4f4e49;
+    /* Texto terciario: 5.2:1 sobre el fondo claro (cumple AA). */
+    --text-dark: #66655f;
 
     /* Sobre fondo claro el rojo de marca necesita oscurecerse para ser legible. */
     --accent-text: #c00818;
 
-    --primary-color: #eb0a1e;
-    --primary-glow: rgba(235, 10, 30, 0.2);
-    --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
-}
+    --ok-color: #0b7a4b;
+    --ok-soft: rgba(11, 122, 75, 0.08);
+    --ok-border: rgba(11, 122, 75, 0.28);
+    --warn-color: #a45a05;
+    --danger-color: #c00818;
+    --orange-color: #c2410c;
+    --violet-color: #6d28d9;
 
-.light-theme body {
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px) !important;
-}
-
-.light-theme .blob-bg {
-    opacity: 0.06;
-}
-
-.light-theme .theme-toggle {
-    background: rgba(0, 0, 0, 0.04);
-    color: #111827;
-    border-color: rgba(0, 0, 0, 0.08);
-}
-
-.light-theme .theme-toggle:hover {
-    background: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0.15);
-    color: var(--primary-color);
-}
-
-.light-theme .contact-link-item {
-    background: rgba(0, 0, 0, 0.02);
-}
-
-.light-theme .contact-link-item:hover {
-    background: rgba(0, 0, 0, 0.04);
-}
-
-.light-theme .skill-card {
-    background: rgba(255, 255, 255, 0.8);
-}
-
-.light-theme .btn-secondary {
-    background-color: rgba(0, 0, 0, 0.02);
-    color: var(--text-main);
-}
-
-.light-theme .btn-secondary:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.light-theme .simulator-card-header {
-    background: rgba(0, 0, 0, 0.03);
-}
-
-.light-theme .main-header {
-    background: rgba(247, 248, 250, 0.78);
-}
-
-.light-theme .highlight-name {
-    background: linear-gradient(135deg, #111827 30%, var(--primary-color) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.light-theme .theme-dropdown {
-    background: rgba(255, 255, 255, 0.97);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
-
-.light-theme .theme-dropdown-item:hover {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-.light-theme .nav-menu.mobile-open {
-    background: #f7f8fa;
-}
-
-.light-theme .contact-btn {
-    background: rgba(0, 0, 0, 0.04);
-}
-
-.light-theme .contact-btn:hover {
-    background: var(--primary-color);
-    color: #fff;
-}
-
-.light-theme .mobile-toggle {
-    color: var(--text-main);
-}
-
-.light-theme .about-highlight-item,
-.light-theme .sim-term {
-    background: rgba(0, 0, 0, 0.03);
-}
-
-.light-theme .project-impact {
-    color: #047857;
-    background: rgba(16, 185, 129, 0.1);
-}
-
-.light-theme .stat-note i {
-    color: #059669;
+    --shadow-premium: 0 24px 50px -32px rgba(20, 20, 19, 0.35);
+    --shadow-glow: 0 10px 26px -14px rgba(235, 10, 30, 0.5);
 }

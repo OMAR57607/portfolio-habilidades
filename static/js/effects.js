@@ -1,18 +1,38 @@
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-// Grado máximo de inclinación del efecto 3D.
-const TILT_DEG = 6;
+// Scroll a partir del cual la cabecera gana fondo translúcido.
+const HEADER_SCROLL_THRESHOLD = 12;
+
+// Elementos que aparecen al entrar en pantalla.
+const REVEAL_SELECTOR = [
+    '.section-header',
+    '.about-story',
+    '.about-highlights',
+    '.project-card',
+    '.sim-glossary',
+    '.simulator-card',
+    '.simulator-results',
+    '.patterns-grid',
+    '.skills-grid',
+    '.services-grid',
+    '.services-cta',
+    '.contact-info',
+    '.contact-form-container',
+].join(', ');
 
 function initScrollProgress() {
     const scrollIndicator = document.getElementById('scroll-indicator');
-    if (!scrollIndicator) return;
+    const header = document.getElementById('header-nav');
+    if (!scrollIndicator && !header) return;
 
     let ticking = false;
 
     const update = () => {
         const scrollable = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-        scrollIndicator.style.width = `${scrolled}%`;
+        const progress = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+        // transform en vez de width: se compone en GPU y no provoca reflow.
+        if (scrollIndicator) scrollIndicator.style.transform = `scaleX(${progress})`;
+        header?.classList.toggle('is-scrolled', window.scrollY > HEADER_SCROLL_THRESHOLD);
         ticking = false;
     };
 
@@ -28,7 +48,7 @@ function initScrollProgress() {
 }
 
 function initScrollReveal() {
-    const elementsToAnimate = document.querySelectorAll('.project-card, .glass-panel, .section-header');
+    const elementsToAnimate = document.querySelectorAll(REVEAL_SELECTOR);
 
     // Sin IntersectionObserver o con movimiento reducido, el contenido se
     // muestra tal cual: nunca se queda invisible.
@@ -41,43 +61,16 @@ function initScrollReveal() {
                 obs.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
     elementsToAnimate.forEach((el) => {
         el.classList.add('fade-in-hidden');
         observer.observe(el);
     });
-}
 
-function initTilt() {
-    const supportsHover = window.matchMedia('(hover: hover)').matches;
-    if (!supportsHover || reducedMotion.matches) return;
-
-    document.querySelectorAll('.project-card, .simulator-card, .simulator-results').forEach((card) => {
-        let frame = null;
-
-        card.addEventListener('mousemove', (e) => {
-            if (frame) return;
-            frame = requestAnimationFrame(() => {
-                frame = null;
-                const rect = card.getBoundingClientRect();
-                const rotateX = ((rect.height / 2 - (e.clientY - rect.top)) / (rect.height / 2)) * TILT_DEG;
-                const rotateY = (((e.clientX - rect.left) - rect.width / 2) / (rect.width / 2)) * TILT_DEG;
-
-                card.style.transition = 'transform 0.08s ease-out';
-                card.style.transform =
-                    `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px) scale(1.01)`;
-            });
-        });
-
-        card.addEventListener('mouseleave', () => {
-            if (frame) {
-                cancelAnimationFrame(frame);
-                frame = null;
-            }
-            card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
-        });
+    // Al imprimir no hay scroll: todo debe estar visible.
+    window.addEventListener('beforeprint', () => {
+        elementsToAnimate.forEach((el) => el.classList.add('fade-in-visible'));
     });
 }
 
@@ -110,6 +103,5 @@ function initActiveSection() {
 export function initEffects() {
     initScrollProgress();
     initScrollReveal();
-    initTilt();
     initActiveSection();
 }
