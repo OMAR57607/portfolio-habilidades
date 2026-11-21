@@ -16,7 +16,7 @@
     --text-main: #000;
     --text-muted: #2b2b29;
     --text-dark: #4a4a46;
-    --accent-text: #b00716;
+    --accent-text: #6b3d00;
     --ok-color: #0b6b43;
     --ok-soft: #fff;
     --ok-border: #a3a39e;
@@ -29,6 +29,8 @@ body {
 }
 
 body::before,
+.impact-panel::before,
+.main-footer::before,
 .aurora,
 .grain,
 .marquee,
@@ -171,8 +173,8 @@ body::before,
 
 .highlight-name {
     background: none;
-    color: #b00716;
-    -webkit-text-fill-color: #b00716;
+    color: #10242a;
+    -webkit-text-fill-color: #10242a;
 }
 
 .hero-word {

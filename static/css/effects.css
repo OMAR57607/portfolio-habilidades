@@ -2,7 +2,7 @@
    portada; aquí solo hay atmósfera quieta, respuesta al cursor y la transición
    de tema. */
 
-/* ---------- Aurora de marca ---------- */
+/* ---------- Luz de fondo: ámbar de taller y un frío tomado del emblema ---------- */
 .aurora {
     position: absolute;
     inset: 0 0 auto 0;
@@ -25,21 +25,13 @@
 .aurora-blob.is-a {
     top: -420px;
     right: -180px;
-    background: radial-gradient(circle, rgba(235, 10, 30, 0.3) 0%, rgba(235, 10, 30, 0.08) 40%, transparent 68%);
+    background: radial-gradient(circle, rgb(var(--primary-rgb) / 0.2) 0%, rgb(var(--primary-rgb) / 0.05) 40%, transparent 68%);
 }
 
 .aurora-blob.is-b {
     top: -260px;
     left: -340px;
-    background: radial-gradient(circle, rgba(255, 122, 69, 0.14) 0%, rgba(255, 122, 69, 0.04) 42%, transparent 68%);
-}
-
-.light-theme .aurora-blob.is-a {
-    background: radial-gradient(circle, rgba(235, 10, 30, 0.16) 0%, rgba(235, 10, 30, 0.04) 40%, transparent 68%);
-}
-
-.light-theme .aurora-blob.is-b {
-    background: radial-gradient(circle, rgba(255, 122, 69, 0.14) 0%, rgba(255, 122, 69, 0.03) 42%, transparent 68%);
+    background: radial-gradient(circle, rgb(var(--glow-cool-rgb) / 0.16) 0%, rgb(var(--glow-cool-rgb) / 0.04) 42%, transparent 68%);
 }
 
 /* ---------- Grano: quita el aspecto plano de los degradados ---------- */
@@ -68,7 +60,7 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(235, 10, 30, 0.13), transparent 62%);
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(var(--primary-rgb) / 0.12), transparent 62%);
     opacity: 0;
     transition: opacity 0.35s ease-out;
     pointer-events: none;

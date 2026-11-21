@@ -42,7 +42,7 @@
 .service-card:hover .service-icon,
 .pattern-card:hover .service-icon {
     background: var(--primary-color);
-    color: #fff;
+    color: var(--on-primary);
 }
 
 .pattern-head {

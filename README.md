@@ -16,6 +16,7 @@ contenedores **Docker**.
 - **Resultado medido en portada:** comparativa a escala real del tiempo de cotización (hasta 3 h → 15 min promedio).
 - **Paleta de comandos (Ctrl/⌘ + K o `/`):** salta a cualquier sección o proyecto, copia el correo, abre WhatsApp o cambia el tema. La búsqueda no distingue mayúsculas ni acentos.
 - **Movimiento con intención:** un solo momento orquestado en la portada (entrada del nombre, barras y conteo de cifras), cápsula de navegación flotante, luz bajo el cursor en las fichas de proyecto y cambio de tema con revelado circular. Sin animaciones en bucle; todo se apaga con `prefers-reduced-motion` y el contenido es visible sin depender del scroll.
+- **Identidad «plano de taller»:** azul petróleo tomado del emblema con retícula de plano técnico, ámbar de la señalización de seguridad como acento y su franja diagonal como único adorno. El tema claro es el papel verdoso de una orden de servicio. Todos los colores viven en tokens de `variables.css`.
 - **Temas claro / oscuro / sistema:** persistidos en `localStorage` y aplicados antes del primer pintado, sin parpadeo.
 - **Accesible y respetuoso del movimiento:** navegación por teclado, enlace de salto, regiones `aria-live` y soporte de `prefers-reduced-motion`.
 - **Sin terceros:** fuentes e iconos autoalojados; el sitio no carga nada de CDNs externos.

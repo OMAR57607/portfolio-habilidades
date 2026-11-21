@@ -58,7 +58,7 @@ ol {
 
 ::selection {
     background: var(--primary-color);
-    color: #fff;
+    color: var(--on-primary);
 }
 
 /* Iconos SVG del sprite (static/icons.svg). Heredan color y tamaño del texto. */
@@ -89,7 +89,7 @@ ol {
     padding: 10px 18px;
     border-radius: var(--radius-md);
     background: var(--primary-color);
-    color: #fff;
+    color: var(--on-primary);
     font-weight: 700;
     text-decoration: none;
     transform: translateY(-200%);
@@ -174,7 +174,7 @@ ol {
 
 .btn-primary {
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--on-primary);
     border-color: var(--primary-color);
 }
 
@@ -328,8 +328,15 @@ ol {
 /* Footer */
 .main-footer {
     margin-top: clamp(72px, 10vw, 120px);
-    border-top: 1px solid var(--border-color);
     background: var(--bg-raised);
+}
+
+/* La franja de señalización abre el pie */
+.main-footer::before {
+    content: '';
+    display: block;
+    height: 6px;
+    background: var(--hazard);
 }
 
 .footer-container {

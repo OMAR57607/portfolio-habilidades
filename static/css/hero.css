@@ -75,7 +75,7 @@
 }
 
 .highlight-name {
-    background-image: linear-gradient(100deg, #ff3b4e 0%, var(--primary-color) 48%, var(--ember-color) 100%);
+    background-image: linear-gradient(100deg, var(--display-from) 0%, var(--display-to) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -128,6 +128,15 @@
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-premium), 0 0 80px -40px var(--primary-glow);
+    overflow: hidden;
+}
+
+/* Franja de señalización del taller: remata el panel de resultados */
+.impact-panel::before {
+    content: '';
+    display: block;
+    height: 6px;
+    background: var(--hazard);
 }
 
 .impact-panel-head {

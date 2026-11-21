@@ -48,14 +48,14 @@
     background: var(--card-bg);
     border: 1px solid var(--border-strong);
     border-radius: 18px;
-    box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.85), 0 0 0 1px var(--border-color);
+    box-shadow: var(--shadow-premium), 0 0 0 1px var(--border-color);
     color: var(--text-main);
     overflow: hidden;
     animation: cmdkIn 0.2s var(--ease-out);
 }
 
 .cmdk::backdrop {
-    background: rgba(5, 5, 6, 0.6);
+    background: var(--scrim);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
 }

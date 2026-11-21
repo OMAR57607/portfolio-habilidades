@@ -1,9 +1,9 @@
 /* Animaciones y transiciones */
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(62, 207, 142, 0.55); }
-    70% { box-shadow: 0 0 0 7px rgba(62, 207, 142, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(62, 207, 142, 0); }
+    0% { box-shadow: 0 0 0 0 rgb(var(--ok-rgb) / 0.55); }
+    70% { box-shadow: 0 0 0 7px rgb(var(--ok-rgb) / 0); }
+    100% { box-shadow: 0 0 0 0 rgb(var(--ok-rgb) / 0); }
 }
 
 @keyframes fadeInUp {
