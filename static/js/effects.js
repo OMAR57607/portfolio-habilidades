@@ -6,6 +6,7 @@ const HEADER_SCROLL_THRESHOLD = 12;
 // Elementos que aparecen al entrar en pantalla.
 const REVEAL_SELECTOR = [
     '.section-header',
+    '.marquee',
     '.about-story',
     '.about-highlights',
     '.project-card',
@@ -19,6 +20,67 @@ const REVEAL_SELECTOR = [
     '.contact-info',
     '.contact-form-container',
 ].join(', ');
+
+// Solo las fichas de proyecto responden al cursor: un único gesto, donde está
+// el trabajo que se quiere que miren (estilos en effects.css).
+const SPOT_SELECTOR = '.project-card';
+
+// Duración del conteo animado de las cifras de la portada.
+const COUNT_MS = 1400;
+
+function initSpotlight() {
+    // Solo con puntero fino: en pantallas táctiles no hay cursor que seguir.
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    document.querySelectorAll(SPOT_SELECTOR).forEach((card) => {
+        card.classList.add('spot');
+        let frame = null;
+
+        card.addEventListener('pointermove', (e) => {
+            if (frame) return;
+            frame = requestAnimationFrame(() => {
+                frame = null;
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--my', `${e.clientY - rect.top}px`);
+            });
+        }, { passive: true });
+    });
+}
+
+function initCountUp() {
+    const counters = document.querySelectorAll('[data-count]');
+    // El HTML ya trae la cifra final: sin animación, el dato sigue siendo correcto.
+    if (!counters.length || reducedMotion.matches || !('IntersectionObserver' in window)) return;
+
+    const format = new Intl.NumberFormat('es-MX');
+
+    const run = (el) => {
+        const target = Number(el.dataset.count);
+        if (!Number.isFinite(target)) return;
+        const start = performance.now();
+
+        const tick = (now) => {
+            const t = Math.min((now - start) / COUNT_MS, 1);
+            // Desaceleración cúbica: arranca rápido y se asienta en la cifra.
+            const eased = 1 - Math.pow(1 - t, 3);
+            el.textContent = format.format(Math.round(target * eased));
+            if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                run(entry.target);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.6 });
+
+    counters.forEach((el) => observer.observe(el));
+}
 
 function initScrollProgress() {
     const scrollIndicator = document.getElementById('scroll-indicator');
@@ -104,4 +166,6 @@ export function initEffects() {
     initScrollProgress();
     initScrollReveal();
     initActiveSection();
+    initSpotlight();
+    initCountUp();
 }

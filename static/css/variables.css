@@ -23,41 +23,59 @@
     font-display: swap;
 }
 
-/* Variables CSS */
+/* Identidad: «plano de taller».
+   El fondo es el azul petróleo del emblema, con retícula de plano técnico; el
+   acento es el ámbar de la señalización de seguridad del piso de servicio, y
+   la franja diagonal de esa señalización es el único adorno de la página.
+   Ningún color se escribe fuera de estos tokens. */
 :root {
     color-scheme: dark;
 
-    --bg-color: #0b0b0c;
-    --bg-raised: #111113;
-    --card-bg: #141416;
-    --card-bg-hover: #18181b;
-    --border-color: rgba(255, 255, 255, 0.09);
-    --border-strong: rgba(255, 255, 255, 0.18);
-    --border-glow: rgba(235, 10, 30, 0.45);
-    --grid-line: rgba(255, 255, 255, 0.035);
+    --bg-color: #0c2229;
+    --bg-raised: #0f2931;
+    --card-bg: #12303a;
+    --card-bg-hover: #153844;
+    --border-color: rgba(202, 232, 232, 0.13);
+    --border-strong: rgba(202, 232, 232, 0.28);
+    --grid-line: rgba(202, 232, 232, 0.05);
 
-    --primary-color: #eb0a1e;
-    --primary-glow: rgba(235, 10, 30, 0.35);
-    --primary-hover: #ff2a3c;
-    --primary-soft: rgba(235, 10, 30, 0.1);
+    /* Ámbar de seguridad: relleno de botones, barras y señalización */
+    --primary-rgb: 245 167 10;
+    --primary-color: rgb(var(--primary-rgb));
+    --primary-hover: #ffbe3b;
+    --primary-glow: rgb(var(--primary-rgb) / 0.3);
+    --primary-soft: rgb(var(--primary-rgb) / 0.1);
+    --border-glow: rgb(var(--primary-rgb) / 0.42);
+    /* Tinta que va SOBRE el ámbar: el blanco no alcanza contraste ahí */
+    --on-primary: #10242a;
+    /* Degradado del nombre en la portada (texto grande: basta 3:1) */
+    --display-from: #f8bb42;
+    --display-to: #ff8a3d;
+    /* Luz fría secundaria del fondo, tomada del emblema */
+    --glow-cool-rgb: 64 196 214;
 
-    --text-main: #f4f3f0;
-    --text-muted: #adaca7;
-    /* Texto terciario: 5.9:1 sobre el fondo oscuro (cumple AA). */
-    --text-dark: #8f8e89;
+    --text-main: #eaf2ef;
+    --text-muted: #adc4c4;
+    /* Texto terciario: 6.0:1 sobre el fondo oscuro (cumple AA). */
+    --text-dark: #8aa5a6;
 
-    /* Rojo de marca legible como texto. --primary-color se reserva para
-       rellenos y bordes, donde el contraste no aplica igual. */
-    --accent-text: #ff5a6a;
+    /* Ámbar legible como texto sobre el petróleo */
+    --accent-text: #f8bb42;
+
+    /* Vidrio de la cápsula de navegación y velo de los diálogos */
+    --nav-glass: rgba(15, 41, 49, 0.74);
+    --nav-glass-solid: rgba(15, 41, 49, 0.93);
+    --scrim: rgba(6, 20, 25, 0.66);
 
     /* Colores de estado (simulador, impacto, "en producción") */
-    --ok-color: #3ecf8e;
-    --ok-soft: rgba(62, 207, 142, 0.1);
-    --ok-border: rgba(62, 207, 142, 0.28);
-    --warn-color: #fbbf24;
-    --danger-color: #ff6b6b;
-    --orange-color: #fb923c;
-    --violet-color: #a78bfa;
+    --ok-rgb: 95 211 154;
+    --ok-color: rgb(var(--ok-rgb));
+    --ok-soft: rgb(var(--ok-rgb) / 0.1);
+    --ok-border: rgb(var(--ok-rgb) / 0.3);
+    --warn-color: #f8bb42;
+    --danger-color: #ff8177;
+    --orange-color: #ff9d57;
+    --violet-color: #b7a4ff;
 
     --font-title: 'Archivo Expanded', 'Archivo', 'Inter', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -69,46 +87,54 @@
 
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     --transition-smooth: 0.25s var(--ease-out);
-    --shadow-premium: 0 24px 60px -30px rgba(0, 0, 0, 0.9);
-    --shadow-glow: 0 10px 30px -12px rgba(235, 10, 30, 0.55);
+    --shadow-premium: 0 24px 60px -30px rgba(2, 12, 16, 0.9);
+    --shadow-glow: 0 10px 30px -12px rgb(var(--primary-rgb) / 0.55);
+
+    /* Franja de señalización del taller */
+    --hazard: repeating-linear-gradient(-45deg, var(--primary-color) 0 10px, var(--on-primary) 10px 20px);
 
     --page-max: 1180px;
     --page-gutter: clamp(20px, 4vw, 32px);
-    --header-h: 68px;
+    --header-h: 84px;
 }
 
-/* Light Theme Variables */
+/* Tema claro: el papel verdoso de una orden de servicio, con tinta petróleo */
 .light-theme {
     color-scheme: light;
 
-    --bg-color: #f6f5f1;
-    --bg-raised: #fbfaf7;
-    --card-bg: #ffffff;
+    --bg-color: #e7eeeb;
+    --bg-raised: #dfe8e4;
+    --card-bg: #f7faf8;
     --card-bg-hover: #ffffff;
-    --border-color: rgba(20, 20, 19, 0.11);
-    --border-strong: rgba(20, 20, 19, 0.24);
-    --border-glow: rgba(235, 10, 30, 0.4);
-    --grid-line: rgba(20, 20, 19, 0.045);
+    --border-color: rgba(16, 36, 42, 0.14);
+    --border-strong: rgba(16, 36, 42, 0.32);
+    --grid-line: rgba(16, 36, 42, 0.055);
 
-    --primary-soft: rgba(235, 10, 30, 0.07);
-    --primary-glow: rgba(235, 10, 30, 0.2);
+    --primary-glow: rgb(var(--primary-rgb) / 0.32);
+    --primary-soft: rgb(var(--primary-rgb) / 0.16);
+    --border-glow: rgb(var(--primary-rgb) / 0.7);
+    --display-from: #c77700;
+    --display-to: #9c5200;
+    --glow-cool-rgb: 20 120 140;
 
-    --text-main: #141413;
-    --text-muted: #4f4e49;
-    /* Texto terciario: 5.2:1 sobre el fondo claro (cumple AA). */
-    --text-dark: #66655f;
+    --text-main: #10242a;
+    --text-muted: #3d565b;
+    /* Texto terciario: 5.0:1 sobre el papel (cumple AA). */
+    --text-dark: #51696d;
 
-    /* Sobre fondo claro el rojo de marca necesita oscurecerse para ser legible. */
-    --accent-text: #c00818;
+    /* Sobre papel el ámbar no se lee: el texto de acento baja a ocre oscuro */
+    --accent-text: #8a4f00;
 
-    --ok-color: #0b7a4b;
-    --ok-soft: rgba(11, 122, 75, 0.08);
-    --ok-border: rgba(11, 122, 75, 0.28);
-    --warn-color: #a45a05;
-    --danger-color: #c00818;
-    --orange-color: #c2410c;
-    --violet-color: #6d28d9;
+    --nav-glass: rgba(247, 250, 248, 0.76);
+    --nav-glass-solid: rgba(247, 250, 248, 0.95);
+    --scrim: rgba(16, 36, 42, 0.42);
 
-    --shadow-premium: 0 24px 50px -32px rgba(20, 20, 19, 0.35);
-    --shadow-glow: 0 10px 26px -14px rgba(235, 10, 30, 0.5);
+    --ok-rgb: 10 112 72;
+    --warn-color: #8a4f00;
+    --danger-color: #b3261e;
+    --orange-color: #a34a00;
+    --violet-color: #5a3fc0;
+
+    --shadow-premium: 0 24px 50px -32px rgba(16, 36, 42, 0.45);
+    --shadow-glow: 0 10px 26px -14px rgb(var(--primary-rgb) / 0.8);
 }

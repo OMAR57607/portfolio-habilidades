@@ -7,8 +7,8 @@
     <meta name="keywords" content="Omar Fuentes, Full Stack Developer, Python Developer, Node.js, Data Analyst, Machine Learning, scikit-learn, Django, FastAPI, Flask, Streamlit, Express, Pandas, Supabase, PostgreSQL, BDC, Automotriz, Programador Python, Automatización de Concesionarias, Taller Automotriz, Cotizaciones de Taller, Analítica BDC, Puebla">
     <meta name="author" content="Omar Fuentes">
     <meta name="color-scheme" content="dark light">
-    <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c2229" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#e7eeeb" media="(prefers-color-scheme: light)">
     <link rel="canonical" href="__SITE_URL__/">
 
     <!-- Open Graph / Facebook -->
@@ -70,6 +70,8 @@
     <link rel="stylesheet" href="/static/css/services.css?v=__ASSET_VERSION__">
     <link rel="stylesheet" href="/static/css/skills.css?v=__ASSET_VERSION__">
     <link rel="stylesheet" href="/static/css/contact.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/effects.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/palette.css?v=__ASSET_VERSION__">
     <link rel="stylesheet" href="/static/css/animations.css?v=__ASSET_VERSION__">
     <link rel="stylesheet" href="/static/css/print.css?v=__ASSET_VERSION__" media="print">
 
@@ -101,6 +103,10 @@
     <!-- Sprite de iconos SVG: el servidor lo incrusta desde static/icons.svg -->
     <!-- __ICON_SPRITE__ -->
 
+    <!-- Fondo: luz de marca y textura de grano (decorativos, sin movimiento) -->
+    <div class="aurora" aria-hidden="true"><span class="aurora-blob is-a"></span><span class="aurora-blob is-b"></span></div>
+    <div class="grain" aria-hidden="true"></div>
+
     <!-- Scroll Progress Indicator -->
     <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true"></div>
 
@@ -121,6 +127,11 @@
                 <a href="#contacto" class="nav-link contact-btn">Contacto <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
             </nav>
             <div class="nav-right-group">
+                <button class="cmdk-trigger" id="cmdk-trigger" type="button" aria-label="Abrir buscador y comandos" aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K">
+                    <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+                    <span class="cmdk-trigger-text">Buscar</span>
+                    <kbd class="cmdk-kbd">Ctrl K</kbd>
+                </button>
                 <div class="theme-select-container">
                     <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-expanded="false" aria-haspopup="true" aria-controls="theme-dropdown">
                         <svg class="icon" aria-hidden="true"><use href="#i-sun-moon"/></svg>
@@ -155,7 +166,7 @@
                     <span class="badge-location"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg> Puebla, México</span>
                 </p>
                 <h1 class="hero-title fade-in-up">
-                    <span class="hero-name">Omar <span class="highlight-name">Fuentes</span></span>
+                    <span class="hero-name"><span class="hero-line"><span class="hero-word">Omar</span></span> <span class="hero-line"><span class="hero-word highlight-name">Fuentes</span></span></span>
                     <span class="hero-role">Full Stack Developer <span class="amp">&amp;</span> Data/ML Analyst</span>
                 </h1>
                 <p class="hero-desc fade-in-up">
@@ -172,15 +183,6 @@
                         <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> GitHub
                     </a>
                 </div>
-                <ul class="hero-tech-pills fade-in-up" aria-label="Stack principal">
-                    <li class="tech-pill">Python</li>
-                    <li class="tech-pill">Django</li>
-                    <li class="tech-pill">FastAPI</li>
-                    <li class="tech-pill">Node.js</li>
-                    <li class="tech-pill">scikit-learn</li>
-                    <li class="tech-pill">Pandas</li>
-                    <li class="tech-pill">Supabase</li>
-                </ul>
             </div>
 
             <!-- Resultados medibles en la operación -->
@@ -200,19 +202,19 @@
                     <div class="compare-row is-now">
                         <span class="compare-label">Hoy</span>
                         <span class="compare-track"><span class="compare-bar is-now"></span></span>
-                        <span class="compare-value">15 min</span>
+                        <span class="compare-value"><span data-count="15">15</span> min</span>
                     </div>
                     <p class="impact-note"><svg class="icon" aria-hidden="true"><use href="#i-trending-down"/></svg> Promedio actual; hasta 12 veces más rápido que el proceso manual.</p>
                 </div>
 
                 <div class="impact-stats">
                     <div class="stat-card">
-                        <span class="stat-value">+$1,500 <small>MXN</small></span>
+                        <span class="stat-value">+$<span data-count="1500">1,500</span> <small>MXN</small></span>
                         <span class="stat-label">Ticket promedio por orden de servicio</span>
                         <span class="stat-note">incremento estimado</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-value">7</span>
+                        <span class="stat-value"><span data-count="7">7</span></span>
                         <span class="stat-label">Sistemas propios desplegados</span>
                         <span class="stat-note">en Railway y Vercel</span>
                     </div>
@@ -220,10 +222,30 @@
             </aside>
         </section>
 
+        <!-- Franja de tecnologías principales -->
+        <div class="marquee" aria-label="Stack principal">
+            <div class="marquee-track">
+                <ul class="marquee-group">
+                    <li class="marquee-item">Python</li>
+                    <li class="marquee-item">Django</li>
+                    <li class="marquee-item">FastAPI</li>
+                    <li class="marquee-item">Node.js</li>
+                    <li class="marquee-item">TypeScript</li>
+                    <li class="marquee-item">React</li>
+                    <li class="marquee-item">Next.js</li>
+                    <li class="marquee-item">scikit-learn</li>
+                    <li class="marquee-item">Pandas</li>
+                    <li class="marquee-item">PostgreSQL</li>
+                    <li class="marquee-item">Supabase</li>
+                    <li class="marquee-item">Docker</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- About Section -->
         <section class="section-container" id="sobre-mi">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">01</span> Mi historia</p>
+                <p class="section-tag">Mi historia</p>
                 <h2 class="section-title">Del piso del taller al código</h2>
                 <p class="section-desc">No desarrollo para la operación desde fuera: trabajo dentro de ella, todos los días.</p>
             </header>
@@ -258,7 +280,7 @@
         <!-- Projects Section -->
         <section class="section-container" id="proyectos">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">02</span> Mis desarrollos</p>
+                <p class="section-tag">Mis desarrollos</p>
                 <h2 class="section-title">Proyectos destacados</h2>
                 <p class="section-desc">Sistemas empresariales, de analítica y sitios web construidos de punta a punta, del modelo de datos al despliegue.</p>
             </header>
@@ -268,7 +290,6 @@
                 <!-- Project 1: Django -->
                 <article class="project-card is-featured" id="project-django">
                     <div class="project-meta">
-                        <span class="project-index">01</span>
                         <span class="project-kind">Plataforma empresarial</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción · Railway</span>
                     </div>
@@ -302,7 +323,6 @@
                 <!-- Project 2: FastAPI -->
                 <article class="project-card" id="project-fastapi">
                     <div class="project-meta">
-                        <span class="project-index">02</span>
                         <span class="project-kind">PWA de cotización</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción · Railway</span>
                     </div>
@@ -334,7 +354,6 @@
                 <!-- Project 3: Control de estacionamiento -->
                 <article class="project-card" id="project-estacionamiento">
                     <div class="project-meta">
-                        <span class="project-index">03</span>
                         <span class="project-kind">Control de estacionamiento</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> Desplegado en Railway</span>
                     </div>
@@ -366,7 +385,6 @@
                 <!-- Project 4: Catálogo para clientes -->
                 <article class="project-card" id="project-catalogo">
                     <div class="project-meta">
-                        <span class="project-index">04</span>
                         <span class="project-kind">Catálogo para clientes</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> Desplegado en Vercel</span>
                     </div>
@@ -400,7 +418,6 @@
                 <!-- Project 5: Sitio web con IA -->
                 <article class="project-card" id="project-rjcars">
                     <div class="project-meta">
-                        <span class="project-index">05</span>
                         <span class="project-kind">Sitio web con IA</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> Desplegado en Railway</span>
                     </div>
@@ -432,7 +449,6 @@
                 <!-- Project 6: Tienda en línea -->
                 <article class="project-card" id="project-nitro">
                     <div class="project-meta">
-                        <span class="project-index">06</span>
                         <span class="project-kind">Tienda en línea</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción · Vercel</span>
                     </div>
@@ -463,7 +479,6 @@
                 <!-- Project 7: Punto de venta -->
                 <article class="project-card" id="project-pos">
                     <div class="project-meta">
-                        <span class="project-index">07</span>
                         <span class="project-kind">Punto de venta</span>
                         <span class="project-status is-pilot"><span class="status-dot" aria-hidden="true"></span> Piloto · Railway</span>
                     </div>
@@ -495,7 +510,7 @@
         <!-- BDC Simulator Section -->
         <section class="section-container" id="simulador">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">03</span> Simulador interactivo</p>
+                <p class="section-tag">Simulador interactivo</p>
                 <h2 class="section-title">Consola analítica BDC</h2>
                 <p class="section-desc">Pon a prueba el motor matemático que implementé en mis proyectos de analítica. Ingresa datos de un vehículo de ejemplo para ver cómo calcula y clasifica a un cliente.</p>
             </header>
@@ -610,7 +625,7 @@
         <!-- Engineering Patterns Section -->
         <section class="section-container" id="ingenieria">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">04</span> Bajo el capó</p>
+                <p class="section-tag">Bajo el capó</p>
                 <h2 class="section-title">Patrones de ingeniería</h2>
                 <p class="section-desc">No solo construyo funciones: aplico patrones de software que mantienen los sistemas rápidos, confiables y seguros en producción.</p>
             </header>
@@ -619,7 +634,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-refresh-cw"/></svg></span>
-                        <span class="pattern-index">01</span>
                     </div>
                     <h3>Outbox Pattern + Colas Asíncronas</h3>
                     <p>Consistencia eventual con cola persistente y Dead Letter Queue: las tareas costosas (subir imágenes, sincronizar) no bloquean la respuesta al usuario.</p>
@@ -627,7 +641,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-fingerprint"/></svg></span>
-                        <span class="pattern-index">02</span>
                     </div>
                     <h3>Idempotencia</h3>
                     <p>Operaciones seguras de reintentar: hash de contenido y claves idempotentes evitan cotizaciones y registros duplicados ante doble clic o reintentos de red.</p>
@@ -635,7 +648,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg></span>
-                        <span class="pattern-index">03</span>
                     </div>
                     <h3>Optimización de Consultas (N+1)</h3>
                     <p>Uso de select_related y prefetch_related para bajar expedientes de 40+ consultas a solo 3, logrando carga instantánea en alto volumen.</p>
@@ -643,7 +655,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
-                        <span class="pattern-index">04</span>
                     </div>
                     <h3>Concurrencia con Lock Cooperativo</h3>
                     <p>Bloqueo de edición respaldado en base de datos y <code>select_for_update</code> para impedir que dos usuarios editen el mismo folio a la vez, con aviso visual en modo solo lectura.</p>
@@ -651,7 +662,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-brain"/></svg></span>
-                        <span class="pattern-index">05</span>
                     </div>
                     <h3>Inferencia con Machine Learning</h3>
                     <p>TF-IDF (scikit-learn) para predecir SKU desde texto libre, con umbrales de confianza y un plan de validación con métricas de acierto.</p>
@@ -659,7 +669,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg></span>
-                        <span class="pattern-index">06</span>
                     </div>
                     <h3>Seguridad por Capas</h3>
                     <p>Helmet/CSP y rate limiting en Node; django-axes, HSTS y Row Level Security en el resto; contenedores Docker sin privilegios de root.</p>
@@ -670,9 +679,9 @@
         <!-- Tech Stack Section -->
         <section class="section-container" id="habilidades">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">05</span> Tecnologías</p>
+                <p class="section-tag">Tecnologías</p>
                 <h2 class="section-title">Habilidades &amp; stack</h2>
-                <p class="section-desc">Tecnologías que uso en mis repositorios: nada en esta lista está de adorno.</p>
+                <p class="section-desc">Las tecnologías con las que construyo, agrupadas por área.</p>
             </header>
 
             <!-- Skills agrupadas por área -->
@@ -788,7 +797,7 @@
         <!-- Services Section -->
         <section class="section-container" id="servicios">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">06</span> Servicios</p>
+                <p class="section-tag">Servicios</p>
                 <h2 class="section-title">¿Qué puedo construir para ti?</h2>
                 <p class="section-desc">Soluciones probadas en la operación real de una concesionaria, adaptables a tu negocio.</p>
             </header>
@@ -837,7 +846,7 @@
         <!-- Contact Section -->
         <section class="section-container" id="contacto">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">07</span> Conectemos</p>
+                <p class="section-tag">Conectemos</p>
                 <h2 class="section-title">¿Hablamos de tu proyecto?</h2>
                 <p class="section-desc">¿Tienes alguna duda sobre mis sistemas o quieres colaborar en algún desarrollo? Escríbeme: respondo personalmente.</p>
             </header>
@@ -905,6 +914,7 @@
 
     <!-- Footer -->
     <footer class="main-footer">
+        <p class="footer-giant" aria-hidden="true">Omar Fuentes</p>
         <div class="footer-container">
             <div class="footer-brand">
                 <span class="logo-wordmark">Omar Fuentes</span>
@@ -915,6 +925,21 @@
             <a href="#inicio" class="footer-top"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg> Volver arriba</a>
         </div>
     </footer>
+
+    <!-- Paleta de comandos (Ctrl/⌘ + K): navegación y acciones rápidas -->
+    <dialog class="cmdk" id="cmdk" aria-label="Buscador y comandos">
+        <div class="cmdk-head">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <input class="cmdk-input" id="cmdk-input" type="text" role="combobox" aria-expanded="true" aria-controls="cmdk-list" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="Busca una sección, un proyecto o una acción…">
+            <kbd class="cmdk-kbd">Esc</kbd>
+        </div>
+        <ul class="cmdk-list" id="cmdk-list" role="listbox" aria-label="Resultados"></ul>
+        <p class="cmdk-empty hidden" id="cmdk-empty">Sin resultados. Prueba con «proyectos», «whatsapp» o «tema».</p>
+        <div class="cmdk-foot" aria-hidden="true">
+            <span><kbd class="cmdk-kbd">↑</kbd><kbd class="cmdk-kbd">↓</kbd> navegar</span>
+            <span><kbd class="cmdk-kbd">Enter</kbd> abrir</span>
+        </div>
+    </dialog>
 
     <!-- Custom JS -->
     <script type="module" src="/static/app.js?v=__ASSET_VERSION__"></script>

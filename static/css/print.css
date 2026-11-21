@@ -16,7 +16,7 @@
     --text-main: #000;
     --text-muted: #2b2b29;
     --text-dark: #4a4a46;
-    --accent-text: #b00716;
+    --accent-text: #6b3d00;
     --ok-color: #0b6b43;
     --ok-soft: #fff;
     --ok-border: #a3a39e;
@@ -29,7 +29,13 @@ body {
 }
 
 body::before,
-body::after,
+.impact-panel::before,
+.main-footer::before,
+.aurora,
+.grain,
+.marquee,
+.cmdk,
+.footer-giant,
 .main-header,
 .scroll-indicator,
 .skip-link,
@@ -164,3 +170,18 @@ body::after,
 .cert-card {
     break-inside: avoid;
 }
+
+.highlight-name {
+    background: none;
+    color: #10242a;
+    -webkit-text-fill-color: #10242a;
+}
+
+.hero-word {
+    animation: none;
+}
+
+.spot::after {
+    display: none;
+}
+

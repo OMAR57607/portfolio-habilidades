@@ -14,6 +14,9 @@ contenedores **Docker**.
 - **Patrones de ingeniería:** los patrones aplicados en producción (Outbox Pattern, idempotencia, optimización de N+1, lock cooperativo en base de datos, inferencia ML con TF-IDF y seguridad por capas).
 - **Stack agrupado por área y verificado:** Backend, Frontend, Datos, Machine Learning e IA, Nube, DevOps y Negocio. Solo incluye tecnologías presentes en el código de los repositorios.
 - **Resultado medido en portada:** comparativa a escala real del tiempo de cotización (hasta 3 h → 15 min promedio).
+- **Paleta de comandos (Ctrl/⌘ + K o `/`):** salta a cualquier sección o proyecto, copia el correo, abre WhatsApp o cambia el tema. La búsqueda no distingue mayúsculas ni acentos.
+- **Movimiento con intención:** un solo momento orquestado en la portada (entrada del nombre, barras y conteo de cifras), cápsula de navegación flotante, luz bajo el cursor en las fichas de proyecto y cambio de tema con revelado circular. Sin animaciones en bucle; todo se apaga con `prefers-reduced-motion` y el contenido es visible sin depender del scroll.
+- **Identidad «plano de taller»:** azul petróleo tomado del emblema con retícula de plano técnico, ámbar de la señalización de seguridad como acento y su franja diagonal como único adorno. El tema claro es el papel verdoso de una orden de servicio. Todos los colores viven en tokens de `variables.css`.
 - **Temas claro / oscuro / sistema:** persistidos en `localStorage` y aplicados antes del primer pintado, sin parpadeo.
 - **Accesible y respetuoso del movimiento:** navegación por teclado, enlace de salto, regiones `aria-live` y soporte de `prefers-reduced-motion`.
 - **Sin terceros:** fuentes e iconos autoalojados; el sitio no carga nada de CDNs externos.
@@ -40,6 +43,8 @@ portfolio-habilidades/
     │   ├── base.css         # Reset, iconos, botones, formularios y layout global
     │   ├── header.css   hero.css   about.css   projects.css
     │   ├── simulator.css services.css skills.css contact.css
+    │   ├── effects.css      # Aurora, grano, luz bajo el cursor, cinta y transición de tema
+    │   ├── palette.css      # Paleta de comandos
     │   ├── animations.css   # Keyframes y prefers-reduced-motion
     │   └── print.css        # Versión para imprimir / guardar como PDF
     └── js/                  # Un módulo ES por responsabilidad
@@ -47,7 +52,8 @@ portfolio-habilidades/
         ├── menu.js          # Menú móvil
         ├── simulator.js     # Motor de KPIs del simulador BDC
         ├── contact.js       # Envío del formulario vía WhatsApp
-        └── effects.js       # Progreso de scroll, reveal y sección activa
+        ├── palette.js       # Paleta de comandos (Ctrl/⌘ + K)
+        └── effects.js       # Progreso de scroll, reveal, sección activa, luz bajo el cursor y conteos
 ```
 
 Las hojas de estilo se enlazan una por una desde `index.html` (no encadenadas con

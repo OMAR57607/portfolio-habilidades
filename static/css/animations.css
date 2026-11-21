@@ -1,9 +1,9 @@
 /* Animaciones y transiciones */
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(62, 207, 142, 0.55); }
-    70% { box-shadow: 0 0 0 7px rgba(62, 207, 142, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(62, 207, 142, 0); }
+    0% { box-shadow: 0 0 0 0 rgb(var(--ok-rgb) / 0.55); }
+    70% { box-shadow: 0 0 0 7px rgb(var(--ok-rgb) / 0); }
+    100% { box-shadow: 0 0 0 0 rgb(var(--ok-rgb) / 0); }
 }
 
 @keyframes fadeInUp {
@@ -20,6 +20,27 @@
 @keyframes barGrow {
     from { transform: scaleX(0); }
     to { transform: scaleX(1); }
+}
+
+@keyframes wordRise {
+    from { transform: translateY(105%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes themeReveal {
+    from { clip-path: circle(0 at var(--vt-x, 100%) var(--vt-y, 0%)); }
+    to { clip-path: circle(150vmax at var(--vt-x, 100%) var(--vt-y, 0%)); }
+}
+
+@keyframes cmdkIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes dropdownIn {
@@ -43,18 +64,17 @@
 .hero-title.fade-in-up { animation-delay: 0.08s; }
 .hero-desc.fade-in-up { animation-delay: 0.16s; }
 .hero-actions.fade-in-up { animation-delay: 0.24s; }
-.hero-tech-pills.fade-in-up { animation-delay: 0.32s; }
 .impact-panel.fade-in-up { animation-delay: 0.3s; }
 
 /* Aparición al hacer scroll (IntersectionObserver en effects.js) */
+/* El estado de reposo es VISIBLE: la sección solo se asienta unos píxeles.
+   Nada queda oculto esperando al observador (vistas previas, lectura rápida). */
 .fade-in-hidden {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    transform: translateY(14px);
+    transition: transform 0.7s var(--ease-out);
 }
 
 .fade-in-visible {
-    opacity: 1;
     transform: none;
 }
 
@@ -76,7 +96,7 @@
     }
 
     .fade-in-hidden {
-        opacity: 1;
         transform: none;
     }
+
 }

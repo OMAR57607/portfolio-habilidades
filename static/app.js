@@ -3,6 +3,7 @@ import { initMenu } from './js/menu.js';
 import { initSimulator } from './js/simulator.js';
 import { initContact } from './js/contact.js';
 import { initEffects } from './js/effects.js';
+import { initPalette } from './js/palette.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -10,4 +11,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initSimulator();
     initContact();
     initEffects();
+    initPalette();
 });

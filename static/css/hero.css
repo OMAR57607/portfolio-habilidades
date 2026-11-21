@@ -4,9 +4,7 @@
     grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
     gap: clamp(36px, 5vw, 72px);
     align-items: center;
-    min-height: min(100vh, 860px);
-    min-height: min(100svh, 860px);
-    padding: calc(var(--header-h) + 48px) 0 24px;
+    padding: calc(var(--header-h) + 56px) 0 56px;
 }
 
 .hero-content {
@@ -53,15 +51,37 @@
 .hero-name {
     display: block;
     font-family: var(--font-title);
-    font-size: clamp(2.7rem, 8.4vw, 5.6rem);
+    font-size: clamp(2.9rem, 9vw, 7.2rem);
     font-weight: 900;
-    line-height: 0.95;
-    letter-spacing: -0.05em;
-    text-wrap: balance;
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+}
+
+/* Cada línea del nombre sube desde detrás de su propio recorte */
+.hero-line {
+    display: block;
+    overflow: hidden;
+    /* Aire para que el recorte no corte los trazos bajos ni el tracking negativo */
+    padding: 0.04em 0.06em 0.1em 0;
+}
+
+.hero-word {
+    display: inline-block;
+    animation: wordRise 1s var(--ease-out) backwards;
+}
+
+.hero-line + .hero-line .hero-word {
+    animation-delay: 0.12s;
 }
 
 .highlight-name {
-    color: var(--primary-color);
+    background-image: linear-gradient(100deg, var(--display-from) 0%, var(--display-to) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    /* El recorte del degradado necesita espacio a la derecha del último trazo */
+    padding-right: 0.06em;
 }
 
 .hero-role {
@@ -97,39 +117,26 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-bottom: 36px;
-}
-
-.hero-tech-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 0;
-    padding-top: 22px;
-    border-top: 1px solid var(--border-color);
-}
-
-.tech-pill {
-    color: var(--text-dark);
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-}
-
-.tech-pill:not(:last-child)::after {
-    content: '/';
-    margin: 0 10px;
-    color: var(--border-strong);
+    margin-bottom: 0;
 }
 
 /* Panel de resultados medibles */
 .impact-panel {
+    position: relative;
     min-width: 0;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-premium);
+    box-shadow: var(--shadow-premium), 0 0 80px -40px var(--primary-glow);
     overflow: hidden;
+}
+
+/* Franja de señalización del taller: remata el panel de resultados */
+.impact-panel::before {
+    content: '';
+    display: block;
+    height: 6px;
+    background: var(--hazard);
 }
 
 .impact-panel-head {
