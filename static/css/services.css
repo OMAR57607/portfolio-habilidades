@@ -115,3 +115,14 @@
         width: 100%;
     }
 }
+
+/* Nombre técnico del patrón: etiqueta pequeña para quien lo busque */
+.pattern-term {
+    margin-bottom: 8px;
+    color: var(--accent-text);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}

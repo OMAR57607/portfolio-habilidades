@@ -1,20 +1,13 @@
 // Umbrales del índice de churn (días transcurridos / DERT promedio, en %).
+// Los mismos cortes que el motor real; solo cambian las palabras con que se
+// muestran, para que se entiendan sin conocer el vocabulario de BDC.
 // `levelClass` elige el color en simulator.css, así sigue al tema activo.
 const CHURN_LEVELS = [
-    { min: 150, label: '1. CHURN CONFIRMADO', levelClass: 'is-danger' },
-    { min: 100, label: '2. RIESGO CRÍTICO', levelClass: 'is-orange' },
-    { min: 80, label: '3. RIESGO ALTO', levelClass: 'is-warning' },
-    { min: -Infinity, label: '4. SANO', levelClass: 'is-healthy' },
+    { min: 150, label: 'Crítico', levelClass: 'is-danger' },
+    { min: 100, label: 'Muy alto', levelClass: 'is-orange' },
+    { min: 80, label: 'Alto', levelClass: 'is-warning' },
+    { min: -Infinity, label: 'Bajo', levelClass: 'is-healthy' },
 ];
-
-// Variante visual de la insignia según el prefijo numérico de la estrategia.
-const STRATEGY_VARIANTS = {
-    '0': 'is-critical',
-    '1': 'is-critical',
-    '2': 'is-warning',
-    '3': 'is-warning',
-    '5': 'is-recovery',
-};
 
 const DIAS_POR_ANIO = 365;
 
@@ -22,20 +15,25 @@ function classifyChurn(churnPct) {
     return CHURN_LEVELS.find((level) => churnPct >= level.min);
 }
 
+// Clasificación CRT: retención pura, conquista, fuga pura y fuga conquista.
 function classifyCrt(esActivo, isLocal) {
-    if (esActivo && isLocal) return '1. RETENCIÓN PURA (VENDIDO AQUÍ Y ACTIVO)';
-    if (esActivo) return '2. CONQUISTA (VENDIDO EN OTRA AGENCIA Y ACTIVO)';
-    if (isLocal) return '3. FUGA PURA (VENDIDO AQUÍ Y PERDIDO)';
-    return '4. FUGA CONQUISTA (CLIENTE EXTERNO PERDIDO)';
+    if (esActivo && isLocal) return 'Cliente fiel (compró aquí y sigue viniendo)';
+    if (esActivo) return 'Cliente ganado (compró en otra agencia y viene aquí)';
+    if (isLocal) return 'Cliente perdido (compró aquí y ya no viene)';
+    return 'Cliente externo que ya no viene';
 }
 
+// El orden de las reglas es el del motor real: la primera que se cumple decide.
+// `variant` elige el color de la insignia en simulator.css.
 function pickStrategy({ isTdm, esActivo, modelo, certKm, diasSinVenir, dertPromedio }) {
-    if (isTdm) return '0. CRÍTICO TDM';
-    if (!esActivo) return '5. CAMPAÑA RECUPERACIÓN';
-    if (modelo === 'Hilux' && certKm >= 35000 && certKm <= 45000) return '1. OPORTUNIDAD VIP: HILUX 40K';
-    if (diasSinVenir >= dertPromedio) return '2. URGENCIA: CICLO VENCIDO';
-    if (diasSinVenir >= dertPromedio - 30) return '3. PREVENTIVO: PRÓXIMO A VENCER';
-    return '4. SEGUIMIENTO REGULAR';
+    if (isTdm) return { label: 'Llamar hoy para agendar su mantenimiento', variant: 'is-critical' };
+    if (!esActivo) return { label: 'Invitarlo a regresar con una promoción', variant: 'is-recovery' };
+    if (modelo === 'Hilux' && certKm >= 35000 && certKm <= 45000) {
+        return { label: 'Ofrecerle el servicio de 40,000 km', variant: 'is-critical' };
+    }
+    if (diasSinVenir >= dertPromedio) return { label: 'Llamar pronto: ya le tocaba servicio', variant: 'is-warning' };
+    if (diasSinVenir >= dertPromedio - 30) return { label: 'Recordarle que pronto le toca servicio', variant: 'is-warning' };
+    return { label: 'Seguimiento normal', variant: 'is-healthy' };
 }
 
 function computeKpis({ kmActual, diasSinVenir, dertPromedio, modelo, isTdm, isLocal }) {
@@ -44,8 +42,8 @@ function computeKpis({ kmActual, diasSinVenir, dertPromedio, modelo, isTdm, isLo
     const certKm = Math.round(kmActual + kmDiario * diasSinVenir);
 
     const proximoServicio = certKm > 0
-        ? `OFRECER PAQUETE DE ${(Math.ceil(certKm / 10000) * 10000).toLocaleString('es-MX')} KM`
-        : 'OFRECER 1ER SERVICIO';
+        ? `Servicio de ${(Math.ceil(certKm / 10000) * 10000).toLocaleString('es-MX')} km`
+        : 'Primer servicio';
 
     const esActivo = diasSinVenir <= DIAS_POR_ANIO;
     const churnPct = Math.round((diasSinVenir / dertPromedio) * 100 * 100) / 100;
@@ -69,7 +67,7 @@ function renderResults(results) {
         if (el) el.textContent = value;
     };
 
-    setText('out-cert', `${results.certKm.toLocaleString('es-MX')} KM`);
+    setText('out-cert', `${results.certKm.toLocaleString('es-MX')} km`);
     setText('out-service', results.proximoServicio);
     setText('out-crt', results.clasificacionCrt);
     setText('out-churn-pct', `${results.churnPct}%`);
@@ -93,9 +91,8 @@ function renderResults(results) {
 
     const outStrategy = document.getElementById('out-strategy');
     if (outStrategy) {
-        outStrategy.textContent = results.estrategia;
-        const variant = STRATEGY_VARIANTS[results.estrategia.charAt(0)] || 'is-healthy';
-        outStrategy.className = `strategy-badge ${variant}`;
+        outStrategy.textContent = results.estrategia.label;
+        outStrategy.className = `strategy-badge ${results.estrategia.variant}`;
     }
 }
 

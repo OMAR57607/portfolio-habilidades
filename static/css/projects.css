@@ -262,3 +262,88 @@
 .project-card:last-child:nth-child(even) {
     grid-column: 1 / -1;
 }
+
+/* Detalle técnico de cada proyecto: plegado, para quien quiera leerlo */
+.project-tech {
+    margin: -6px 0 22px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.project-tech > summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    list-style: none;
+    cursor: pointer;
+    transition: color var(--transition-smooth);
+}
+
+.project-tech > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Flecha dibujada con bordes: gira al abrir */
+.project-tech > summary::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    margin-top: -3px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform var(--transition-smooth), margin var(--transition-smooth);
+}
+
+.project-tech[open] > summary::after {
+    margin-top: 3px;
+    transform: rotate(-135deg);
+}
+
+.project-tech > summary:hover {
+    color: var(--text-main);
+}
+
+.project-tech-list {
+    display: grid;
+    gap: 10px;
+    padding: 2px 0 8px;
+}
+
+.is-featured .project-tech-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 36px;
+}
+
+.project-tech-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.87rem;
+    line-height: 1.55;
+}
+
+.project-tech-list li strong {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.project-tech-list li .icon {
+    margin-top: 4px;
+    color: var(--text-dark);
+    font-size: 0.8rem;
+    stroke-width: 2.5;
+}
+
+@media (max-width: 860px) {
+    .is-featured .project-tech-list {
+        grid-template-columns: 1fr;
+    }
+}

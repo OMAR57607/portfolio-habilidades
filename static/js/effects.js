@@ -162,10 +162,20 @@ function initActiveSection() {
     sections.forEach((section) => observer.observe(section));
 }
 
+// En papel no hay a quién hacer clic: el detalle técnico de cada proyecto sale
+// abierto. Va fuera de initScrollReveal porque debe correr también con
+// movimiento reducido.
+function initPrintDetails() {
+    window.addEventListener('beforeprint', () => {
+        document.querySelectorAll('details.project-tech').forEach((d) => { d.open = true; });
+    });
+}
+
 export function initEffects() {
     initScrollProgress();
     initScrollReveal();
     initActiveSection();
     initSpotlight();
     initCountUp();
+    initPrintDetails();
 }
