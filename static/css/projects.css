@@ -257,3 +257,8 @@
 .project-status.is-pilot .status-dot {
     background-color: var(--warn-color);
 }
+
+/* Si la última tarjeta queda sola en su fila, ocupa todo el ancho */
+.project-card:last-child:nth-child(even) {
+    grid-column: 1 / -1;
+}
