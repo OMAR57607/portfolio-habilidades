@@ -8,7 +8,7 @@ const REVEAL_SELECTOR = [
     '.section-header',
     '.marquee',
     '.about-story',
-    '.about-highlight-item',
+    '.about-highlights',
     '.project-card',
     '.sim-glossary',
     '.simulator-card',
@@ -21,20 +21,9 @@ const REVEAL_SELECTOR = [
     '.contact-form-container',
 ].join(', ');
 
-// Tarjetas que reciben la luz que sigue al cursor (estilos en effects.css).
-const SPOT_SELECTOR = [
-    '.project-card',
-    '.about-story',
-    '.about-highlight-item',
-    '.service-card',
-    '.pattern-card',
-    '.skill-group',
-    '.cert-card',
-    '.simulator-card',
-    '.simulator-results',
-    '.contact-info',
-    '.contact-form-container',
-].join(', ');
+// Solo las fichas de proyecto responden al cursor: un único gesto, donde está
+// el trabajo que se quiere que miren (estilos en effects.css).
+const SPOT_SELECTOR = '.project-card';
 
 // Duración del conteo animado de las cifras de la portada.
 const COUNT_MS = 1400;

@@ -15,7 +15,7 @@ contenedores **Docker**.
 - **Stack agrupado por área y verificado:** Backend, Frontend, Datos, Machine Learning e IA, Nube, DevOps y Negocio. Solo incluye tecnologías presentes en el código de los repositorios.
 - **Resultado medido en portada:** comparativa a escala real del tiempo de cotización (hasta 3 h → 15 min promedio).
 - **Paleta de comandos (Ctrl/⌘ + K o `/`):** salta a cualquier sección o proyecto, copia el correo, abre WhatsApp o cambia el tema. La búsqueda no distingue mayúsculas ni acentos.
-- **Interfaz viva:** cápsula de navegación flotante, aurora y grano de fondo, cinta de tecnologías, luz que sigue al cursor en las tarjetas, conteo animado de cifras y cambio de tema con revelado circular. Todo se detiene con `prefers-reduced-motion`.
+- **Movimiento con intención:** un solo momento orquestado en la portada (entrada del nombre, barras y conteo de cifras), cápsula de navegación flotante, luz bajo el cursor en las fichas de proyecto y cambio de tema con revelado circular. Sin animaciones en bucle; todo se apaga con `prefers-reduced-motion` y el contenido es visible sin depender del scroll.
 - **Temas claro / oscuro / sistema:** persistidos en `localStorage` y aplicados antes del primer pintado, sin parpadeo.
 - **Accesible y respetuoso del movimiento:** navegación por teclado, enlace de salto, regiones `aria-live` y soporte de `prefers-reduced-motion`.
 - **Sin terceros:** fuentes e iconos autoalojados; el sitio no carga nada de CDNs externos.

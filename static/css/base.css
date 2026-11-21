@@ -235,21 +235,6 @@ ol {
     letter-spacing: 0.14em;
 }
 
-.section-num {
-    color: var(--accent-text);
-    font-weight: 700;
-}
-
-.section-num::after {
-    content: '';
-    display: inline-block;
-    width: 28px;
-    height: 1px;
-    margin-left: 12px;
-    background: var(--border-strong);
-    vertical-align: middle;
-}
-
 .section-title {
     font-family: var(--font-title);
     font-size: clamp(1.7rem, 4.2vw, 2.7rem);

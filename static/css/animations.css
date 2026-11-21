@@ -27,24 +27,6 @@
     to { transform: translateY(0); }
 }
 
-@keyframes borderSpin {
-    to { --border-angle: 360deg; }
-}
-
-@keyframes auroraA {
-    from { transform: translate3d(0, 0, 0) scale(1); }
-    to { transform: translate3d(-160px, 90px, 0) scale(1.18); }
-}
-
-@keyframes auroraB {
-    from { transform: translate3d(0, 0, 0) scale(1.05); }
-    to { transform: translate3d(180px, 60px, 0) scale(0.9); }
-}
-
-@keyframes marquee {
-    to { transform: translateX(-50%); }
-}
-
 @keyframes themeReveal {
     from { clip-path: circle(0 at var(--vt-x, 100%) var(--vt-y, 0%)); }
     to { clip-path: circle(150vmax at var(--vt-x, 100%) var(--vt-y, 0%)); }
@@ -85,14 +67,14 @@
 .impact-panel.fade-in-up { animation-delay: 0.3s; }
 
 /* Aparición al hacer scroll (IntersectionObserver en effects.js) */
+/* El estado de reposo es VISIBLE: la sección solo se asienta unos píxeles.
+   Nada queda oculto esperando al observador (vistas previas, lectura rápida). */
 .fade-in-hidden {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    transform: translateY(14px);
+    transition: transform 0.7s var(--ease-out);
 }
 
 .fade-in-visible {
-    opacity: 1;
     transform: none;
 }
 
@@ -114,23 +96,7 @@
     }
 
     .fade-in-hidden {
-        opacity: 1;
         transform: none;
     }
 
-    /* Los bucles decorativos se detienen por completo */
-    .aurora-blob,
-    .marquee-track,
-    .impact-panel::before {
-        animation: none !important;
-    }
-
-    /* Sin movimiento, la cinta se convierte en una lista que se puede desplazar */
-    .marquee {
-        overflow-x: auto;
-    }
-
-    .marquee-group[aria-hidden="true"] {
-        display: none;
-    }
 }

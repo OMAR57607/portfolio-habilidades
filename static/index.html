@@ -103,7 +103,7 @@
     <!-- Sprite de iconos SVG: el servidor lo incrusta desde static/icons.svg -->
     <!-- __ICON_SPRITE__ -->
 
-    <!-- Fondo vivo: aurora de marca y textura de grano (decorativos) -->
+    <!-- Fondo: luz de marca y textura de grano (decorativos, sin movimiento) -->
     <div class="aurora" aria-hidden="true"><span class="aurora-blob is-a"></span><span class="aurora-blob is-b"></span></div>
     <div class="grain" aria-hidden="true"></div>
 
@@ -222,24 +222,10 @@
             </aside>
         </section>
 
-        <!-- Cinta de tecnologías: la segunda copia es solo visual, para el bucle -->
+        <!-- Franja de tecnologías principales -->
         <div class="marquee" aria-label="Stack principal">
             <div class="marquee-track">
                 <ul class="marquee-group">
-                    <li class="marquee-item">Python</li>
-                    <li class="marquee-item">Django</li>
-                    <li class="marquee-item">FastAPI</li>
-                    <li class="marquee-item">Node.js</li>
-                    <li class="marquee-item">TypeScript</li>
-                    <li class="marquee-item">React</li>
-                    <li class="marquee-item">Next.js</li>
-                    <li class="marquee-item">scikit-learn</li>
-                    <li class="marquee-item">Pandas</li>
-                    <li class="marquee-item">PostgreSQL</li>
-                    <li class="marquee-item">Supabase</li>
-                    <li class="marquee-item">Docker</li>
-                </ul>
-                <ul class="marquee-group" aria-hidden="true">
                     <li class="marquee-item">Python</li>
                     <li class="marquee-item">Django</li>
                     <li class="marquee-item">FastAPI</li>
@@ -259,7 +245,7 @@
         <!-- About Section -->
         <section class="section-container" id="sobre-mi">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">01</span> Mi historia</p>
+                <p class="section-tag">Mi historia</p>
                 <h2 class="section-title">Del piso del taller al código</h2>
                 <p class="section-desc">No desarrollo para la operación desde fuera: trabajo dentro de ella, todos los días.</p>
             </header>
@@ -294,7 +280,7 @@
         <!-- Projects Section -->
         <section class="section-container" id="proyectos">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">02</span> Mis desarrollos</p>
+                <p class="section-tag">Mis desarrollos</p>
                 <h2 class="section-title">Proyectos destacados</h2>
                 <p class="section-desc">Sistemas empresariales, de analítica y sitios web construidos de punta a punta, del modelo de datos al despliegue.</p>
             </header>
@@ -304,7 +290,6 @@
                 <!-- Project 1: Django -->
                 <article class="project-card is-featured" id="project-django">
                     <div class="project-meta">
-                        <span class="project-index">01</span>
                         <span class="project-kind">Plataforma empresarial</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción · Railway</span>
                     </div>
@@ -338,7 +323,6 @@
                 <!-- Project 2: FastAPI -->
                 <article class="project-card" id="project-fastapi">
                     <div class="project-meta">
-                        <span class="project-index">02</span>
                         <span class="project-kind">PWA de cotización</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción · Railway</span>
                     </div>
@@ -370,7 +354,6 @@
                 <!-- Project 3: Control de estacionamiento -->
                 <article class="project-card" id="project-estacionamiento">
                     <div class="project-meta">
-                        <span class="project-index">03</span>
                         <span class="project-kind">Control de estacionamiento</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> Desplegado en Railway</span>
                     </div>
@@ -402,7 +385,6 @@
                 <!-- Project 4: Catálogo para clientes -->
                 <article class="project-card" id="project-catalogo">
                     <div class="project-meta">
-                        <span class="project-index">04</span>
                         <span class="project-kind">Catálogo para clientes</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> Desplegado en Vercel</span>
                     </div>
@@ -436,7 +418,6 @@
                 <!-- Project 5: Sitio web con IA -->
                 <article class="project-card" id="project-rjcars">
                     <div class="project-meta">
-                        <span class="project-index">05</span>
                         <span class="project-kind">Sitio web con IA</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> Desplegado en Railway</span>
                     </div>
@@ -468,7 +449,6 @@
                 <!-- Project 6: Tienda en línea -->
                 <article class="project-card" id="project-nitro">
                     <div class="project-meta">
-                        <span class="project-index">06</span>
                         <span class="project-kind">Tienda en línea</span>
                         <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción · Vercel</span>
                     </div>
@@ -499,7 +479,6 @@
                 <!-- Project 7: Punto de venta -->
                 <article class="project-card" id="project-pos">
                     <div class="project-meta">
-                        <span class="project-index">07</span>
                         <span class="project-kind">Punto de venta</span>
                         <span class="project-status is-pilot"><span class="status-dot" aria-hidden="true"></span> Piloto · Railway</span>
                     </div>
@@ -531,7 +510,7 @@
         <!-- BDC Simulator Section -->
         <section class="section-container" id="simulador">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">03</span> Simulador interactivo</p>
+                <p class="section-tag">Simulador interactivo</p>
                 <h2 class="section-title">Consola analítica BDC</h2>
                 <p class="section-desc">Pon a prueba el motor matemático que implementé en mis proyectos de analítica. Ingresa datos de un vehículo de ejemplo para ver cómo calcula y clasifica a un cliente.</p>
             </header>
@@ -646,7 +625,7 @@
         <!-- Engineering Patterns Section -->
         <section class="section-container" id="ingenieria">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">04</span> Bajo el capó</p>
+                <p class="section-tag">Bajo el capó</p>
                 <h2 class="section-title">Patrones de ingeniería</h2>
                 <p class="section-desc">No solo construyo funciones: aplico patrones de software que mantienen los sistemas rápidos, confiables y seguros en producción.</p>
             </header>
@@ -655,7 +634,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-refresh-cw"/></svg></span>
-                        <span class="pattern-index">01</span>
                     </div>
                     <h3>Outbox Pattern + Colas Asíncronas</h3>
                     <p>Consistencia eventual con cola persistente y Dead Letter Queue: las tareas costosas (subir imágenes, sincronizar) no bloquean la respuesta al usuario.</p>
@@ -663,7 +641,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-fingerprint"/></svg></span>
-                        <span class="pattern-index">02</span>
                     </div>
                     <h3>Idempotencia</h3>
                     <p>Operaciones seguras de reintentar: hash de contenido y claves idempotentes evitan cotizaciones y registros duplicados ante doble clic o reintentos de red.</p>
@@ -671,7 +648,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg></span>
-                        <span class="pattern-index">03</span>
                     </div>
                     <h3>Optimización de Consultas (N+1)</h3>
                     <p>Uso de select_related y prefetch_related para bajar expedientes de 40+ consultas a solo 3, logrando carga instantánea en alto volumen.</p>
@@ -679,7 +655,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
-                        <span class="pattern-index">04</span>
                     </div>
                     <h3>Concurrencia con Lock Cooperativo</h3>
                     <p>Bloqueo de edición respaldado en base de datos y <code>select_for_update</code> para impedir que dos usuarios editen el mismo folio a la vez, con aviso visual en modo solo lectura.</p>
@@ -687,7 +662,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-brain"/></svg></span>
-                        <span class="pattern-index">05</span>
                     </div>
                     <h3>Inferencia con Machine Learning</h3>
                     <p>TF-IDF (scikit-learn) para predecir SKU desde texto libre, con umbrales de confianza y un plan de validación con métricas de acierto.</p>
@@ -695,7 +669,6 @@
                 <li class="pattern-card">
                     <div class="pattern-head">
                         <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg></span>
-                        <span class="pattern-index">06</span>
                     </div>
                     <h3>Seguridad por Capas</h3>
                     <p>Helmet/CSP y rate limiting en Node; django-axes, HSTS y Row Level Security en el resto; contenedores Docker sin privilegios de root.</p>
@@ -706,9 +679,9 @@
         <!-- Tech Stack Section -->
         <section class="section-container" id="habilidades">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">05</span> Tecnologías</p>
+                <p class="section-tag">Tecnologías</p>
                 <h2 class="section-title">Habilidades &amp; stack</h2>
-                <p class="section-desc">Tecnologías que uso en mis repositorios: nada en esta lista está de adorno.</p>
+                <p class="section-desc">Las tecnologías con las que construyo, agrupadas por área.</p>
             </header>
 
             <!-- Skills agrupadas por área -->
@@ -824,7 +797,7 @@
         <!-- Services Section -->
         <section class="section-container" id="servicios">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">06</span> Servicios</p>
+                <p class="section-tag">Servicios</p>
                 <h2 class="section-title">¿Qué puedo construir para ti?</h2>
                 <p class="section-desc">Soluciones probadas en la operación real de una concesionaria, adaptables a tu negocio.</p>
             </header>
@@ -873,7 +846,7 @@
         <!-- Contact Section -->
         <section class="section-container" id="contacto">
             <header class="section-header">
-                <p class="section-tag"><span class="section-num">07</span> Conectemos</p>
+                <p class="section-tag">Conectemos</p>
                 <h2 class="section-title">¿Hablamos de tu proyecto?</h2>
                 <p class="section-desc">¿Tienes alguna duda sobre mis sistemas o quieres colaborar en algún desarrollo? Escríbeme: respondo personalmente.</p>
             </header>

@@ -4,9 +4,7 @@
     grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
     gap: clamp(36px, 5vw, 72px);
     align-items: center;
-    min-height: min(100vh, 820px);
-    min-height: min(100svh, 820px);
-    padding: calc(var(--header-h) + 40px) 0 32px;
+    padding: calc(var(--header-h) + 56px) 0 56px;
 }
 
 .hero-content {
@@ -130,21 +128,6 @@
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-premium), 0 0 80px -40px var(--primary-glow);
-}
-
-/* Filo de luz que recorre el borde del panel */
-.impact-panel::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    padding: 1px;
-    border-radius: inherit;
-    background: conic-gradient(from var(--border-angle), transparent 0 62%, var(--primary-color) 78%, var(--ember-color) 86%, transparent 96%);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-    animation: borderSpin 7s linear infinite;
-    pointer-events: none;
 }
 
 .impact-panel-head {

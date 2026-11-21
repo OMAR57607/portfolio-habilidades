@@ -1,34 +1,15 @@
-/* Sección Sobre Mí: composición tipo bento */
+/* Sección Sobre Mí */
 .about-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: clamp(32px, 5vw, 72px);
+    align-items: start;
 }
 
-.about-story,
-.about-highlight-item {
-    position: relative;
-    min-width: 0;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    transition: border-color var(--transition-smooth), transform var(--transition-smooth);
-}
-
-.about-highlight-item:hover {
-    border-color: var(--border-strong);
-    transform: translateY(-2px);
-}
-
-/* La historia ocupa dos columnas y dos filas */
 .about-story {
-    grid-column: span 2;
-    grid-row: span 2;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: clamp(24px, 3.4vw, 40px);
 }
 
 .about-story p {
@@ -41,9 +22,9 @@
 
 .about-story .about-lead {
     color: var(--text-main);
-    font-size: clamp(1.15rem, 2vw, 1.4rem);
-    line-height: 1.55;
-    letter-spacing: -0.012em;
+    font-size: clamp(1.12rem, 1.9vw, 1.32rem);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
 }
 
 .about-story p strong {
@@ -55,30 +36,22 @@
     color: var(--accent-text);
 }
 
-/* La lista se disuelve: cada punto es una celda del bento */
 .about-highlights {
-    display: contents;
+    border-top: 1px solid var(--border-color);
 }
 
 .about-highlight-item {
     display: flex;
-    flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
-    padding: 24px;
-}
-
-.about-highlight-item:nth-child(4) {
-    grid-column: span 2;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .about-highlight-item .icon {
-    width: 42px;
-    height: 42px;
-    padding: 10px;
-    background: var(--primary-soft);
-    border: 1px solid var(--border-glow);
-    border-radius: var(--radius-md);
+    margin-top: 2px;
     color: var(--accent-text);
+    font-size: 1.15rem;
 }
 
 .about-highlight-item span {
@@ -89,33 +62,14 @@
 
 .about-highlight-item strong {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
     color: var(--text-main);
-    font-size: 1.02rem;
-    font-weight: 650;
-    letter-spacing: -0.01em;
+    font-size: 0.98rem;
+    font-weight: 600;
 }
 
 @media (max-width: 860px) {
     .about-wrapper {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .about-story {
-        grid-row: auto;
-    }
-
-    .about-highlight-item:nth-child(4) {
-        grid-column: auto;
-    }
-}
-
-@media (max-width: 520px) {
-    .about-wrapper {
         grid-template-columns: 1fr;
-    }
-
-    .about-story {
-        grid-column: auto;
     }
 }
