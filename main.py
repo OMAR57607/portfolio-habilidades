@@ -5,31 +5,36 @@ adecuadas para producción, y genera `robots.txt` / `sitemap.xml` a partir de la
 URL pública real del despliegue.
 """
 
+import hashlib
 import os
 import secrets
 from pathlib import Path
 
 import uvicorn
 from fastapi import FastAPI, Request, Response
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import FileResponse, HTMLResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
 INDEX_FILE = STATIC_DIR / "index.html"
+ICON_SPRITE_FILE = STATIC_DIR / "icons.svg"
 
 # URL pública del sitio. Si no se define, se deduce de la petición entrante.
 # En Railway basta con declarar SITE_URL=https://tu-dominio.com
 SITE_URL = os.environ.get("SITE_URL", "").rstrip("/")
 
+# Con DEV_RELOAD=1 la plantilla se reconstruye en cada petición, para ver los
+# cambios de HTML/CSS/JS sin reiniciar el servidor.
+DEV_RELOAD = os.environ.get("DEV_RELOAD", "0") == "1"
+
 # Marcadores que el HTML sustituye en cada petición.
 SITE_URL_PLACEHOLDER = "__SITE_URL__"
 NONCE_PLACEHOLDER = "__CSP_NONCE__"
-
-# Orígenes externos de los que depende el frontend.
-GOOGLE_FONTS_CSS = "https://fonts.googleapis.com"
-GOOGLE_FONTS_FILES = "https://fonts.gstatic.com"
-FONTAWESOME_CDN = "https://cdnjs.cloudflare.com"
+# Marcadores que se resuelven una sola vez, al construir la plantilla.
+ASSET_VERSION_PLACEHOLDER = "__ASSET_VERSION__"
+ICON_SPRITE_PLACEHOLDER = "<!-- __ICON_SPRITE__ -->"
 
 
 def build_csp(nonce: str | None = None) -> str:
@@ -39,10 +44,10 @@ def build_csp(nonce: str | None = None) -> str:
         [
             "default-src 'self'",
             f"script-src {script_src}",
-            # Los estilos en línea siguen siendo necesarios para las animaciones
-            # calculadas en JS (dial de churn, filtros de skills).
-            f"style-src 'self' 'unsafe-inline' {GOOGLE_FONTS_CSS} {FONTAWESOME_CDN}",
-            f"font-src 'self' {GOOGLE_FONTS_FILES} {FONTAWESOME_CDN}",
+            # Fuentes e iconos se sirven desde el propio origen: no hay CDNs de
+            # terceros ni estilos en línea, así que basta con 'self'.
+            "style-src 'self'",
+            "font-src 'self'",
             "img-src 'self' data:",
             "connect-src 'self'",
             "form-action 'self'",
@@ -59,19 +64,53 @@ SECURITY_HEADERS = {
     "Referrer-Policy": "strict-origin-when-cross-origin",
     "Permissions-Policy": "geolocation=(), microphone=(), camera=()",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+    "Cross-Origin-Opener-Policy": "same-origin",
 }
 
-# Caché larga para assets, sin caché para el HTML (lleva un nonce por petición).
-STATIC_CACHE_CONTROL = "public, max-age=604800, stale-while-revalidate=86400"
+# Los assets enlazados con ?v=<hash> cambian de URL en cada despliegue, así que
+# pueden cachearse "para siempre". El resto se revalida con ETag (304 barato):
+# nunca se mezcla un HTML nuevo con CSS/JS viejo tras publicar cambios.
+VERSIONED_CACHE_CONTROL = "public, max-age=31536000, immutable"
+STATIC_CACHE_CONTROL = "no-cache"
 HTML_CACHE_CONTROL = "no-store"
+
+
+def compute_asset_version() -> str:
+    """Huella corta del contenido de `static/`: cambia si cambia cualquier asset."""
+    digest = hashlib.sha256()
+    for path in sorted(STATIC_DIR.rglob("*")):
+        if path.is_file():
+            digest.update(path.relative_to(STATIC_DIR).as_posix().encode())
+            digest.update(path.read_bytes())
+    return digest.hexdigest()[:12]
+
+
+def build_template() -> tuple[str, str]:
+    """HTML con el sprite de iconos incrustado y los assets versionados."""
+    version = compute_asset_version()
+    html = INDEX_FILE.read_text(encoding="utf-8")
+    html = html.replace(ICON_SPRITE_PLACEHOLDER, ICON_SPRITE_FILE.read_text(encoding="utf-8"))
+    html = html.replace(ASSET_VERSION_PLACEHOLDER, version)
+    return html, version
+
+
+TEMPLATE, ASSET_VERSION = build_template()
+
+
+def current_template() -> tuple[str, str]:
+    return build_template() if DEV_RELOAD else (TEMPLATE, ASSET_VERSION)
+
 
 app = FastAPI(
     title="Omar Fuentes Portfolio",
-    description="Portfolio de tecnología y analítica para concesionarias automotrices.",
+    description="Portfolio de desarrollo full stack y analítica de datos.",
     docs_url=None,
     redoc_url=None,
     openapi_url=None,
 )
+
+# HTML, CSS, JS y SVG viajan comprimidos (las fuentes woff2 y los PNG ya lo están).
+app.add_middleware(GZipMiddleware, minimum_size=1024)
 
 
 @app.middleware("http")
@@ -83,8 +122,12 @@ async def add_security_and_cache_headers(request: Request, call_next):
     # La ruta del index fija su propia CSP con nonce; el resto usa la genérica.
     response.headers.setdefault("Content-Security-Policy", build_csp())
 
-    if request.url.path.startswith("/static/"):
-        response.headers.setdefault("Cache-Control", STATIC_CACHE_CONTROL)
+    if request.url.path.startswith("/static/") and response.status_code in (200, 304):
+        _, version = current_template()
+        is_versioned = request.query_params.get("v") == version
+        response.headers["Cache-Control"] = (
+            VERSIONED_CACHE_CONTROL if is_versioned and not DEV_RELOAD else STATIC_CACHE_CONTROL
+        )
 
     return response
 
@@ -99,10 +142,11 @@ def resolve_site_url(request: Request) -> str:
     return str(request.base_url).rstrip("/")
 
 
-@app.get("/", response_class=HTMLResponse)
+# HEAD incluido: lo usan monitores de disponibilidad y vistas previas de enlaces.
+@app.api_route("/", methods=["GET", "HEAD"], response_class=HTMLResponse)
 async def read_index(request: Request) -> HTMLResponse:
     nonce = secrets.token_urlsafe(16)
-    html = INDEX_FILE.read_text(encoding="utf-8")
+    html, _ = current_template()
     html = html.replace(SITE_URL_PLACEHOLDER, resolve_site_url(request))
     html = html.replace(NONCE_PLACEHOLDER, nonce)
     return HTMLResponse(
@@ -118,7 +162,7 @@ async def read_index(request: Request) -> HTMLResponse:
 async def read_favicon() -> FileResponse:
     return FileResponse(
         STATIC_DIR / "favicon.ico",
-        headers={"Cache-Control": STATIC_CACHE_CONTROL},
+        headers={"Cache-Control": "public, max-age=86400"},
     )
 
 
@@ -147,5 +191,4 @@ async def health() -> dict:
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
-    reload_enabled = os.environ.get("DEV_RELOAD", "0") == "1"
-    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=reload_enabled)
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=DEV_RELOAD)

@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Omar Fuentes - Full Stack Developer (Python & Node.js) & Data/ML Analyst en el piso de un taller Toyota. Machine learning para refacciones, automatización de cotizaciones y analítica BDC para concesionarias: de 3 horas a 15 minutos por cotización.">
-    <meta name="keywords" content="Omar Fuentes, Python Developer, Node.js, Data Analyst, Machine Learning, scikit-learn, Django, FastAPI, Flask, Streamlit, Express, Pandas, Supabase, PostgreSQL, BDC, Automotriz, Programador Python, Automatización de Concesionarias, Taller Automotriz, Cotizaciones de Taller, Analítica BDC">
+    <meta name="description" content="Omar Fuentes, Full Stack Developer (Python y Node.js) y Data/ML Analyst. Construyo sistemas web, modelos de machine learning y analítica de datos que corren en producción: cotizaciones de taller de hasta 3 horas a 15 minutos promedio.">
+    <meta name="keywords" content="Omar Fuentes, Full Stack Developer, Python Developer, Node.js, Data Analyst, Machine Learning, scikit-learn, Django, FastAPI, Flask, Streamlit, Express, Pandas, Supabase, PostgreSQL, BDC, Automotriz, Programador Python, Automatización de Concesionarias, Taller Automotriz, Cotizaciones de Taller, Analítica BDC, Puebla">
     <meta name="author" content="Omar Fuentes">
-    <meta name="theme-color" content="#08080a" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
     <link rel="canonical" href="__SITE_URL__/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Omar Fuentes">
     <meta property="og:locale" content="es_MX">
-    <meta property="og:title" content="Omar Fuentes | Tecnología y Analítica para Concesionarias Automotrices">
-    <meta property="og:description" content="Cotizaciones de taller de 3 horas a 15 minutos promedio. Sistemas y analítica BDC construidos desde el piso de una concesionaria Toyota.">
+    <meta property="og:title" content="Omar Fuentes | Full Stack Developer &amp; Data/ML Analyst">
+    <meta property="og:description" content="Software, machine learning y analítica de datos que corren en producción. Cotizaciones de taller de hasta 3 horas a 15 minutos promedio.">
     <meta property="og:url" content="__SITE_URL__/">
-    <meta property="og:image" content="__SITE_URL__/static/logo.png">
-    <meta property="og:image:width" content="1024">
-    <meta property="og:image:height" content="558">
-    <meta property="og:image:alt" content="Logo de Omar Fuentes: creador de tecnología, logística y eficiencia">
+    <meta property="og:image" content="__SITE_URL__/static/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Omar Fuentes, Full Stack Developer y Data/ML Analyst: cotizaciones de taller de hasta 3 horas a 15 minutos promedio">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Omar Fuentes | Tecnología y Analítica para Concesionarias Automotrices">
-    <meta name="twitter:description" content="Cotizaciones de taller de 3 horas a 15 minutos promedio. Sistemas y analítica BDC construidos desde la operación real.">
-    <meta name="twitter:image" content="__SITE_URL__/static/logo.png">
-    <meta name="twitter:image:alt" content="Logo de Omar Fuentes: creador de tecnología, logística y eficiencia">
+    <meta name="twitter:title" content="Omar Fuentes | Full Stack Developer &amp; Data/ML Analyst">
+    <meta name="twitter:description" content="Software, machine learning y analítica de datos que corren en producción, construidos desde la operación real.">
+    <meta name="twitter:image" content="__SITE_URL__/static/og-image.png">
+    <meta name="twitter:image:alt" content="Omar Fuentes, Full Stack Developer y Data/ML Analyst: cotizaciones de taller de hasta 3 horas a 15 minutos promedio">
 
-    <title>Omar Fuentes | Tecnología y Analítica para Concesionarias Automotrices</title>
+    <title>Omar Fuentes | Full Stack Developer &amp; Data/ML Analyst</title>
 
     <!-- Favicons y manifiesto PWA -->
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
@@ -52,27 +53,25 @@
         })();
     </script>
 
-    <!-- Google Fonts: Outfit & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Fuentes autoalojadas (Archivo, Inter, JetBrains Mono): sin terceros.
+         Se precargan las dos que pintan el primer pantallazo. -->
+    <link rel="preload" href="/static/fonts/archivo-expanded-latin.woff2?v=__ASSET_VERSION__" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/static/fonts/inter-latin.woff2?v=__ASSET_VERSION__" as="font" type="font/woff2" crossorigin>
 
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Hojas de estilo por componente (enlazadas en paralelo, no encadenadas con @import) -->
-    <link rel="stylesheet" href="/static/css/variables.css">
-    <link rel="stylesheet" href="/static/css/base.css">
-    <link rel="stylesheet" href="/static/css/header.css">
-    <link rel="stylesheet" href="/static/css/hero.css">
-    <link rel="stylesheet" href="/static/css/about.css">
-    <link rel="stylesheet" href="/static/css/projects.css">
-    <link rel="stylesheet" href="/static/css/simulator.css">
-    <link rel="stylesheet" href="/static/css/services.css">
-    <link rel="stylesheet" href="/static/css/skills.css">
-    <link rel="stylesheet" href="/static/css/contact.css">
-    <link rel="stylesheet" href="/static/css/animations.css">
+    <!-- Hojas de estilo por componente (enlazadas en paralelo, no encadenadas con @import).
+         El sufijo ?v= cambia en cada despliegue: permite caché larga sin servir CSS viejo. -->
+    <link rel="stylesheet" href="/static/css/variables.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/base.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/header.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/hero.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/about.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/projects.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/simulator.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/services.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/skills.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/contact.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/animations.css?v=__ASSET_VERSION__">
+    <link rel="stylesheet" href="/static/css/print.css?v=__ASSET_VERSION__" media="print">
 
     <!-- Datos estructurados para buscadores -->
     <script type="application/ld+json" nonce="__CSP_NONCE__">
@@ -81,9 +80,9 @@
         "@type": "Person",
         "name": "Omar Fuentes",
         "url": "__SITE_URL__/",
-        "image": "__SITE_URL__/static/logo.png",
+        "image": "__SITE_URL__/static/og-image.png",
         "jobTitle": "Full Stack Developer & Data/ML Analyst",
-        "description": "Desarrollador full stack y analista de datos especializado en digitalizar y automatizar la operación de concesionarias automotrices.",
+        "description": "Desarrollador full stack y analista de datos. Construye sistemas web, modelos de machine learning y analítica que corren en producción, con especialidad en la operación de concesionarias automotrices.",
         "address": { "@type": "PostalAddress", "addressRegion": "Puebla", "addressCountry": "MX" },
         "knowsAbout": [
             "Python", "Django", "FastAPI", "Node.js", "scikit-learn", "Pandas",
@@ -99,48 +98,47 @@
 <body>
     <a class="skip-link" href="#inicio">Saltar al contenido principal</a>
 
+    <!-- Sprite de iconos SVG: el servidor lo incrusta desde static/icons.svg -->
+    <!-- __ICON_SPRITE__ -->
+
     <!-- Scroll Progress Indicator -->
     <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true"></div>
-
-    <!-- Glowing Background blobs -->
-    <div class="blob-bg blob-red" aria-hidden="true"></div>
-    <div class="blob-bg blob-purple" aria-hidden="true"></div>
-    <div class="blob-bg blob-orange" aria-hidden="true"></div>
 
     <!-- Navigation Header -->
     <header class="main-header" id="header-nav">
         <div class="header-container">
-            <a href="#inicio" class="logo-wrapper" id="logo-link" aria-label="Inicio">
-                <img src="/static/logo-mark.png" alt="Logo de Omar Fuentes" class="nav-logo-img" width="44" height="44">
+            <a href="#inicio" class="logo-wrapper" id="logo-link" aria-label="Omar Fuentes, ir al inicio">
+                <img src="/static/logo-mark.png" alt="" class="nav-logo-img" width="36" height="36">
+                <span class="logo-wordmark">Omar Fuentes</span>
             </a>
             <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
-                <a href="#sobre-mi" class="nav-link"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> Sobre mí</a>
-                <a href="#proyectos" class="nav-link"><i class="fa-solid fa-code" aria-hidden="true"></i> Proyectos</a>
-                <a href="#simulador" class="nav-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Simulador BDC</a>
-                <a href="#servicios" class="nav-link"><i class="fa-solid fa-handshake" aria-hidden="true"></i> Servicios</a>
-                <a href="#habilidades" class="nav-link"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Skills</a>
-                <a href="#ingenieria" class="nav-link"><i class="fa-solid fa-gears" aria-hidden="true"></i> Ingeniería</a>
-                <a href="#contacto" class="nav-link contact-btn"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Contacto</a>
+                <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#simulador" class="nav-link">Simulador</a>
+                <a href="#ingenieria" class="nav-link">Ingeniería</a>
+                <a href="#habilidades" class="nav-link">Stack</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#contacto" class="nav-link contact-btn">Contacto <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
             </nav>
             <div class="nav-right-group">
                 <div class="theme-select-container">
                     <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-expanded="false" aria-haspopup="true" aria-controls="theme-dropdown">
-                        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+                        <svg class="icon" aria-hidden="true"><use href="#i-sun-moon"/></svg>
                     </button>
                     <div class="theme-dropdown" id="theme-dropdown" role="menu">
                         <button class="theme-dropdown-item" data-theme="light" role="menuitem">
-                            <i class="fa-solid fa-sun" aria-hidden="true"></i> Claro
+                            <svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg> Claro
                         </button>
                         <button class="theme-dropdown-item" data-theme="dark" role="menuitem">
-                            <i class="fa-solid fa-moon" aria-hidden="true"></i> Oscuro
+                            <svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg> Oscuro
                         </button>
                         <button class="theme-dropdown-item" data-theme="system" role="menuitem">
-                            <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Sistema
+                            <svg class="icon" aria-hidden="true"><use href="#i-sun-moon"/></svg> Sistema
                         </button>
                     </div>
                 </div>
                 <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
-                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                    <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
                 </button>
             </div>
         </div>
@@ -151,248 +149,278 @@
         <!-- Hero Section -->
         <section class="hero-section" id="inicio">
             <div class="hero-content">
-                <div class="badge-status fade-in">
-                    <span class="status-dot"></span> Disponible para nuevos proyectos
-                </div>
-                <h1 class="hero-title fade-in-up">
-                    Hola, soy <span class="highlight-name">Omar Fuentes</span>
-                </h1>
-                <h2 class="hero-subtitle fade-in-up">
-                    Digitalizo y automatizo la operación de concesionarias automotrices
-                </h2>
-                <p class="hero-desc fade-in-up">
-                    <strong>Full Stack Developer & Data/ML Analyst</strong> — y trabajo todos los días en el piso de un taller Toyota. Construyo arquitecturas web con <strong>Django</strong>, <strong>FastAPI</strong> y <strong>Node.js</strong>, modelos de <strong>machine learning</strong> (scikit-learn) y analítica en <strong>Pandas</strong> que resuelven cuellos de botella reales de BDC, taller y refacciones: cotizaciones que tardaban horas hoy salen en minutos.
+                <p class="badge-status fade-in-up">
+                    <span class="status-dot" aria-hidden="true"></span> Disponible para nuevos proyectos
+                    <span class="badge-sep" aria-hidden="true">/</span>
+                    <span class="badge-location"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg> Puebla, México</span>
                 </p>
-                <div class="hero-tech-pills fade-in-up">
-                    <span class="tech-pill"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</span>
-                    <span class="tech-pill"><i class="fa-solid fa-network-wired" aria-hidden="true"></i> Django</span>
-                    <span class="tech-pill"><i class="fa-solid fa-bolt" aria-hidden="true"></i> FastAPI</span>
-                    <span class="tech-pill"><i class="fa-brands fa-node-js" aria-hidden="true"></i> Node.js</span>
-                    <span class="tech-pill"><i class="fa-solid fa-brain" aria-hidden="true"></i> scikit-learn</span>
-                    <span class="tech-pill"><i class="fa-solid fa-table" aria-hidden="true"></i> Pandas</span>
-                    <span class="tech-pill"><i class="fa-solid fa-cloud" aria-hidden="true"></i> Supabase</span>
-                </div>
+                <h1 class="hero-title fade-in-up">
+                    <span class="hero-name">Omar <span class="highlight-name">Fuentes</span></span>
+                    <span class="hero-role">Full Stack Developer <span class="amp">&amp;</span> Data/ML Analyst</span>
+                </h1>
+                <p class="hero-desc fade-in-up">
+                    Convierto cuellos de botella de la operación en <strong>software que corre en producción</strong>. Programo desde el piso de un taller Toyota: arquitecturas web con <strong>Django</strong>, <strong>FastAPI</strong> y <strong>Node.js</strong>, modelos de <strong>machine learning</strong> y analítica en <strong>Pandas</strong> que hoy se usan a diario.
+                </p>
                 <div class="hero-actions fade-in-up">
                     <a href="#proyectos" class="btn btn-primary" id="btn-view-projects">
-                        Ver Proyectos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Ver proyectos <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
                     </a>
                     <a href="#simulador" class="btn btn-secondary" id="btn-try-simulator">
-                        Probar Simulador BDC <i class="fa-solid fa-circle-play" aria-hidden="true"></i>
+                        <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> Probar simulador BDC
+                    </a>
+                    <a href="https://github.com/OMAR57607" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> GitHub
                     </a>
                 </div>
+                <ul class="hero-tech-pills fade-in-up" aria-label="Stack principal">
+                    <li class="tech-pill">Python</li>
+                    <li class="tech-pill">Django</li>
+                    <li class="tech-pill">FastAPI</li>
+                    <li class="tech-pill">Node.js</li>
+                    <li class="tech-pill">scikit-learn</li>
+                    <li class="tech-pill">Pandas</li>
+                    <li class="tech-pill">Supabase</li>
+                </ul>
+            </div>
 
-                <!-- Resultados medibles en la operación -->
-                <div class="impact-stats fade-in-up" id="impacto">
-                    <div class="stat-card glass-panel">
-                        <span class="stat-value">15 <small>min</small></span>
-                        <span class="stat-label">Tiempo promedio de cotización en taller</span>
-                        <span class="stat-note"><i class="fa-solid fa-arrow-trend-down" aria-hidden="true"></i> antes tomaba hasta 3 horas</span>
+            <!-- Resultados medibles en la operación -->
+            <aside class="impact-panel fade-in-up" id="impacto" aria-label="Resultados medidos">
+                <div class="impact-panel-head">
+                    <span class="impact-kicker">Resultado medido</span>
+                    <span class="impact-live"><span class="status-dot is-ok" aria-hidden="true"></span> En producción</span>
+                </div>
+
+                <div class="impact-compare">
+                    <p class="impact-title">Tiempo de cotización en taller</p>
+                    <div class="compare-row">
+                        <span class="compare-label">Antes</span>
+                        <span class="compare-track"><span class="compare-bar is-before"></span></span>
+                        <span class="compare-value">hasta 3 h</span>
                     </div>
-                    <div class="stat-card glass-panel">
+                    <div class="compare-row is-now">
+                        <span class="compare-label">Hoy</span>
+                        <span class="compare-track"><span class="compare-bar is-now"></span></span>
+                        <span class="compare-value">15 min</span>
+                    </div>
+                    <p class="impact-note"><svg class="icon" aria-hidden="true"><use href="#i-trending-down"/></svg> Promedio actual; hasta 12 veces más rápido que el proceso manual.</p>
+                </div>
+
+                <div class="impact-stats">
+                    <div class="stat-card">
                         <span class="stat-value">+$1,500 <small>MXN</small></span>
                         <span class="stat-label">Ticket promedio por orden de servicio</span>
-                        <span class="stat-note"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> incremento estimado</span>
+                        <span class="stat-note">incremento estimado</span>
                     </div>
-                    <div class="stat-card glass-panel">
+                    <div class="stat-card">
                         <span class="stat-value">5</span>
                         <span class="stat-label">Sistemas propios en producción</span>
-                        <span class="stat-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> usados a diario en la operación</span>
+                        <span class="stat-note">usados a diario en la operación</span>
                     </div>
                 </div>
-            </div>
+            </aside>
         </section>
 
         <!-- About Section -->
         <section class="section-container" id="sobre-mi">
-            <div class="section-header">
-                <span class="section-tag">Mi Historia</span>
-                <h3 class="section-title">Del Piso del Taller al Código</h3>
-                <p class="section-desc">No desarrollo para concesionarias desde fuera: trabajo dentro de una, todos los días.</p>
-            </div>
+            <header class="section-header">
+                <p class="section-tag"><span class="section-num">01</span> Mi historia</p>
+                <h2 class="section-title">Del piso del taller al código</h2>
+                <p class="section-desc">No desarrollo para la operación desde fuera: trabajo dentro de ella, todos los días.</p>
+            </header>
 
             <div class="about-wrapper">
-                <div class="about-story glass-panel">
-                    <p>Trabajo en el <strong>piso de una concesionaria Toyota</strong>, en la operación diaria del taller de servicio. Ahí viví de primera mano los cuellos de botella del negocio: cotizaciones que tardaban <strong>hasta 3 horas</strong>, reportes del DMS consolidados a mano y llamadas de seguimiento sin priorizar.</p>
-                    <p>Aprendí a programar para resolver esos problemas — los míos y los de mi equipo. Cada sistema de este portfolio nació de una necesidad real y hoy <strong>corre en producción</strong>, usándose todos los días. El resultado: cotizaciones en <strong>15 minutos promedio</strong> y un incremento estimado de <strong>$1,500 MXN</strong> al ticket promedio por orden.</p>
+                <div class="about-story">
+                    <p class="about-lead">Trabajo en el <strong>piso de una concesionaria Toyota</strong>, en la operación diaria del taller de servicio. Ahí viví de primera mano los cuellos de botella del negocio: cotizaciones que tardaban <strong>hasta 3 horas</strong>, reportes del DMS consolidados a mano y llamadas de seguimiento sin priorizar.</p>
+                    <p>Aprendí a programar para resolver esos problemas, los míos y los de mi equipo. Cada sistema de este portfolio nació de una necesidad real y hoy <strong>corre en producción</strong>, usándose todos los días. El resultado: cotizaciones en <strong>15 minutos promedio</strong> y un incremento estimado de <strong>$1,500 MXN</strong> al ticket promedio por orden.</p>
                     <p>Mi diferencial es la mezcla: la disciplina operativa de la casa (<strong>Toyota Way, Kodawari, Max Max</strong>) con un stack moderno de desarrollo y datos (<strong>Python, Django, FastAPI, Pandas</strong>). No traduzco requerimientos: vivo el problema, lo mido y lo automatizo.</p>
                 </div>
-                <div class="about-highlights glass-panel">
-                    <div class="about-highlight-item">
-                        <i class="fa-solid fa-wrench text-red" aria-hidden="true"></i>
+                <ul class="about-highlights">
+                    <li class="about-highlight-item">
+                        <svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg>
                         <span><strong>Operación real</strong>Trabajo en el taller: conozco de primera mano el proceso que automatizo.</span>
-                    </div>
-                    <div class="about-highlight-item">
-                        <i class="fa-solid fa-gears text-blue" aria-hidden="true"></i>
+                    </li>
+                    <li class="about-highlight-item">
+                        <svg class="icon" aria-hidden="true"><use href="#i-cog"/></svg>
                         <span><strong>Formación interna Toyota</strong>Toyota Way, Metodología Kodawari y administración de inventarios Max Max.</span>
-                    </div>
-                    <div class="about-highlight-item">
-                        <i class="fa-solid fa-rocket text-teal" aria-hidden="true"></i>
+                    </li>
+                    <li class="about-highlight-item">
+                        <svg class="icon" aria-hidden="true"><use href="#i-rocket"/></svg>
                         <span><strong>Sistemas en producción</strong>5 desarrollos propios usados a diario por la operación.</span>
-                    </div>
-                    <div class="about-highlight-item">
-                        <i class="fa-solid fa-chart-line text-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="about-highlight-item">
+                        <svg class="icon" aria-hidden="true"><use href="#i-chart-line"/></svg>
                         <span><strong>Resultados medidos</strong>KPIs antes y después: tiempo de cotización, ticket promedio y retención.</span>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section class="section-container" id="proyectos">
-            <div class="section-header">
-                <span class="section-tag">Mis Desarrollos</span>
-                <h3 class="section-title">Proyectos Destacados</h3>
+            <header class="section-header">
+                <p class="section-tag"><span class="section-num">02</span> Mis desarrollos</p>
+                <h2 class="section-title">Proyectos en producción</h2>
                 <p class="section-desc">Sistemas empresariales y de analítica implementados y optimizados para entornos de producción.</p>
-            </div>
+            </header>
 
             <div class="projects-grid">
 
                 <!-- Project 1: Django -->
-                <article class="project-card" id="project-django">
-                    <div class="project-icon">
-                        <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+                <article class="project-card is-featured" id="project-django">
+                    <div class="project-meta">
+                        <span class="project-index">01</span>
+                        <span class="project-kind">Plataforma empresarial</span>
+                        <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción</span>
                     </div>
                     <div class="project-content">
-                        <h4 class="project-title">Sistema Central Taller Toyota</h4>
+                        <h3 class="project-title">Sistema Central Taller Toyota</h3>
                         <p class="project-text">
                             Plataforma empresarial Django de 10 módulos para la operación integral de taller, citas, refacciones y pedidos especiales. En producción diaria sobre Railway.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>Machine Learning</strong>: inferencia de SKU desde descripción + modelo con <strong>TF-IDF (scikit-learn)</strong>, umbrales de confianza y reentrenamiento por comando.</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>IA multimodal Gemini 2.5 Flash</strong>: diagnóstico por foto y extracción estructurada de PDFs a JSON, con consentimiento legal (PROFECO).</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>Arquitectura resiliente</strong>: Outbox Pattern con cola asíncrona (DLQ), idempotencia y lock cooperativo vía Redis para edición concurrente.</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>Rendimiento</strong>: optimización de N+1 (de 40+ queries a 3) y generación de PDF con Playwright headless + firma digital.</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Seguridad: bloqueo anti fuerza bruta (django-axes), HSTS y tokens UUID; notificaciones Web Push y soporte PWA.</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Machine Learning</strong>: inferencia de SKU desde descripción + modelo con <strong>TF-IDF (scikit-learn)</strong>, umbrales de confianza y reentrenamiento por comando.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>IA multimodal Gemini 2.5 Flash</strong>: diagnóstico por foto y extracción estructurada de PDFs a JSON, con consentimiento legal (PROFECO).</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Arquitectura resiliente</strong>: Outbox Pattern con cola asíncrona (DLQ), idempotencia y lock cooperativo vía Redis para edición concurrente.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Rendimiento</strong>: optimización de N+1 (de 40+ queries a 3) y generación de PDF con Playwright headless + firma digital.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Seguridad: bloqueo anti fuerza bruta (django-axes), HSTS y tokens UUID; notificaciones Web Push y soporte PWA.</span></li>
                         </ul>
-                        <div class="project-tags">
-                            <span class="tag">Django 6</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">scikit-learn</span>
-                            <span class="tag">Gemini AI</span>
-                            <span class="tag">Playwright</span>
-                            <span class="tag">Redis</span>
-                        </div>
+                        <ul class="project-tags" aria-label="Tecnologías">
+                            <li class="tag">Django 6</li>
+                            <li class="tag">PostgreSQL</li>
+                            <li class="tag">scikit-learn</li>
+                            <li class="tag">Gemini AI</li>
+                            <li class="tag">Playwright</li>
+                            <li class="tag">Redis</li>
+                        </ul>
                         <div class="project-links">
-                            <span class="repo-lock"><i class="fa-solid fa-lock" aria-hidden="true"></i> Sistema interno · Repositorio privado</span>
+                            <span class="repo-lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Sistema interno · Repositorio privado</span>
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 2: FastAPI -->
                 <article class="project-card" id="project-fastapi">
-                    <div class="project-icon">
-                        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                    <div class="project-meta">
+                        <span class="project-index">02</span>
+                        <span class="project-kind">PWA de cotización</span>
+                        <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción</span>
                     </div>
                     <div class="project-content">
-                        <h4 class="project-title">Verificador Digital de Precios</h4>
+                        <h3 class="project-title">Verificador Digital de Precios</h3>
                         <p class="project-text">
                             Aplicación web instalable (PWA) de consulta y cotización de refacciones, diseñada bajo las normativas PROFECO de exhibición comercial mexicana.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Búsqueda en milisegundos por SKU con FastAPI y <strong>Web Scraping</strong> anti-bot (curl_cffi + BeautifulSoup) de 4 fuentes OEM.</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>PWA con Service Worker</strong>: instalable y funcional sin conexión, con tema día/noche según zona horaria CDMX.</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Cotización multi-item persistida en Supabase con <strong>idempotencia por hash</strong> y <strong>Row Level Security</strong>.</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Producción en Docker (imagen endurecida, usuario no-root) sobre Railway, con monitoreo de errores en <strong>Sentry</strong>.</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Búsqueda en milisegundos por SKU con FastAPI y <strong>Web Scraping</strong> anti-bot (curl_cffi + BeautifulSoup) de 4 fuentes OEM.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>PWA con Service Worker</strong>: instalable y funcional sin conexión, con tema día/noche según zona horaria CDMX.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Cotización multi-item persistida en Supabase con <strong>idempotencia por hash</strong> y <strong>Row Level Security</strong>.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Producción en Docker (imagen endurecida, usuario no-root) sobre Railway, con monitoreo de errores en <strong>Sentry</strong>.</span></li>
                         </ul>
-                        <div class="project-tags">
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">PWA</span>
-                            <span class="tag">Supabase</span>
-                            <span class="tag">BeautifulSoup</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">Sentry</span>
-                        </div>
+                        <ul class="project-tags" aria-label="Tecnologías">
+                            <li class="tag">FastAPI</li>
+                            <li class="tag">PWA</li>
+                            <li class="tag">Supabase</li>
+                            <li class="tag">BeautifulSoup</li>
+                            <li class="tag">Docker</li>
+                            <li class="tag">Sentry</li>
+                        </ul>
                         <div class="project-links">
-                            <span class="repo-lock"><i class="fa-solid fa-lock" aria-hidden="true"></i> Repositorio Privado</span>
+                            <span class="repo-lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Repositorio Privado</span>
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 3: Flask & Pandas -->
                 <article class="project-card" id="project-flask">
-                    <div class="project-icon">
-                        <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+                    <div class="project-meta">
+                        <span class="project-index">03</span>
+                        <span class="project-kind">Analítica de datos</span>
+                        <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción</span>
                     </div>
                     <div class="project-content">
-                        <h4 class="project-title">Consolidador BDC y Analítica Automotriz</h4>
+                        <h3 class="project-title">Consolidador BDC y Analítica Automotriz</h3>
                         <p class="project-text">
                             Motor de analítica y consolidación que unifica hojas de cálculo del DMS (Quiter) y del CRM para predecir retención de clientes.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Consolidación automática de reportes de servicio (U297, U307, TDM).</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Clasificación de retención mediante el algoritmo <strong>CRT</strong> (Pura, Conquista, Fuga).</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Algoritmo de proyección predictiva de kilometraje (<strong>CERT</strong>).</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Alertas y priorización de llamadas según índice de riesgo de abandono (Churn).</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Consolidación automática de reportes de servicio (U297, U307, TDM).</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Clasificación de retención mediante el algoritmo <strong>CRT</strong> (Pura, Conquista, Fuga).</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Algoritmo de proyección predictiva de kilometraje (<strong>CERT</strong>).</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Alertas y priorización de llamadas según índice de riesgo de abandono (Churn).</span></li>
                         </ul>
-                        <div class="project-tags">
-                            <span class="tag">Flask</span>
-                            <span class="tag">Pandas</span>
-                            <span class="tag">NumPy</span>
-                            <span class="tag">OpenPyXL</span>
-                        </div>
+                        <ul class="project-tags" aria-label="Tecnologías">
+                            <li class="tag">Flask</li>
+                            <li class="tag">Pandas</li>
+                            <li class="tag">NumPy</li>
+                            <li class="tag">OpenPyXL</li>
+                        </ul>
                         <div class="project-links">
-                            <a class="project-link" href="https://github.com/OMAR57607/procesador_de_archivos" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Ver código en GitHub</a>
+                            <a class="project-link" href="https://github.com/OMAR57607/procesador_de_archivos" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Ver código en GitHub</a>
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 4: Streamlit -->
                 <article class="project-card" id="project-streamlit">
-                    <div class="project-icon">
-                        <i class="fa-solid fa-images" aria-hidden="true"></i>
+                    <div class="project-meta">
+                        <span class="project-index">04</span>
+                        <span class="project-kind">App móvil para técnicos</span>
+                        <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción</span>
                     </div>
                     <div class="project-content">
-                        <h4 class="project-title">Sistema de Evidencia y Diagnóstico Taller</h4>
+                        <h3 class="project-title">Sistema de Evidencia y Diagnóstico Taller</h3>
                         <p class="project-text">
                             Aplicación móvil de captura rápida para técnicos que agiliza la subida de cotizaciones de servicio con evidencias visuales.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Interfaz en Streamlit con login seguro conectado a Supabase Auth.</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>Compresión de imágenes en cliente</strong> (PIL) para ahorrar datos móviles.</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Generación en tiempo real y descarga de reportes avanzados con <strong>FPDF</strong>.</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Subida asíncrona de reportes y fotografías a Supabase Storage.</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Interfaz en Streamlit con login seguro conectado a Supabase Auth.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Compresión de imágenes en cliente</strong> (PIL) para ahorrar datos móviles.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Generación en tiempo real y descarga de reportes avanzados con <strong>FPDF</strong>.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Subida asíncrona de reportes y fotografías a Supabase Storage.</span></li>
                         </ul>
-                        <div class="project-impact">
-                            <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+                        <p class="project-impact">
+                            <svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg>
                             <span><strong>Impacto:</strong> cotizaciones de taller en 15 min promedio (antes hasta 3 h) y un incremento estimado de $1,500 MXN al ticket promedio por orden.</span>
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Streamlit</span>
-                            <span class="tag">Supabase</span>
-                            <span class="tag">FPDF</span>
-                            <span class="tag">Pillow (PIL)</span>
-                        </div>
+                        </p>
+                        <ul class="project-tags" aria-label="Tecnologías">
+                            <li class="tag">Streamlit</li>
+                            <li class="tag">Supabase</li>
+                            <li class="tag">FPDF</li>
+                            <li class="tag">Pillow (PIL)</li>
+                        </ul>
                         <div class="project-links">
-                            <a class="project-link" href="https://github.com/OMAR57607/tecnicos-Toyota" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Ver código en GitHub</a>
+                            <a class="project-link" href="https://github.com/OMAR57607/tecnicos-Toyota" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Ver código en GitHub</a>
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 5: Node.js / Express -->
                 <article class="project-card" id="project-node">
-                    <div class="project-icon">
-                        <i class="fa-brands fa-node-js" aria-hidden="true"></i>
+                    <div class="project-meta">
+                        <span class="project-index">05</span>
+                        <span class="project-kind">Sitio web</span>
+                        <span class="project-status"><span class="status-dot is-ok" aria-hidden="true"></span> En producción</span>
                     </div>
                     <div class="project-content">
-                        <h4 class="project-title">Fuertes Trail Puebla — Sitio Web</h4>
+                        <h3 class="project-title">Fuertes Trail Puebla — Sitio Web</h3>
                         <p class="project-text">
                             Sitio web oficial de una comunidad off-road 4x4, construido en Node.js con foco en seguridad y rendimiento. Mi único proyecto fuera del stack Python.
                         </p>
                         <ul class="project-features">
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Servidor <strong>Express</strong> endurecido con <strong>Helmet</strong>: CSP, anti-XSS, anti-clickjacking y anti-MIME-sniffing.</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <strong>Rate limiting</strong> contra fuerza bruta/DoS, trust proxy y apagado seguro (graceful shutdown).</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Frontend responsive mobile-first con imágenes optimizadas a <strong>WebP</strong>.</li>
-                            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Desplegado en producción sobre Railway.</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Servidor <strong>Express</strong> endurecido con <strong>Helmet</strong>: CSP, anti-XSS, anti-clickjacking y anti-MIME-sniffing.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Rate limiting</strong> contra fuerza bruta/DoS, trust proxy y apagado seguro (graceful shutdown).</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Frontend responsive mobile-first con imágenes optimizadas a <strong>WebP</strong>.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Desplegado en producción sobre Railway.</span></li>
                         </ul>
-                        <div class="project-tags">
-                            <span class="tag">Node.js</span>
-                            <span class="tag">Express</span>
-                            <span class="tag">Helmet</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Railway</span>
-                        </div>
+                        <ul class="project-tags" aria-label="Tecnologías">
+                            <li class="tag">Node.js</li>
+                            <li class="tag">Express</li>
+                            <li class="tag">Helmet</li>
+                            <li class="tag">JavaScript</li>
+                            <li class="tag">Railway</li>
+                        </ul>
                         <div class="project-links">
-                            <a class="project-link demo-link" href="https://fuertes-trail-puebla-production.up.railway.app" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver demo en vivo</a>
+                            <a class="project-link demo-link" href="https://fuertes-trail-puebla-production.up.railway.app" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg> Ver demo en vivo</a>
                         </div>
                     </div>
                 </article>
@@ -402,109 +430,112 @@
 
         <!-- BDC Simulator Section -->
         <section class="section-container" id="simulador">
-            <div class="section-header">
-                <span class="section-tag">Simulador Interactivo</span>
-                <h3 class="section-title">Consola Analítica BDC</h3>
+            <header class="section-header">
+                <p class="section-tag"><span class="section-num">03</span> Simulador interactivo</p>
+                <h2 class="section-title">Consola analítica BDC</h2>
                 <p class="section-desc">Pon a prueba el motor matemático que implementé en mis proyectos de analítica. Ingresa datos de un vehículo de ejemplo para ver cómo calcula y clasifica a un cliente.</p>
-            </div>
+            </header>
 
-            <div class="sim-glossary">
-                <span class="sim-term"><strong>CERT</strong> · proyección del kilometraje actual del vehículo</span>
-                <span class="sim-term"><strong>DERT</strong> · días promedio entre servicios del cliente</span>
-                <span class="sim-term"><strong>CRT</strong> · clasificación de retención (Pura, Conquista, Fuga)</span>
-                <span class="sim-term"><strong>TDM</strong> · citas de mantenimiento programado</span>
-                <span class="sim-term"><strong>Churn</strong> · riesgo de que el cliente abandone el servicio</span>
-            </div>
+            <dl class="sim-glossary">
+                <div class="sim-term"><dt>CERT</dt><dd>proyección del kilometraje actual del vehículo</dd></div>
+                <div class="sim-term"><dt>DERT</dt><dd>días promedio entre servicios del cliente</dd></div>
+                <div class="sim-term"><dt>CRT</dt><dd>clasificación de retención (Pura, Conquista, Fuga)</dd></div>
+                <div class="sim-term"><dt>TDM</dt><dd>citas de mantenimiento programado</dd></div>
+                <div class="sim-term"><dt>Churn</dt><dd>riesgo de que el cliente abandone el servicio</dd></div>
+            </dl>
 
             <div class="simulator-wrapper">
-                <div class="simulator-card glass-panel">
+                <div class="simulator-card">
                     <div class="simulator-card-header">
-                        <div class="console-dots">
+                        <div class="console-dots" aria-hidden="true">
                             <span class="dot dot-r"></span>
                             <span class="dot dot-y"></span>
                             <span class="dot dot-g"></span>
                         </div>
                         <span class="console-title">kpi_engine_v1.py</span>
+                        <span class="console-tag">entrada</span>
                     </div>
                     <div class="simulator-card-body">
                         <form id="bdc-sim-form">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="input-km"><i class="fa-solid fa-tachometer-alt" aria-hidden="true"></i> Kilometraje Actual</label>
-                                    <input type="number" id="input-km" value="38500" min="0" placeholder="Ej: 40000" required>
+                                    <label for="input-km">Kilometraje actual</label>
+                                    <input type="number" id="input-km" value="38500" min="0" inputmode="numeric" placeholder="Ej: 40000" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="input-days"><i class="fa-solid fa-calendar-day" aria-hidden="true"></i> Días sin Visitas</label>
-                                    <input type="number" id="input-days" value="280" min="0" placeholder="Ej: 150" required>
+                                    <label for="input-days">Días sin visitas</label>
+                                    <input type="number" id="input-days" value="280" min="0" inputmode="numeric" placeholder="Ej: 150" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="input-interval"><i class="fa-solid fa-history" aria-hidden="true"></i> DERT Promedio (Días entre servicios)</label>
-                                    <input type="number" id="input-interval" value="180" min="1" placeholder="Ej: 180" required>
+                                    <label for="input-interval">DERT promedio (días entre servicios)</label>
+                                    <input type="number" id="input-interval" value="180" min="1" inputmode="numeric" placeholder="Ej: 180" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="select-model"><i class="fa-solid fa-car" aria-hidden="true"></i> Modelo de Vehículo</label>
+                                    <label for="select-model">Modelo de vehículo</label>
                                     <select id="select-model">
                                         <option value="Hilux">Hilux</option>
                                         <option value="Yaris">Yaris</option>
                                         <option value="Corolla">Corolla</option>
                                         <option value="RAV4">RAV4</option>
                                         <option value="Hiace">Hiace</option>
-                                        <option value="Otro" selected>Otro Modelo</option>
+                                        <option value="Otro" selected>Otro modelo</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-row checkbox-row">
                                 <div class="checkbox-group">
                                     <input type="checkbox" id="check-tdm" checked>
-                                    <label for="check-tdm">¿Objetivo de Citas TDM?</label>
+                                    <label for="check-tdm">¿Objetivo de citas TDM?</label>
                                 </div>
                                 <div class="checkbox-group">
                                     <input type="checkbox" id="check-local" checked>
-                                    <label for="check-local">¿Vendido en esta Agencia?</label>
+                                    <label for="check-local">¿Vendido en esta agencia?</label>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary btn-full" id="btn-run-sim">
-                                <i class="fa-solid fa-play" aria-hidden="true"></i> Ejecutar Algoritmo de Priorización
+                                <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> Ejecutar algoritmo de priorización
                             </button>
+                            <p class="sim-hint">Los resultados también se recalculan al cambiar cualquier dato.</p>
                         </form>
                     </div>
                 </div>
 
                 <!-- Simulation Output -->
-                <div class="simulator-results glass-panel" id="sim-results" role="status" aria-live="polite">
+                <div class="simulator-results" id="sim-results" role="status" aria-live="polite">
                     <div class="results-header">
-                        <i class="fa-solid fa-terminal" aria-hidden="true"></i> Salida del Algoritmo (Output)
+                        <svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg> Salida del algoritmo
+                        <span class="console-tag">output</span>
                     </div>
                     <div class="results-body">
                         <div class="output-item">
-                            <span class="output-label">Kilometraje Proyectado (CERT):</span>
-                            <span class="output-value text-glow" id="out-cert">44,488 KM</span>
+                            <span class="output-label">Kilometraje proyectado (CERT)</span>
+                            <span class="output-value text-glow" id="out-cert">68,034 KM</span>
                         </div>
                         <div class="output-item">
-                            <span class="output-label">Próximo Paquete de Servicio:</span>
-                            <span class="output-value" id="out-service">OFRECER PAQUETE DE 50,000 KM</span>
+                            <span class="output-label">Próximo paquete de servicio</span>
+                            <span class="output-value" id="out-service">OFRECER PAQUETE DE 70,000 KM</span>
                         </div>
                         <div class="output-item">
-                            <span class="output-label">Clasificación CRT del Cliente:</span>
+                            <span class="output-label">Clasificación CRT del cliente</span>
                             <span class="output-value" id="out-crt">1. RETENCIÓN PURA (VENDIDO AQUÍ Y ACTIVO)</span>
                         </div>
                         <div class="output-item churn-output-group">
                             <div class="churn-info">
-                                <span class="output-label">Índice de Riesgo (Churn Risk):</span>
-                                <span class="churn-alert-tag text-red" id="out-churn-alert">1. CHURN CONFIRMADO</span>
+                                <span class="output-label">Índice de riesgo (churn risk)</span>
+                                <span class="churn-alert-tag is-danger" id="out-churn-alert">1. CHURN CONFIRMADO</span>
                             </div>
-                            <div class="churn-dial-container">
-                                <svg class="churn-dial" width="85" height="85" viewBox="0 0 36 36">
-                                    <path class="dial-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="3"/>
-                                    <path class="dial-fill" id="dial-fill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--primary-color)" stroke-width="3" stroke-dasharray="100, 100" stroke-dashoffset="0"/>
+                            <div class="churn-dial-container is-danger" id="churn-dial">
+                                <svg class="churn-dial" width="92" height="92" viewBox="0 0 36 36" aria-hidden="true">
+                                    <path class="dial-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"/>
+                                    <path class="dial-fill" id="dial-fill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3" stroke-dasharray="100, 100" stroke-dashoffset="0"/>
                                 </svg>
                                 <span class="dial-pct" id="out-churn-pct">155.56%</span>
                             </div>
                         </div>
                         <div class="output-item strategy-output">
-                            <span class="output-label">Acción Estratégica sugerida:</span>
+                            <span class="output-label">Acción estratégica sugerida</span>
                             <div class="strategy-badge is-critical" id="out-strategy">0. CRÍTICO TDM</div>
                         </div>
                     </div>
@@ -512,330 +543,252 @@
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section class="section-container" id="servicios">
-            <div class="section-header">
-                <span class="section-tag">Servicios</span>
-                <h3 class="section-title">¿Qué Puedo Construir para tu Agencia?</h3>
-                <p class="section-desc">Soluciones probadas en la operación real de una concesionaria, adaptables a la tuya.</p>
-            </div>
+        <!-- Engineering Patterns Section -->
+        <section class="section-container" id="ingenieria">
+            <header class="section-header">
+                <p class="section-tag"><span class="section-num">04</span> Bajo el capó</p>
+                <h2 class="section-title">Patrones de ingeniería</h2>
+                <p class="section-desc">No solo construyo funciones: aplico patrones de software que mantienen los sistemas rápidos, confiables y seguros en producción.</p>
+            </header>
 
-            <div class="services-grid">
-                <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i></div>
-                    <h4>Cotizaciones de Taller con Evidencia</h4>
-                    <p>Apps móviles para técnicos y asesores: fotos, diagnóstico y PDF de cotización en minutos, no en horas. Probado: de hasta 3 h a 15 min promedio.</p>
-                </div>
-                <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-table" aria-hidden="true"></i></div>
-                    <h4>Automatización de Reportes DMS/CRM</h4>
-                    <p>Consolidación automática de Quiter, Excel y CRM. Lo que se hacía a mano en horas, en un clic y sin errores de captura.</p>
-                </div>
-                <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
-                    <h4>Analítica BDC y Retención</h4>
-                    <p>Priorización de llamadas por riesgo de churn, proyección de kilometraje y clasificación CRT para llenar la agenda de citas.</p>
-                </div>
-                <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-barcode" aria-hidden="true"></i></div>
-                    <h4>Verificación de Precios y PROFECO</h4>
-                    <p>Verificadores digitales de refacciones con búsqueda por SKU y scraping OEM, alineados a la normativa mexicana de exhibición de precios.</p>
-                </div>
-            </div>
-
-            <div class="services-cta glass-panel">
-                <p>¿Tu agencia vive alguno de estos cuellos de botella?</p>
-                <a class="btn btn-primary" href="https://wa.me/522227703715?text=Hola%20Omar%2C%20vi%20tu%20portfolio%20y%20me%20interesa%20una%20soluci%C3%B3n%20para%20mi%20agencia." target="_blank" id="btn-services-whatsapp">
-                    Cuéntamelo por WhatsApp <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                </a>
-            </div>
+            <ul class="patterns-grid">
+                <li class="pattern-card">
+                    <div class="pattern-head">
+                        <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-refresh-cw"/></svg></span>
+                        <span class="pattern-index">01</span>
+                    </div>
+                    <h3>Outbox Pattern + Colas Asíncronas</h3>
+                    <p>Consistencia eventual con cola persistente y Dead Letter Queue: las tareas costosas (subir imágenes, sincronizar) no bloquean la respuesta al usuario.</p>
+                </li>
+                <li class="pattern-card">
+                    <div class="pattern-head">
+                        <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-fingerprint"/></svg></span>
+                        <span class="pattern-index">02</span>
+                    </div>
+                    <h3>Idempotencia</h3>
+                    <p>Operaciones seguras de reintentar: hash de contenido y claves idempotentes evitan cotizaciones y registros duplicados ante doble clic o reintentos de red.</p>
+                </li>
+                <li class="pattern-card">
+                    <div class="pattern-head">
+                        <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg></span>
+                        <span class="pattern-index">03</span>
+                    </div>
+                    <h3>Optimización de Consultas (N+1)</h3>
+                    <p>Uso de select_related y prefetch_related para bajar expedientes de 40+ consultas a solo 3, logrando carga instantánea en alto volumen.</p>
+                </li>
+                <li class="pattern-card">
+                    <div class="pattern-head">
+                        <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
+                        <span class="pattern-index">04</span>
+                    </div>
+                    <h3>Concurrencia con Lock Cooperativo</h3>
+                    <p>Semáforos vía Redis para impedir que dos usuarios editen el mismo folio a la vez, con aviso visual en tiempo real.</p>
+                </li>
+                <li class="pattern-card">
+                    <div class="pattern-head">
+                        <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-brain"/></svg></span>
+                        <span class="pattern-index">05</span>
+                    </div>
+                    <h3>Inferencia con Machine Learning</h3>
+                    <p>TF-IDF (scikit-learn) para predecir SKU desde texto libre, con umbrales de confianza y un plan de validación con métricas de acierto.</p>
+                </li>
+                <li class="pattern-card">
+                    <div class="pattern-head">
+                        <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg></span>
+                        <span class="pattern-index">06</span>
+                    </div>
+                    <h3>Seguridad por Capas</h3>
+                    <p>Helmet/CSP y rate limiting en Node; django-axes, HSTS y Row Level Security en el resto; contenedores Docker sin privilegios de root.</p>
+                </li>
+            </ul>
         </section>
 
         <!-- Tech Stack Section -->
         <section class="section-container" id="habilidades">
-            <div class="section-header">
-                <span class="section-tag">Tecnologías</span>
-                <h3 class="section-title">Habilidades & Stack</h3>
+            <header class="section-header">
+                <p class="section-tag"><span class="section-num">05</span> Tecnologías</p>
+                <h2 class="section-title">Habilidades &amp; stack</h2>
                 <p class="section-desc">Herramientas y tecnologías que domino para el desarrollo de software y ciencia de datos.</p>
-            </div>
+            </header>
 
-            <!-- Filters -->
-            <div class="skills-filters">
-                <button type="button" class="filter-btn active" data-filter="all" id="filter-all" aria-pressed="true">Todas</button>
-                <button type="button" class="filter-btn" data-filter="backend" id="filter-backend" aria-pressed="false">Backend</button>
-                <button type="button" class="filter-btn" data-filter="data" id="filter-data" aria-pressed="false">Datos &amp; Analytics</button>
-                <button type="button" class="filter-btn" data-filter="ml" id="filter-ml" aria-pressed="false">Machine Learning</button>
-                <button type="button" class="filter-btn" data-filter="cloud" id="filter-cloud" aria-pressed="false">Cloud &amp; DB</button>
-                <button type="button" class="filter-btn" data-filter="devops" id="filter-devops" aria-pressed="false">DevOps</button>
-                <button type="button" class="filter-btn" data-filter="business" id="filter-business" aria-pressed="false">Negocio &amp; Metodología</button>
-            </div>
-
-            <!-- Skills Grid -->
-            <div class="skills-grid" id="skills-grid-container" role="list" aria-live="polite">
-
-                <!-- Python -->
-                <div class="skill-card" role="listitem" data-category="backend data">
-                    <div class="skill-icon"><i class="fa-brands fa-python text-blue" aria-hidden="true"></i></div>
-                    <span class="skill-name">Python</span>
+            <!-- Skills agrupadas por área -->
+            <div class="skills-grid" id="skills-grid-container">
+                <div class="skill-group">
+                    <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-code-xml"/></svg> Backend</h3>
+                    <ul class="skill-list">
+                        <li class="skill-card">Python</li>
+                        <li class="skill-card">Django</li>
+                        <li class="skill-card">FastAPI</li>
+                        <li class="skill-card">Flask</li>
+                        <li class="skill-card">Node.js</li>
+                        <li class="skill-card">Express</li>
+                        <li class="skill-card">JavaScript</li>
+                        <li class="skill-card">Streamlit</li>
+                        <li class="skill-card">PWA / Service Workers</li>
+                    </ul>
                 </div>
-                <!-- Django -->
-                <div class="skill-card" role="listitem" data-category="backend">
-                    <div class="skill-icon"><i class="fa-solid fa-network-wired text-green" aria-hidden="true"></i></div>
-                    <span class="skill-name">Django</span>
+                <div class="skill-group">
+                    <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-table-2"/></svg> Datos &amp; Analytics</h3>
+                    <ul class="skill-list">
+                        <li class="skill-card">Pandas</li>
+                        <li class="skill-card">NumPy</li>
+                        <li class="skill-card">OpenPyXL</li>
+                        <li class="skill-card">RStudio / R</li>
+                        <li class="skill-card">Tableau</li>
+                        <li class="skill-card">Excel Avanzado</li>
+                        <li class="skill-card">Web Scraping</li>
+                    </ul>
                 </div>
-                <!-- FastAPI -->
-                <div class="skill-card" role="listitem" data-category="backend">
-                    <div class="skill-icon"><i class="fa-solid fa-bolt text-teal" aria-hidden="true"></i></div>
-                    <span class="skill-name">FastAPI</span>
+                <div class="skill-group">
+                    <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-brain"/></svg> Machine Learning &amp; IA</h3>
+                    <ul class="skill-list">
+                        <li class="skill-card">scikit-learn</li>
+                        <li class="skill-card">Inferencia ML (TF-IDF)</li>
+                        <li class="skill-card">Forecasting (statsmodels)</li>
+                        <li class="skill-card">Ecosistema Gemini AI</li>
+                        <li class="skill-card">Claude AI</li>
+                    </ul>
                 </div>
-                <!-- Flask -->
-                <div class="skill-card" role="listitem" data-category="backend">
-                    <div class="skill-icon"><i class="fa-solid fa-leaf text-grey" aria-hidden="true"></i></div>
-                    <span class="skill-name">Flask</span>
+                <div class="skill-group">
+                    <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg> Cloud &amp; Bases de datos</h3>
+                    <ul class="skill-list">
+                        <li class="skill-card">Supabase</li>
+                        <li class="skill-card">PostgreSQL</li>
+                        <li class="skill-card">SQLite</li>
+                        <li class="skill-card">Railway</li>
+                    </ul>
                 </div>
-                <!-- Streamlit -->
-                <div class="skill-card" role="listitem" data-category="backend data">
-                    <div class="skill-icon"><i class="fa-solid fa-cubes text-red" aria-hidden="true"></i></div>
-                    <span class="skill-name">Streamlit</span>
+                <div class="skill-group">
+                    <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg> DevOps &amp; Seguridad</h3>
+                    <ul class="skill-list">
+                        <li class="skill-card">Docker</li>
+                        <li class="skill-card">Sentry SDK</li>
+                        <li class="skill-card">Playwright</li>
+                        <li class="skill-card">Seguridad Web (Helmet/CSP)</li>
+                    </ul>
                 </div>
-                <!-- Pandas -->
-                <div class="skill-card" role="listitem" data-category="data">
-                    <div class="skill-icon"><i class="fa-solid fa-table text-purple" aria-hidden="true"></i></div>
-                    <span class="skill-name">Pandas</span>
+                <div class="skill-group">
+                    <h3 class="skill-group-title"><svg class="icon" aria-hidden="true"><use href="#i-cog"/></svg> Negocio &amp; Metodología</h3>
+                    <ul class="skill-list">
+                        <li class="skill-card">Toyota Way</li>
+                        <li class="skill-card">Administración de Inventarios (Toyota Max Max)</li>
+                        <li class="skill-card">Metodología Kodawari</li>
+                    </ul>
                 </div>
-                <!-- NumPy -->
-                <div class="skill-card" role="listitem" data-category="data">
-                    <div class="skill-icon"><i class="fa-solid fa-square-root-variable text-blue" aria-hidden="true"></i></div>
-                    <span class="skill-name">NumPy</span>
-                </div>
-                <!-- OpenPyXL -->
-                <div class="skill-card" role="listitem" data-category="data">
-                    <div class="skill-icon"><i class="fa-regular fa-file-excel text-green" aria-hidden="true"></i></div>
-                    <span class="skill-name">OpenPyXL</span>
-                </div>
-                <!-- R / RStudio -->
-                <div class="skill-card" role="listitem" data-category="data">
-                    <div class="skill-icon"><i class="fa-solid fa-registered text-blue" aria-hidden="true"></i></div>
-                    <span class="skill-name">RStudio / R</span>
-                </div>
-                <!-- Supabase -->
-                <div class="skill-card" role="listitem" data-category="cloud">
-                    <div class="skill-icon"><i class="fa-solid fa-cloud text-teal" aria-hidden="true"></i></div>
-                    <span class="skill-name">Supabase</span>
-                </div>
-                <!-- PostgreSQL -->
-                <div class="skill-card" role="listitem" data-category="cloud">
-                    <div class="skill-icon"><i class="fa-solid fa-database text-blue" aria-hidden="true"></i></div>
-                    <span class="skill-name">PostgreSQL</span>
-                </div>
-                <!-- SQLite -->
-                <div class="skill-card" role="listitem" data-category="cloud">
-                    <div class="skill-icon"><i class="fa-solid fa-server text-grey" aria-hidden="true"></i></div>
-                    <span class="skill-name">SQLite</span>
-                </div>
-                <!-- Docker -->
-                <div class="skill-card" role="listitem" data-category="devops">
-                    <div class="skill-icon"><i class="fa-brands fa-docker text-blue" aria-hidden="true"></i></div>
-                    <span class="skill-name">Docker</span>
-                </div>
-                <!-- Railway -->
-                <div class="skill-card" role="listitem" data-category="devops cloud">
-                    <div class="skill-icon"><i class="fa-solid fa-train text-purple" aria-hidden="true"></i></div>
-                    <span class="skill-name">Railway</span>
-                </div>
-                <!-- Sentry -->
-                <div class="skill-card" role="listitem" data-category="devops">
-                    <div class="skill-icon"><i class="fa-solid fa-bug text-red" aria-hidden="true"></i></div>
-                    <span class="skill-name">Sentry SDK</span>
-                </div>
-                <!-- Tableau -->
-                <div class="skill-card" role="listitem" data-category="data">
-                    <div class="skill-icon"><i class="fa-solid fa-chart-column text-teal" aria-hidden="true"></i></div>
-                    <span class="skill-name">Tableau</span>
-                </div>
-                <!-- Excel Avanzado -->
-                <div class="skill-card" role="listitem" data-category="data">
-                    <div class="skill-icon"><i class="fa-regular fa-file-excel text-green" aria-hidden="true"></i></div>
-                    <span class="skill-name">Excel Avanzado</span>
-                </div>
-                <!-- Toyota Way -->
-                <div class="skill-card" role="listitem" data-category="business">
-                    <div class="skill-icon"><i class="fa-solid fa-gears text-red" aria-hidden="true"></i></div>
-                    <span class="skill-name">Toyota Way</span>
-                </div>
-                <!-- Administración de Inventarios Toyota Max Max -->
-                <div class="skill-card" role="listitem" data-category="business">
-                    <div class="skill-icon"><i class="fa-solid fa-boxes-stacked text-yellow" aria-hidden="true"></i></div>
-                    <span class="skill-name">Administración de Inventarios (Toyota Max Max)</span>
-                </div>
-                <!-- Metodología Kodawari -->
-                <div class="skill-card" role="listitem" data-category="business">
-                    <div class="skill-icon"><i class="fa-solid fa-gem text-teal" aria-hidden="true"></i></div>
-                    <span class="skill-name">Metodología Kodawari</span>
-                </div>
-                <!-- Claude AI -->
-                <div class="skill-card" role="listitem" data-category="backend data">
-                    <div class="skill-icon"><i class="fa-solid fa-brain text-purple" aria-hidden="true"></i></div>
-                    <span class="skill-name">Claude AI</span>
-                </div>
-                <!-- Ecosistema Gemini AI -->
-                <div class="skill-card" role="listitem" data-category="backend data ml">
-                    <div class="skill-icon"><i class="fa-solid fa-wand-magic-sparkles text-blue" aria-hidden="true"></i></div>
-                    <span class="skill-name">Ecosistema Gemini AI</span>
-                </div>
-                <!-- scikit-learn -->
-                <div class="skill-card" role="listitem" data-category="ml data">
-                    <div class="skill-icon"><i class="fa-solid fa-brain text-orange" aria-hidden="true"></i></div>
-                    <span class="skill-name">scikit-learn</span>
-                </div>
-                <!-- Inferencia ML / TF-IDF -->
-                <div class="skill-card" role="listitem" data-category="ml data">
-                    <div class="skill-icon"><i class="fa-solid fa-magnifying-glass-chart text-purple" aria-hidden="true"></i></div>
-                    <span class="skill-name">Inferencia ML (TF-IDF)</span>
-                </div>
-                <!-- Forecasting / statsmodels -->
-                <div class="skill-card" role="listitem" data-category="ml data">
-                    <div class="skill-icon"><i class="fa-solid fa-chart-line text-teal" aria-hidden="true"></i></div>
-                    <span class="skill-name">Forecasting (statsmodels)</span>
-                </div>
-                <!-- Node.js -->
-                <div class="skill-card" role="listitem" data-category="backend">
-                    <div class="skill-icon"><i class="fa-brands fa-node-js text-green" aria-hidden="true"></i></div>
-                    <span class="skill-name">Node.js</span>
-                </div>
-                <!-- Express -->
-                <div class="skill-card" role="listitem" data-category="backend">
-                    <div class="skill-icon"><i class="fa-solid fa-bolt text-grey" aria-hidden="true"></i></div>
-                    <span class="skill-name">Express</span>
-                </div>
-                <!-- JavaScript -->
-                <div class="skill-card" role="listitem" data-category="backend">
-                    <div class="skill-icon"><i class="fa-brands fa-js text-yellow" aria-hidden="true"></i></div>
-                    <span class="skill-name">JavaScript</span>
-                </div>
-                <!-- Seguridad Web -->
-                <div class="skill-card" role="listitem" data-category="devops backend">
-                    <div class="skill-icon"><i class="fa-solid fa-shield-halved text-red" aria-hidden="true"></i></div>
-                    <span class="skill-name">Seguridad Web (Helmet/CSP)</span>
-                </div>
-                <!-- Web Scraping -->
-                <div class="skill-card" role="listitem" data-category="data backend">
-                    <div class="skill-icon"><i class="fa-solid fa-spider text-purple" aria-hidden="true"></i></div>
-                    <span class="skill-name">Web Scraping</span>
-                </div>
-                <!-- Playwright -->
-                <div class="skill-card" role="listitem" data-category="devops backend">
-                    <div class="skill-icon"><i class="fa-solid fa-robot text-teal" aria-hidden="true"></i></div>
-                    <span class="skill-name">Playwright</span>
-                </div>
-                <!-- PWA / Service Workers -->
-                <div class="skill-card" role="listitem" data-category="backend devops">
-                    <div class="skill-icon"><i class="fa-solid fa-mobile-screen-button text-blue" aria-hidden="true"></i></div>
-                    <span class="skill-name">PWA / Service Workers</span>
-                </div>
-
             </div>
         </section>
 
-        <!-- Engineering Patterns Section -->
-        <section class="section-container" id="ingenieria">
-            <div class="section-header">
-                <span class="section-tag">Bajo el Capó</span>
-                <h3 class="section-title">Patrones de Ingeniería</h3>
-                <p class="section-desc">No solo construyo funciones: aplico patrones de software que mantienen los sistemas rápidos, confiables y seguros en producción.</p>
-            </div>
+        <!-- Services Section -->
+        <section class="section-container" id="servicios">
+            <header class="section-header">
+                <p class="section-tag"><span class="section-num">06</span> Servicios</p>
+                <h2 class="section-title">¿Qué puedo construir para ti?</h2>
+                <p class="section-desc">Soluciones probadas en la operación real de una concesionaria, adaptables a tu negocio.</p>
+            </header>
 
-            <div class="services-grid">
-                <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
-                    <h4>Outbox Pattern + Colas Asíncronas</h4>
-                    <p>Consistencia eventual con cola persistente y Dead Letter Queue: las tareas costosas (subir imágenes, sincronizar) no bloquean la respuesta al usuario.</p>
-                </div>
-                <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-fingerprint" aria-hidden="true"></i></div>
-                    <h4>Idempotencia</h4>
-                    <p>Operaciones seguras de reintentar: hash de contenido y claves idempotentes evitan cotizaciones y registros duplicados ante doble clic o reintentos de red.</p>
-                </div>
-                <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></div>
-                    <h4>Optimización de Consultas (N+1)</h4>
-                    <p>Uso de select_related y prefetch_related para bajar expedientes de 40+ consultas a solo 3, logrando carga instantánea en alto volumen.</p>
-                </div>
-                <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></div>
-                    <h4>Concurrencia con Lock Cooperativo</h4>
-                    <p>Semáforos vía Redis para impedir que dos usuarios editen el mismo folio a la vez, con aviso visual en tiempo real.</p>
-                </div>
-                <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
-                    <h4>Inferencia con Machine Learning</h4>
-                    <p>TF-IDF (scikit-learn) para predecir SKU desde texto libre, con umbrales de confianza y un plan de validación con métricas de acierto.</p>
-                </div>
-                <div class="service-card glass-panel">
-                    <div class="service-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
-                    <h4>Seguridad por Capas</h4>
-                    <p>Helmet/CSP y rate limiting en Node; django-axes, HSTS y Row Level Security en el resto; contenedores Docker sin privilegios de root.</p>
-                </div>
+            <ul class="services-grid">
+                <li class="service-card">
+                    <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-receipt-text"/></svg></span>
+                    <h3>Cotizaciones de Taller con Evidencia</h3>
+                    <p>Apps móviles para técnicos y asesores: fotos, diagnóstico y PDF de cotización en minutos, no en horas. Probado: de hasta 3 h a 15 min promedio.</p>
+                </li>
+                <li class="service-card">
+                    <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-table-2"/></svg></span>
+                    <h3>Automatización de Reportes DMS/CRM</h3>
+                    <p>Consolidación automática de Quiter, Excel y CRM. Lo que se hacía a mano en horas, en un clic y sin errores de captura.</p>
+                </li>
+                <li class="service-card">
+                    <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart-line"/></svg></span>
+                    <h3>Analítica BDC y Retención</h3>
+                    <p>Priorización de llamadas por riesgo de churn, proyección de kilometraje y clasificación CRT para llenar la agenda de citas.</p>
+                </li>
+                <li class="service-card">
+                    <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-scan-barcode"/></svg></span>
+                    <h3>Verificación de Precios y PROFECO</h3>
+                    <p>Verificadores digitales de refacciones con búsqueda por SKU y scraping OEM, alineados a la normativa mexicana de exhibición de precios.</p>
+                </li>
+                <li class="service-card">
+                    <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></span>
+                    <h3>Aplicaciones Web a la Medida</h3>
+                    <p>Sistemas y sitios con Django, FastAPI o Node.js: del modelo de datos al despliegue en producción con Docker, seguridad por capas y monitoreo de errores.</p>
+                </li>
+                <li class="service-card">
+                    <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
+                    <h3>Machine Learning e IA Aplicada</h3>
+                    <p>Modelos con scikit-learn e integración de IA multimodal (Gemini) para clasificar, inferir y extraer datos de texto, fotos y PDFs dentro de tu flujo de trabajo.</p>
+                </li>
+            </ul>
+
+            <div class="services-cta">
+                <p>¿Tu operación vive alguno de estos cuellos de botella?</p>
+                <a class="btn btn-primary" href="https://wa.me/522227703715?text=Hola%20Omar%2C%20vi%20tu%20portfolio%20y%20me%20interesa%20una%20soluci%C3%B3n%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" id="btn-services-whatsapp">
+                    <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg> Cuéntamelo por WhatsApp
+                </a>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section class="section-container" id="contacto">
-            <div class="section-header">
-                <span class="section-tag">Conectemos</span>
-                <h3 class="section-title">Contacto</h3>
-                <p class="section-desc">¿Tienes alguna duda sobre mis sistemas o quieres colaborar en algún desarrollo?</p>
-            </div>
+            <header class="section-header">
+                <p class="section-tag"><span class="section-num">07</span> Conectemos</p>
+                <h2 class="section-title">¿Hablamos de tu proyecto?</h2>
+                <p class="section-desc">¿Tienes alguna duda sobre mis sistemas o quieres colaborar en algún desarrollo? Escríbeme: respondo personalmente.</p>
+            </header>
 
             <div class="contact-wrapper">
-                <div class="contact-info glass-panel">
-                    <h4>Información de Enlaces</h4>
+                <div class="contact-info">
+                    <h3>Canales directos</h3>
                     <p>Puedes ver parte de mi código público y mis contribuciones académicas o personales directamente en mis redes.</p>
-                    
+
                     <div class="contact-links-list">
-                        <a href="https://github.com/OMAR57607" target="_blank" class="contact-link-item" id="github-link">
-                            <i class="fa-brands fa-github" aria-hidden="true"></i>
-                            <span>GitHub (OMAR57607)</span>
+                        <a href="https://wa.me/522227703715" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="whatsapp-link">
+                            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            <span class="contact-link-text"><small>WhatsApp</small>+52 222 770 3715</span>
+                            <svg class="icon contact-link-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
                         </a>
                         <a href="mailto:desable999@gmail.com" class="contact-link-item" id="email-link">
-                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                            <span>desable999@gmail.com</span>
+                            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                            <span class="contact-link-text"><small>Email</small>desable999@gmail.com</span>
+                            <svg class="icon contact-link-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
                         </a>
-                        <a href="https://wa.me/522227703715" target="_blank" class="contact-link-item" id="whatsapp-link">
-                            <i class="fa-brands fa-whatsapp text-green" aria-hidden="true"></i>
-                            <span>WhatsApp (+52 222 770 3715)</span>
+                        <a href="https://github.com/OMAR57607" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="github-link">
+                            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+                            <span class="contact-link-text"><small>GitHub</small>OMAR57607</span>
+                            <svg class="icon contact-link-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
                         </a>
-                        <a href="https://www.facebook.com/share/18gQBhdY94/" target="_blank" class="contact-link-item" id="facebook-link">
-                            <i class="fa-brands fa-facebook text-blue" aria-hidden="true"></i>
-                            <span>Facebook</span>
+                        <a href="https://www.facebook.com/share/18gQBhdY94/" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="facebook-link">
+                            <svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg>
+                            <span class="contact-link-text"><small>Facebook</small>Ver perfil</span>
+                            <svg class="icon contact-link-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
                         </a>
                     </div>
 
-                    <div class="toyota-badge">
-                        <i class="fa-solid fa-wrench" aria-hidden="true"></i> Especialista en Desarrollo para Sistemas de Taller Automotriz
-                    </div>
+                    <p class="toyota-badge">
+                        <svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg> Especialista en desarrollo para sistemas de taller automotriz
+                    </p>
                 </div>
 
-                <div class="contact-form-container glass-panel">
+                <div class="contact-form-container">
                     <form id="contact-form">
                         <div class="form-group">
                             <label for="form-name">Nombre</label>
-                            <input type="text" id="form-name" placeholder="Tu nombre" required>
+                            <input type="text" id="form-name" placeholder="Tu nombre" autocomplete="name" maxlength="80" required>
                         </div>
                         <div class="form-group">
                             <label for="form-email">Email</label>
-                            <input type="email" id="form-email" placeholder="tu@correo.com" required>
+                            <input type="email" id="form-email" placeholder="tu@correo.com" autocomplete="email" maxlength="120" required>
                         </div>
                         <div class="form-group">
                             <label for="form-msg">Mensaje</label>
-                            <textarea id="form-msg" rows="4" placeholder="¿En qué puedo ayudarte?" required></textarea>
+                            <textarea id="form-msg" rows="5" placeholder="¿En qué puedo ayudarte?" maxlength="1000" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full" id="btn-send-message">
-                            Enviar por WhatsApp <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg> Enviar por WhatsApp
                         </button>
+                        <p class="form-hint">Se abrirá WhatsApp con tu mensaje listo para enviar. Este sitio no almacena tus datos.</p>
                     </form>
                     <div class="form-feedback hidden" id="form-feedback" role="status" aria-live="polite">
-                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <span id="form-feedback-text">Abriendo WhatsApp con tu mensaje listo para enviar...</span>
+                        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg> <span id="form-feedback-text">Abriendo WhatsApp con tu mensaje listo para enviar...</span>
                     </div>
                 </div>
             </div>
@@ -846,12 +799,17 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-wordmark">Omar Fuentes</span>
+                <span class="footer-role">Full Stack Developer &amp; Data/ML Analyst</span>
+            </div>
             <p>&copy; 2026 Omar Fuentes. Todos los derechos reservados.</p>
-            <p class="footer-legal">Cumplimiento del portfolio con fines informativos y demostrativos.</p>
+            <p class="footer-legal">Sitio con fines informativos y demostrativos. Las marcas mencionadas pertenecen a sus respectivos titulares.</p>
+            <a href="#inicio" class="footer-top"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg> Volver arriba</a>
         </div>
     </footer>
 
     <!-- Custom JS -->
-    <script type="module" src="/static/app.js"></script>
+    <script type="module" src="/static/app.js?v=__ASSET_VERSION__"></script>
 </body>
 </html>

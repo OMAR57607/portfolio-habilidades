@@ -5,135 +5,147 @@
     left: 0;
     width: 100%;
     z-index: 100;
-    background: rgba(8, 8, 10, 0.7);
-    backdrop-filter: var(--glass-blur);
-    border-bottom: 1px solid var(--border-color);
-    transition: var(--transition-smooth);
+    border-bottom: 1px solid transparent;
+    transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+/* El fondo translúcido solo aparece al hacer scroll o con el menú móvil abierto */
+.main-header.is-scrolled,
+.main-header.is-menu-open {
+    background: rgba(11, 11, 12, 0.82);
+    -webkit-backdrop-filter: blur(14px) saturate(1.4);
+    backdrop-filter: blur(14px) saturate(1.4);
+    border-bottom-color: var(--border-color);
+}
+
+.light-theme .main-header.is-scrolled,
+.light-theme .main-header.is-menu-open {
+    background: rgba(246, 245, 241, 0.86);
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: var(--page-max);
+    height: var(--header-h);
     margin: 0 auto;
-    padding: 18px 24px;
+    padding: 0 var(--page-gutter);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .logo-wrapper {
     display: flex;
     align-items: center;
+    gap: 12px;
+    color: var(--text-main);
     text-decoration: none;
 }
 
 .nav-logo-img {
-    height: 44px;
-    width: 44px;
+    height: 36px;
+    width: 36px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 15px rgba(6, 182, 212, 0.2); /* cyan glow matching the logo */
-    transition: var(--transition-smooth);
+    border: 1px solid var(--border-strong);
+    transition: transform var(--transition-smooth);
 }
 
 .logo-wrapper:hover .nav-logo-img {
-    transform: rotate(10deg) scale(1.08);
-    box-shadow: 0 0 22px rgba(6, 182, 212, 0.45);
-    border-color: rgba(255, 255, 255, 0.25);
+    transform: rotate(-8deg);
+}
+
+.logo-wordmark {
+    color: var(--text-main);
+    font-family: var(--font-title);
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
 }
 
 .nav-right-group {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
 }
 
 .theme-select-container {
     position: relative;
-    display: inline-block;
 }
 
-.theme-toggle {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border-color);
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    color: var(--text-main);
+.theme-toggle,
+.mobile-toggle {
+    width: 44px;
+    height: 44px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    color: var(--text-muted);
+    font-size: 1.15rem;
     cursor: pointer;
-    transition: var(--transition-smooth);
-    font-size: 1.05rem;
-    padding: 0;
-    z-index: 102;
+    transition: color var(--transition-smooth), border-color var(--transition-smooth),
+        background-color var(--transition-smooth);
 }
 
-.theme-toggle:hover {
-    background: rgba(255, 255, 255, 0.12);
-    transform: scale(1.05);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: var(--accent-text);
-    box-shadow: 0 0 12px rgba(255, 62, 85, 0.25);
+.theme-toggle:hover,
+.mobile-toggle:hover,
+.theme-toggle[aria-expanded="true"] {
+    color: var(--text-main);
+    background: var(--card-bg);
+    border-color: var(--border-color);
 }
 
 .theme-dropdown {
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
-    background: rgba(18, 18, 24, 0.95);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
+    min-width: 150px;
     padding: 6px;
     display: none;
     flex-direction: column;
-    gap: 4px;
-    min-width: 130px;
+    gap: 2px;
     z-index: 150;
-    backdrop-filter: var(--glass-blur);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    background: var(--card-bg);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-premium);
 }
 
 .theme-dropdown.show {
     display: flex;
-    opacity: 1;
-    transform: translateY(0);
+    animation: dropdownIn 0.18s var(--ease-out);
 }
 
 .theme-dropdown-item {
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
+    width: 100%;
+    min-height: 40px;
     padding: 8px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: var(--font-body);
-    font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 100%;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
     text-align: left;
-    transition: var(--transition-smooth);
-}
-
-.theme-dropdown-item i {
-    width: 16px;
-    text-align: center;
-    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color var(--transition-smooth), color var(--transition-smooth);
 }
 
 .theme-dropdown-item:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--bg-color);
     color: var(--text-main);
 }
 
 .theme-dropdown-item.active {
-    background: rgba(235, 10, 30, 0.12);
+    background: var(--primary-soft);
     color: var(--accent-text);
     font-weight: 600;
 }
@@ -141,18 +153,23 @@
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 4px;
+    margin-left: auto;
 }
 
 .nav-link {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: var(--transition-smooth);
+    position: relative;
+    padding: 10px 12px;
     display: flex;
     align-items: center;
     gap: 8px;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color var(--transition-smooth);
 }
 
 .nav-link:hover {
@@ -162,86 +179,116 @@
 /* Sección que se está leyendo actualmente */
 .nav-link.is-current:not(.contact-btn) {
     color: var(--text-main);
-    text-shadow: 0 0 12px var(--primary-glow);
+}
+
+.nav-link:not(.contact-btn)::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 4px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--transition-smooth);
+}
+
+.nav-link.is-current:not(.contact-btn)::after {
+    transform: scaleX(1);
 }
 
 .contact-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
-    padding: 8px 18px;
-    border-radius: 50px;
-    color: var(--text-main);
-    transition: var(--transition-smooth);
+    margin-left: 10px;
+    padding: 9px 16px;
+    background: var(--text-main);
+    border-radius: var(--radius-md);
+    color: var(--bg-color);
+    font-weight: 600;
+    transition: background-color var(--transition-smooth), color var(--transition-smooth);
 }
 
 .contact-btn:hover {
     background: var(--primary-color);
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-glow);
+    color: #fff;
 }
 
 .mobile-toggle {
     display: none;
-    background: none;
-    border: none;
     color: var(--text-main);
-    font-size: 1.5rem;
-    cursor: pointer;
-    /* Medidas propias: el botón solo contiene un icono de fuente externa y sin
-       ella colapsaba a 0x0, dejando el menú móvil inalcanzable. */
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
+    font-size: 1.35rem;
 }
 
-/* En anchos medios el menú de 6 enlaces necesita compactarse */
-@media (min-width: 768px) and (max-width: 1120px) {
-    .nav-menu {
-        gap: 16px;
+/* En anchos medios el menú necesita compactarse */
+@media (min-width: 901px) and (max-width: 1080px) {
+    .logo-wordmark {
+        display: none;
     }
 
     .nav-link {
-        font-size: 0.88rem;
+        padding-inline: 9px;
+        font-size: 0.86rem;
     }
 
-    .nav-link i {
-        display: none;
+    .nav-link:not(.contact-btn)::after {
+        left: 9px;
+        right: 9px;
     }
 }
 
-/* Responsive Menu Styles */
-@media (max-width: 767px) {
+/* Menú móvil */
+@media (max-width: 900px) {
     .nav-menu {
-        display: none; /* Mobile menu toggled by class */
+        display: none;
     }
-    
+
     .mobile-toggle {
         display: flex;
     }
-}
 
-/* Mobile Nav Menu Toggled */
-.nav-menu.mobile-open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #08080a;
-    border-bottom: 1px solid var(--border-color);
-    padding: 24px;
-    gap: 18px;
-    align-items: stretch;
-    box-sizing: border-box !important;
-}
+    .nav-menu.mobile-open {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - var(--header-h));
+        max-height: calc(100dvh - var(--header-h));
+        margin: 0;
+        padding: 8px var(--page-gutter) 24px;
+        overflow-y: auto;
+        background: var(--bg-color);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-premium);
+        animation: dropdownIn 0.2s var(--ease-out);
+    }
 
-.nav-menu.mobile-open .nav-link {
-    padding: 10px 0;
-}
+    .nav-menu.mobile-open .nav-link {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+        font-size: 1.02rem;
+        color: var(--text-main);
+    }
 
-.nav-menu.mobile-open .contact-btn {
-    text-align: center;
+    .nav-menu.mobile-open .nav-link:not(.contact-btn)::after {
+        display: none;
+    }
+
+    .nav-menu.mobile-open .nav-link.is-current:not(.contact-btn) {
+        color: var(--accent-text);
+    }
+
+    .nav-menu.mobile-open .contact-btn {
+        justify-content: center;
+        margin: 20px 0 0;
+        padding: 14px 16px;
+        border: none;
+        border-radius: var(--radius-md);
+        color: var(--bg-color);
+    }
 }

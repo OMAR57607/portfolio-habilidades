@@ -1,8 +1,9 @@
 const STORAGE_KEY = 'theme';
+// Id del símbolo del sprite SVG (static/icons.svg) para cada tema.
 const THEME_ICONS = {
-    light: 'fa-solid fa-sun',
-    dark: 'fa-solid fa-moon',
-    system: 'fa-solid fa-circle-half-stroke',
+    light: '#i-sun',
+    dark: '#i-moon',
+    system: '#i-sun-moon',
 };
 
 const lightMediaQuery = window.matchMedia('(prefers-color-scheme: light)');
@@ -34,9 +35,9 @@ export function initTheme() {
         const isLight = theme === 'light' || (theme === 'system' && lightMediaQuery.matches);
         document.documentElement.classList.toggle('light-theme', isLight);
 
-        const mainIcon = themeToggleBtn?.querySelector('i');
+        const mainIcon = themeToggleBtn?.querySelector('use');
         if (mainIcon) {
-            mainIcon.className = THEME_ICONS[theme] || THEME_ICONS.system;
+            mainIcon.setAttribute('href', THEME_ICONS[theme] || THEME_ICONS.system);
         }
 
         dropdownItems.forEach((item) => {

@@ -1,22 +1,66 @@
 /* Simulador BDC */
-.simulator-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    align-items: stretch;
-}
 
-.simulator-card {
+/* Glosario de términos BDC */
+.sim-glossary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: 28px;
+    border-top: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
     overflow: hidden;
 }
 
-.simulator-card-header {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 12px 20px;
+.sim-term {
+    padding: 14px 16px;
+    border-right: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+}
+
+.sim-term dt {
+    margin-bottom: 4px;
+    color: var(--accent-text);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.sim-term dd {
+    color: var(--text-muted);
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+.simulator-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+.simulator-card,
+.simulator-results {
+    min-width: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.simulator-card-header,
+.results-header {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
+    min-height: 46px;
+    padding: 0 20px;
+    background: var(--bg-raised);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
 }
 
 .console-dots {
@@ -25,10 +69,10 @@
 }
 
 .dot {
+    display: block;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    display: block;
 }
 
 .dot-r { background-color: #ef4444; }
@@ -36,142 +80,123 @@
 .dot-g { background-color: #10b981; }
 
 .console-title {
-    font-family: monospace;
-    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.console-tag {
+    margin-left: auto;
     color: var(--text-dark);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
 }
 
 .simulator-card-body {
-    padding: 24px;
+    padding: 24px 20px;
 }
 
 .form-row {
     display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
     flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 18px;
 }
 
-.form-group {
-    flex: 1;
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.form-group input,
-.form-group select {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border-color);
-    padding: 12px 16px;
-    border-radius: 8px;
-    color: var(--text-main);
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    transition: var(--transition-smooth);
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 10px rgba(235, 10, 30, 0.15);
-    background: rgba(255, 255, 255, 0.04);
+.simulator-card .form-group input,
+.simulator-card .form-group select {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
 }
 
 .checkbox-row {
-    margin-bottom: 24px;
+    gap: 6px 24px;
+    margin-bottom: 22px;
 }
 
 .checkbox-group {
     display: flex;
     align-items: center;
     gap: 10px;
-    cursor: pointer;
+    min-height: 44px;
 }
 
 .checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
     accent-color: var(--primary-color);
-    width: 18px;
-    height: 18px;
     cursor: pointer;
 }
 
 .checkbox-group label {
-    font-size: 0.9rem;
-    font-weight: 500;
     color: var(--text-muted);
+    font-size: 0.92rem;
+    font-weight: 500;
     cursor: pointer;
+}
+
+.sim-hint {
+    margin-top: 12px;
+    color: var(--text-dark);
+    font-size: 0.8rem;
+    text-align: center;
 }
 
 /* Resultados del Simulador */
 .simulator-results {
     display: flex;
     flex-direction: column;
-    padding: 24px;
-    font-family: monospace;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: var(--font-mono);
+}
+
+.results-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 6px 20px 20px;
+    transition: opacity 0.2s ease-out;
 }
 
 /* Estado momentáneo mientras se recalculan los KPIs */
-.simulator-results.is-recalculating {
-    opacity: 0.4;
-    transform: scale(0.98);
-}
-
-.results-header {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 12px;
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.simulator-results.is-recalculating .results-body {
+    opacity: 0.35;
 }
 
 .output-item {
-    margin-bottom: 18px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--border-color);
 }
 
 .output-label {
-    font-size: 0.8rem;
     color: var(--text-dark);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .output-value {
-    font-size: 1rem;
-    font-weight: 600;
     color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    font-variant-numeric: tabular-nums;
 }
 
 .text-glow {
     color: var(--accent-text);
-    text-shadow: 0 0 8px rgba(255, 62, 85, 0.4);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 /* Grupo de Salida Churn */
 .churn-output-group {
-    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    margin-bottom: 20px;
 }
 
 .churn-info {
@@ -179,15 +204,31 @@
     flex-direction: column;
     gap: 8px;
     flex: 1;
+    min-width: 0;
+}
+
+.churn-alert-tag {
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+/* Nivel de riesgo: el JS solo cambia la clase; el color vive aquí */
+.is-danger { --level-color: var(--danger-color); }
+.is-orange { --level-color: var(--orange-color); }
+.is-warning { --level-color: var(--warn-color); }
+.is-healthy { --level-color: var(--ok-color); }
+
+.churn-alert-tag {
+    color: var(--level-color, var(--text-main));
 }
 
 .churn-dial-container {
     position: relative;
-    width: 85px;
-    height: 85px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 92px;
+    height: 92px;
     flex-shrink: 0;
 }
 
@@ -195,111 +236,56 @@
     transform: rotate(-90deg);
 }
 
+.dial-bg {
+    stroke: var(--border-color);
+}
+
 .dial-fill {
-    transition: stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.4s ease;
+    stroke: var(--level-color, var(--primary-color));
     stroke-linecap: round;
+    transition: stroke-dashoffset 0.6s var(--ease-out), stroke 0.3s ease;
 }
 
 .dial-pct {
     position: absolute;
-    font-size: 0.95rem;
-    font-weight: bold;
-    font-family: monospace;
     color: var(--text-main);
-}
-
-.churn-alert-tag {
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-/* Glosario de términos BDC */
-.sim-glossary {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    max-width: 920px;
-    margin: 0 auto 40px;
-}
-
-.sim-term {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    border-radius: 50px;
-    padding: 6px 14px;
-}
-
-.sim-term strong {
-    color: var(--text-main);
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
 }
 
 .strategy-output {
     margin-top: auto;
-    border-top: 1px dashed var(--border-color);
-    padding-top: 18px;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .strategy-badge {
     display: inline-block;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    border: 1px solid transparent;
+    align-self: flex-start;
+    padding: 10px 14px;
+    /* Respaldo para navegadores sin color-mix() */
+    border: 1px solid var(--border-strong);
+    background: color-mix(in srgb, var(--level-color) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--level-color) 40%, transparent);
+    border-radius: var(--radius-md);
+    color: var(--level-color);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 /* Variantes de la acción estratégica. El JS solo cambia la clase: los colores
    viven aquí y así siguen al tema activo. */
-.strategy-badge.is-critical {
-    background: rgba(235, 10, 30, 0.15);
-    border-color: rgba(235, 10, 30, 0.35);
-    color: #ff5468;
-}
-
-.strategy-badge.is-warning {
-    background: rgba(251, 191, 36, 0.12);
-    border-color: rgba(251, 191, 36, 0.35);
-    color: #fbbf24;
-}
-
-.strategy-badge.is-recovery {
-    background: rgba(139, 92, 246, 0.12);
-    border-color: rgba(139, 92, 246, 0.35);
-    color: #a78bfa;
-}
-
-.strategy-badge.is-healthy {
-    background: rgba(16, 185, 129, 0.12);
-    border-color: rgba(16, 185, 129, 0.35);
-    color: #34d399;
-}
-
-.light-theme .strategy-badge.is-critical { color: #c00818; }
-.light-theme .strategy-badge.is-warning { color: #b45309; }
-.light-theme .strategy-badge.is-recovery { color: #6d28d9; }
-.light-theme .strategy-badge.is-healthy { color: #047857; }
+.strategy-badge.is-critical { --level-color: var(--danger-color); }
+.strategy-badge.is-warning { --level-color: var(--warn-color); }
+.strategy-badge.is-recovery { --level-color: var(--violet-color); }
+.strategy-badge.is-healthy { --level-color: var(--ok-color); }
 
 /* Responsive adjustments */
-@media (min-width: 768px) {
+@media (max-width: 860px) {
     .simulator-wrapper {
-        grid-template-columns: 1.2fr 1fr;
-    }
-}
-
-@media (max-width: 767px) {
-    .churn-output-group {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 15px !important;
-    }
-    
-    .churn-info {
-        align-items: center !important;
+        grid-template-columns: 1fr;
     }
 }

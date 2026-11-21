@@ -1,52 +1,15 @@
-/* Fade-In and Transition Animations */
+/* Animaciones y transiciones */
 
 @keyframes pulse {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 62, 85, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(255, 62, 85, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 62, 85, 0); }
-}
-
-@keyframes float-blob {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(10%, 15%) scale(1.15); }
-}
-
-/* Page Load Animations */
-.fade-in {
-    animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.hero-title.fade-in-up {
-    animation-delay: 0.1s;
-}
-.hero-subtitle.fade-in-up {
-    animation-delay: 0.2s;
-}
-.hero-desc.fade-in-up {
-    animation-delay: 0.3s;
-}
-.hero-tech-pills.fade-in-up {
-    animation-delay: 0.4s;
-}
-.hero-actions.fade-in-up {
-    animation-delay: 0.5s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    0% { box-shadow: 0 0 0 0 rgba(62, 207, 142, 0.55); }
+    70% { box-shadow: 0 0 0 7px rgba(62, 207, 142, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(62, 207, 142, 0); }
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(16px);
     }
     to {
         opacity: 1;
@@ -54,16 +17,45 @@
     }
 }
 
-/* Intersection Observer Scroll Animations */
+@keyframes barGrow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+@keyframes dropdownIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Entrada escalonada del primer pantallazo. `backwards` aplica el estado
+   inicial solo durante la espera: si la animación no corre, el contenido
+   se ve igual. */
+.fade-in-up {
+    animation: fadeInUp 0.8s var(--ease-out) backwards;
+}
+
+.hero-title.fade-in-up { animation-delay: 0.08s; }
+.hero-desc.fade-in-up { animation-delay: 0.16s; }
+.hero-actions.fade-in-up { animation-delay: 0.24s; }
+.hero-tech-pills.fade-in-up { animation-delay: 0.32s; }
+.impact-panel.fade-in-up { animation-delay: 0.3s; }
+
+/* Aparición al hacer scroll (IntersectionObserver en effects.js) */
 .fade-in-hidden {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(18px);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
 
 .fade-in-visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+    opacity: 1;
+    transform: none;
 }
 
 /* Respeto por quien pide menos movimiento en el sistema operativo.
@@ -77,18 +69,14 @@
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
 
-    .fade-in-up,
     .fade-in-hidden {
         opacity: 1;
         transform: none;
-    }
-
-    .blob-bg {
-        animation: none;
     }
 }
